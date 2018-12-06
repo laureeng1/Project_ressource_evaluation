@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html ng-app="app">
+  <head>
+    <meta charset="utf-8">
+    <title> Advanced table </title>   
+    
+    <script src="/lib/bower_components/platform/platform.js"></script>  
+    <link rel="import"href="/lib/bower_components/polymer/polymer.html">                   
+        
+    <!-- importation de composants -->
+    <link rel="import"href="/components/advanced-table/advanced-table.html">
+      
+    <link rel="stylesheet" href='/css/bootstrap/css/bootstrap.css' />    
+    <link href="/lib/template/css/bootstrap-reset.css" rel="stylesheet">
+    <link rel="stylesheet" href='/lib/template/assets/font-awesome/css/font-awesome.css' />            
+    <link rel="stylesheet" href='/lib/font-awesome-customized/css/font-awesome.css' />
+    <link rel="stylesheet" href='/lib/template/css/table-responsive.css' />
+      
+    <script src="/lib/bower_components/angular/angular.js"></script>
+
+    <script src="/js/others/modernizr.min.js"></script>
+    <!--<script src="/config/install-features.js"></script> -->
+          
+  </head>
+    <body unresolved ng-controller="myController">
+        <t-pagination totalItems="15000" perPage="5"></t-pagination>
+      
+        <script>
+            var app = angular.module('app', []);
+            app.controller('myController', function ($scope, $timeout) {
+                $scope.name = 'oura';
+
+                $timeout(function() {
+
+                });
+            });
+         
+        </script>
+    </body>
+</html>

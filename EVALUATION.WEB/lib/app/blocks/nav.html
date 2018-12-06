@@ -1,0 +1,248 @@
+﻿<!-- first -->
+<ul class="nav">    
+    <li>
+        <a ui-sref="app.dashboard">
+            <i class="glyphicon glyphicon-stats icon text-primary-dker"></i>
+            <span class="font-bold" translate="aside.nav.DASHBOARD">Tableau de bord</span>
+        </a>
+    </li>    
+    <li class="line dk"></li>
+    <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
+        <span>Modules</span>
+    </li>
+     <li>
+        <a href class="auto">
+            <span class="pull-right text-muted">
+                <i class="fa fa-fw fa-angle-right text"></i>
+                <i class="fa fa-fw fa-angle-down text-active"></i>
+            </span>
+            <i class="glyphicon glyphicon-briefcase icon"></i>
+            <span>Hôpital</span>
+        </a>
+        <ul class="nav nav-sub dk">
+            <li class="nav-sub-header">
+                <a href>
+                    <span>Hôpital</span>
+                </a>
+            </li>
+            <li>
+                <core-menu>
+                   <!-- <core-item ><span ui-sref="app.gc.dashboard">Tableau de bord</span></core-item>-->
+                    <core-item icon="store"><span ui-sref="app.his.calendrier">Programme & Rdv</span></core-item>
+                        <core-submenu icon="store" label="Pharmacie">                        
+                        <core-item><span ui-sref="app.caisse.depenseCaisse">Ventes</span></core-item>
+                            <core-item><span ui-sref="app.caisse.recetteCaisse">Approvisionnements</span></core-item>
+                             <core-item><span ui-sref="app.his.gestionStock">Gestion du stock</span></core-item>
+                       </core-submenu>
+                
+                </core-menu>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <a href class="auto">
+            <span class="pull-right text-muted">
+                <i class="fa fa-fw fa-angle-right text"></i>
+                <i class="fa fa-fw fa-angle-down text-active"></i>
+            </span>
+            <i class="glyphicon glyphicon-briefcase icon"></i>
+            <span>Caisse</span>
+        </a>
+        <ul class="nav nav-sub dk">
+            <li class="nav-sub-header">
+                <a href>
+                    <span>Caisse</span>
+                </a>
+            </li>
+            <li>
+                <core-menu>
+                    <core-item ><span ui-sref="app.caisse.dashboard">Tableau de bord</span></core-item>
+                    <core-item icon="store"><span ui-sref="app.caisse.venteComptoir">Vente Comptoir</span></core-item>
+                    <core-item icon="store"><span ui-sref="app.caisse.miseAuPoint">Mise Au Point</span></core-item>
+                    <core-submenu icon="store" label="Gestion des Caisses">                        
+                        <core-item><span ui-sref="app.caisse.depenseCaisse">dépense</span></core-item>
+                        <core-item><span ui-sref="app.caisse.recetteCaisse">Caisse recette</span></core-item>
+                    </core-submenu>
+                </core-menu>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <a href class="auto">
+            <span class="pull-right text-muted">
+                <i class="fa fa-fw fa-angle-right text"></i>
+                <i class="fa fa-fw fa-angle-down text-active"></i>
+            </span>
+            <i class="glyphicon glyphicon-briefcase icon"></i>
+            <span>Trésorerie</span>
+        </a>
+        <ul class="nav nav-sub dk">
+            <li class="nav-sub-header">
+                <a href>
+                    <span>Trésorerie</span>
+                </a>
+            </li>
+            <li>
+                <core-menu>
+                    <core-item ><span ui-sref="app.treso.dashboard">Tableau de bord</span></core-item>
+                    <core-item icon="store"><span ui-sref="app.treso.Encaissements">Encaissements</span></core-item>
+                    <core-item icon="store"><span ui-sref="app.treso.Decaissements">Décaissements</span></core-item>
+                    <core-item icon="store"><span ui-sref="app.treso.Previsions">Prévisions</span></core-item>
+                    <core-item icon="store"><span ui-sref="app.treso.Validations">Validations</span></core-item>
+                    <core-item icon="store"><span ui-sref="app.treso.Echeancier">Echéanciers</span></core-item>
+                    <core-item icon="store"><span ui-sref="app.treso.Cheques">Editions de chèques</span></core-item>
+                    <core-item icon="store"><span ui-sref="app.treso.Import">Imports</span></core-item>
+                    <!--<core-submenu icon="store" label="Opérations Bancaires">                        
+                            <core-item><span ui-sref="app.caisse.depenseCaisse">Relevés</span></core-item>
+                            <core-item><span ui-sref="app.caisse.recetteCaisse">Prêts</span></core-item>
+                        </core-submenu>-->
+                    <core-submenu icon="store" label="Etats">                        
+                        <core-item><span ui-sref="app.treso.ListeCheque">Liste Chèques Imprimés</span></core-item>
+                        <core-item><span ui-sref="app.treso.ListeChequeValide">Liste Chèques Validés</span></core-item>
+                        <core-item><span ui-sref="app.treso.ListeChequeSigne">Liste Chèques Signés</span></core-item>
+                        <core-item><span ui-sref="app.treso.ListeEncaissementBanque">Liste Encaissements Ribs</span></core-item>
+                        <core-item><span ui-sref="app.treso.ListeDecaissementBanque">Liste Décaissements Ribs</span></core-item>
+                        <!--<core-item><span ui-sref="app.treso.ListePrevision">Liste Prévisions</span></core-item>-->
+                        <core-item><span ui-sref="app.treso.PlanPrevision">Plan Prévisionnel</span></core-item>
+                        <core-item><span ui-sref="app.treso.PlanExecution">Plan d'éxécution</span></core-item>
+                        <core-item><span ui-sref="app.treso.PlanComparatif">Plan comparatif</span></core-item>
+                        <core-item><span ui-sref="app.treso.SituationExecution">Situation Trésorerie</span></core-item>
+                        <core-item><span ui-sref="app.treso.EtatRecapBanque">Situation tréso Banque</span></core-item>
+                    </core-submenu>
+                    <!--<core-item icon="store"><span ui-sref="app.caisse.venteComptoir">Vente Comptoir</span></core-item>
+                        <core-submenu icon="store" label="Gestion des Caisses">                        
+                            <core-item><span ui-sref="app.caisse.depenseCaisse">dépense</span></core-item>
+                            <core-item><span ui-sref="app.caisse.recetteCaisse">Caisse recette</span></core-item>
+                        </core-submenu>-->
+                </core-menu>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <a href class="auto">
+            <span class="pull-right text-muted">
+                <i class="fa fa-fw fa-angle-right text"></i>
+                <i class="fa fa-fw fa-angle-down text-active"></i>
+            </span>
+            <i class="glyphicon glyphicon-briefcase icon"></i>
+            <span>GC</span>
+        </a>
+        <ul class="nav nav-sub dk">
+            <li class="nav-sub-header">
+                <a href>
+                    <span>GC</span>
+                </a>
+            </li>
+            <li>
+                <core-menu>
+                    <core-item ><span ui-sref="app.gc.dashboard">Tableau de bord</span></core-item>
+                    <core-item icon="store"><span ui-sref="app.gc.facture">Facture</span></core-item>
+                </core-menu>
+            </li>
+        </ul>
+    </li>
+    <li apply-acces-fct='{ "code" : "FT-SA-NAV0", "visibility" : "hidden" }'>
+        <a href class="auto">
+            <span class="pull-right text-muted">
+                <i class="fa fa-fw fa-angle-right text"></i>
+                <i class="fa fa-fw fa-angle-down text-active"></i>
+            </span>
+            <i class="glyphicon glyphicon-briefcase icon"></i>
+            <span>SAS</span>
+        </a>
+        <ul class="nav nav-sub dk">
+            <li class="nav-sub-header">
+                <a href>
+                    <span>SAS</span>
+                </a>
+            </li>
+            <li>
+                <core-menu>
+                    <core-item apply-acces-fct='{ "code" : "FT-SA-NAV0-NAV0", "visibility" : "hidden" }'><span ui-sref="app.sa.dashboard">Tableau de bord</span></core-item>
+                    <core-submenu icon="store" label="Adhésions" apply-acces-fct='{ "code" : "FT-SA-NAV0-NAV1", "visibility" : "hidden" }'>
+                        <core-item apply-acces-fct='{ "code" : "FT-SA-NAV0-NAV1-NAV0", "visibility" : "hidden" }'><span ui-sref="app.sa.assures">Assurés</span></core-item>
+                        <core-item apply-acces-fct='{ "code" : "FT-SA-NAV0-NAV1-NAV1", "visibility" : "hidden" }'><span ui-sref="app.sa.contrats">Contrats</span></core-item>
+                        <core-item apply-acces-fct='{ "code" : "FT-SA-NAV0-NAV1-NAV1", "visibility" : "hidden" }'><span ui-sref="app.sa.gestioncarte">Gestion des cartes</span></core-item>
+                    </core-submenu>
+                    <core-submenu icon="store" label="Prestations" apply-acces-fct='{ "code" : "FT-SA-NAV0-NAV2", "visibility" : "hidden" }'>
+                        <core-item apply-acces-fct='{ "code" : "FT-SA-NAV0-NAV2-NAV0", "visibility" : "hidden" }'><span ui-sref="app.sa.prisecharge">PEC manuelles</span></core-item>
+                        <core-item apply-acces-fct='{ "code" : "FT-SA-NAV0-NAV2-NAV0", "visibility" : "hidden" }'><span ui-sref="app.sa.prisencharge">PEC automatisées</span></core-item>
+                    </core-submenu>
+                    <core-submenu icon="store" label="Factures" apply-acces-fct='{ "code" : "FT-SA-NAV0-NAV2", "visibility" : "hidden" }'>
+                        <core-item apply-acces-fct='{ "code" : "FT-SA-NAV0-NAV2-NAV0", "visibility" : "hidden" }'><span ui-sref="app.sa.controleValidation">Contôle/Validation</span></core-item>
+                        <core-item apply-acces-fct='{ "code" : "FT-SA-NAV0-NAV2-NAV0", "visibility" : "hidden" }'><span ui-sref="app.sa.remboursementPrestation">Remboursements</span></core-item>
+                    </core-submenu>
+
+                </core-menu>
+            </li>
+        </ul>
+    </li>
+    <li class="line dk"></li>
+    <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
+        <span>Paramétrages</span>
+    </li>
+    <li apply-acces-fct='{ "code" : "FT-ADMIN-NAV0", "visibility" : "hidden" }'>
+        <a href class="auto">
+            <span class="pull-right text-muted">
+                <i class="fa fa-fw fa-angle-right text"></i>
+                <i class="fa fa-fw fa-angle-down text-active"></i>
+            </span>
+            <i class="glyphicon glyphicon-briefcase icon"></i>
+            <span>Administration</span>
+        </a>
+        <ul class="nav nav-sub dk">
+            <li class="nav-sub-header">
+                <a href>
+                    <span>Administration</span>
+                </a>
+            </li>
+            <li>
+                <core-menu>
+                    <core-submenu icon="store" label="Caisse">
+                        <core-item><span ui-sref="app.caisse.gestioncaisse">Gestion de caisses</span></core-item>
+                        <core-item><span ui-sref="app.caisse.parametregeneraux">Paramètres généraux</span></core-item>
+                    </core-submenu>
+                </core-menu>
+            </li>
+            <li>
+                <core-menu>
+                    <core-submenu icon="store" label="Trésorerie">
+                        <core-item><span ui-sref="app.treso.Parametrages">Paramerage trésorerie</span></core-item>
+                    </core-submenu>
+                </core-menu>
+            </li>
+              <li>
+                <core-menu>
+                    <core-submenu icon="store" label="Hôpital">
+                        <core-item><span ui-sref="app.his.administration">Administration</span></core-item>
+                        <core-item><span ui-sref="app.his.medicaux">Médical</span></core-item>
+                        <core-item><span ui-sref="app.his.parametrage">Pharmacie</span></core-item>
+                    </core-submenu>
+                </core-menu>
+            </li>
+            <li apply-acces-fct='{ "code" : "FT-ADMIN-NAV0-NAV1", "visibility" : "hidden" }'>
+                <core-menu>
+                    <core-submenu icon="store" label="SAS">
+                        <core-item apply-acces-fct='{ "code" : "FT-ADMIN-NAV0-NAV1-NAV0", "visibility" : "hidden" }'><span ui-sref="app.sa.gestionnaires">Gestionnaires</span></core-item>
+                        <core-item apply-acces-fct='{ "code" : "FT-ADMIN-NAV0-NAV1-NAV1", "visibility" : "hidden" }'><span ui-sref="app.sa.sam">SAM</span></core-item>
+                        <core-item apply-acces-fct='{ "code" : "FT-ADMIN-NAV0-NAV1-NAV1", "visibility" : "hidden" }'><span ui-sref="app.sa.exosam">Exo SAM</span></core-item>
+                        <core-item apply-acces-fct='{ "code" : "FT-ADMIN-NAV0-NAV1-NAV2", "visibility" : "hidden" }'><span ui-sref="app.sa.prestataires">Prestataires</span></core-item>
+                        <core-item apply-acces-fct='{ "code" : "FT-ADMIN-NAV0-NAV1-NAV3", "visibility" : "hidden" }'><span ui-sref="app.sa.reseauxsoins">Réseaux de soins</span></core-item>
+                        <core-item apply-acces-fct='{ "code" : "FT-ADMIN-NAV0-NAV1-NAV4", "visibility" : "hidden" }'><span ui-sref="app.sa.polices">Polices</span></core-item>
+                        <core-item apply-acces-fct='{ "code" : "FT-ADMIN-NAV0-NAV1-NAV5", "visibility" : "hidden" }'><span ui-sref="app.sa.generalites">Généralités</span></core-item>
+                        <!--<core-item ><span ui-sref="app.sa.tests.newprestationwizard">Tests</span></core-item>-->                        
+                    </core-submenu>
+                </core-menu>
+            </li>
+            <li>
+                <core-menu>
+                    <core-submenu apply-acces-fct='{ "code" : "FT-ADMIN-NAV0-NAV0", "visibility" : "hidden" }' icon="store" label="ERP">
+                        <core-item apply-acces-fct='{ "code" : "FT-ADMIN-NAV0-NAV0-NAV0", "visibility" : "hidden" }'><span ui-sref="app.admin.users">Gestion des comptes</span></core-item>
+                        <core-item><span ui-sref="app.admin.generalites">Généralités</span></core-item>
+                    </core-submenu>
+                </core-menu>
+            </li>
+        </ul>
+    </li>
+</ul>
+<!-- / third -->

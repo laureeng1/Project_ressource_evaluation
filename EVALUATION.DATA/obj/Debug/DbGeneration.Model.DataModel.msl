@@ -1,0 +1,563 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DbAFContextStoreContainer" CdmEntityContainer="ProjectFsDbContext">
+    <EntitySetMapping Name="AbpClaims">
+      <EntityTypeMapping TypeName="EVALUATION.DATA.AbpClaims">
+        <MappingFragment StoreEntitySet="AbpClaims">
+          <ScalarProperty Name="IdAbpClaims" ColumnName="IdAbpClaims" />
+          <ScalarProperty Name="CodeParent" ColumnName="CodeParent" />
+          <ScalarProperty Name="CodeAbpClaims" ColumnName="CodeAbpClaims" />
+          <ScalarProperty Name="LibelleAbpClaims" ColumnName="LibelleAbpClaims" />
+          <ScalarProperty Name="Descriptions" ColumnName="Descriptions" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="DateCreation" ColumnName="DateCreation" />
+          <ScalarProperty Name="DateMaj" ColumnName="DateMaj" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="DataKey" ColumnName="DataKey" />
+          <ScalarProperty Name="IdTenant" ColumnName="IdTenant" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AbpEditions">
+      <EntityTypeMapping TypeName="EVALUATION.DATA.AbpEditions">
+        <MappingFragment StoreEntitySet="AbpEditions">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="DeleterUserId" ColumnName="DeleterUserId" />
+          <ScalarProperty Name="LastModifierUserId" ColumnName="LastModifierUserId" />
+          <ScalarProperty Name="CreationTime" ColumnName="CreationTime" />
+          <ScalarProperty Name="CreatorUserId" ColumnName="CreatorUserId" />
+          <ScalarProperty Name="DateCreation" ColumnName="DateCreation" />
+          <ScalarProperty Name="DateMaj" ColumnName="DateMaj" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="DataKey" ColumnName="DataKey" />
+          <ScalarProperty Name="IdTenant" ColumnName="IdTenant" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AbpFeatures">
+      <EntityTypeMapping TypeName="EVALUATION.DATA.AbpFeatures">
+        <MappingFragment StoreEntitySet="AbpFeatures">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="CreationTime" ColumnName="CreationTime" />
+          <ScalarProperty Name="CreatorUserId" ColumnName="CreatorUserId" />
+          <ScalarProperty Name="EditionId" ColumnName="EditionId" />
+          <ScalarProperty Name="Discriminator" ColumnName="Discriminator" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="DateCreation" ColumnName="DateCreation" />
+          <ScalarProperty Name="DateMaj" ColumnName="DateMaj" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="DataKey" ColumnName="DataKey" />
+          <ScalarProperty Name="IdTenant" ColumnName="IdTenant" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AbpNotifications">
+      <EntityTypeMapping TypeName="EVALUATION.DATA.AbpNotifications">
+        <MappingFragment StoreEntitySet="AbpNotifications">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="NotificationName" ColumnName="NotificationName" />
+          <ScalarProperty Name="Data" ColumnName="Data" />
+          <ScalarProperty Name="DataTypeName" ColumnName="DataTypeName" />
+          <ScalarProperty Name="EntityTypeName" ColumnName="EntityTypeName" />
+          <ScalarProperty Name="EntityTypeAssemblyQualifiedName" ColumnName="EntityTypeAssemblyQualifiedName" />
+          <ScalarProperty Name="EntityId" ColumnName="EntityId" />
+          <ScalarProperty Name="Severity" ColumnName="Severity" />
+          <ScalarProperty Name="UserIds" ColumnName="UserIds" />
+          <ScalarProperty Name="ExcludedUserIds" ColumnName="ExcludedUserIds" />
+          <ScalarProperty Name="TenantIds" ColumnName="TenantIds" />
+          <ScalarProperty Name="CreationTime" ColumnName="CreationTime" />
+          <ScalarProperty Name="CreatorUserId" ColumnName="CreatorUserId" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="DateCreation" ColumnName="DateCreation" />
+          <ScalarProperty Name="DateMaj" ColumnName="DateMaj" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="DataKey" ColumnName="DataKey" />
+          <ScalarProperty Name="IdTenant" ColumnName="IdTenant" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AbpNotificationSubscriptions">
+      <EntityTypeMapping TypeName="EVALUATION.DATA.AbpNotificationSubscriptions">
+        <MappingFragment StoreEntitySet="AbpNotificationSubscriptions">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="NotificationName" ColumnName="NotificationName" />
+          <ScalarProperty Name="EntityTypeName" ColumnName="EntityTypeName" />
+          <ScalarProperty Name="EntityTypeAssemblyQualifiedName" ColumnName="EntityTypeAssemblyQualifiedName" />
+          <ScalarProperty Name="EntityId" ColumnName="EntityId" />
+          <ScalarProperty Name="CreationTime" ColumnName="CreationTime" />
+          <ScalarProperty Name="CreatorUserId" ColumnName="CreatorUserId" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="DateCreation" ColumnName="DateCreation" />
+          <ScalarProperty Name="DateMaj" ColumnName="DateMaj" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="DataKey" ColumnName="DataKey" />
+          <ScalarProperty Name="IdTenant" ColumnName="IdTenant" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AbpOrganizationUnits">
+      <EntityTypeMapping TypeName="EVALUATION.DATA.AbpOrganizationUnits">
+        <MappingFragment StoreEntitySet="AbpOrganizationUnits">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="LastModifierUserId" ColumnName="LastModifierUserId" />
+          <ScalarProperty Name="CreationTime" ColumnName="CreationTime" />
+          <ScalarProperty Name="CreatorUserId" ColumnName="CreatorUserId" />
+          <ScalarProperty Name="DateCreation" ColumnName="DateCreation" />
+          <ScalarProperty Name="DateMaj" ColumnName="DateMaj" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="DataKey" ColumnName="DataKey" />
+          <ScalarProperty Name="IdTenant" ColumnName="IdTenant" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AbpPermissions">
+      <EntityTypeMapping TypeName="EVALUATION.DATA.AbpPermissions">
+        <MappingFragment StoreEntitySet="AbpPermissions">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="IsGranted" ColumnName="IsGranted" />
+          <ScalarProperty Name="CreationTime" ColumnName="CreationTime" />
+          <ScalarProperty Name="CreatorUserId" ColumnName="CreatorUserId" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="IdHabilitation" ColumnName="IdHabilitation" />
+          <ScalarProperty Name="Discriminator" ColumnName="Discriminator" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="DateCreation" ColumnName="DateCreation" />
+          <ScalarProperty Name="DateMaj" ColumnName="DateMaj" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="DataKey" ColumnName="DataKey" />
+          <ScalarProperty Name="IdTenant" ColumnName="IdTenant" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AbpRoleClaims">
+      <EntityTypeMapping TypeName="EVALUATION.DATA.AbpRoleClaims">
+        <MappingFragment StoreEntitySet="AbpRoleClaims">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
+          <ScalarProperty Name="ClaimValue" ColumnName="ClaimValue" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="DateCreation" ColumnName="DateCreation" />
+          <ScalarProperty Name="DateMaj" ColumnName="DateMaj" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="DataKey" ColumnName="DataKey" />
+          <ScalarProperty Name="IdTenant" ColumnName="IdTenant" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AbpRoles">
+      <EntityTypeMapping TypeName="EVALUATION.DATA.AbpRoles">
+        <MappingFragment StoreEntitySet="AbpRoles">
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
+          <ScalarProperty Name="IsStatic" ColumnName="IsStatic" />
+          <ScalarProperty Name="IsDefault" ColumnName="IsDefault" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="DateCreation" ColumnName="DateCreation" />
+          <ScalarProperty Name="DateMaj" ColumnName="DateMaj" />
+          <ScalarProperty Name="DataKey" ColumnName="DataKey" />
+          <ScalarProperty Name="IdTenant" ColumnName="IdTenant" />
+          <ScalarProperty Name="TypeDeRole" ColumnName="TypeDeRole" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AbpTenantNotifications">
+      <EntityTypeMapping TypeName="EVALUATION.DATA.AbpTenantNotifications">
+        <MappingFragment StoreEntitySet="AbpTenantNotifications">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="NotificationName" ColumnName="NotificationName" />
+          <ScalarProperty Name="Data" ColumnName="Data" />
+          <ScalarProperty Name="DataTypeName" ColumnName="DataTypeName" />
+          <ScalarProperty Name="EntityTypeName" ColumnName="EntityTypeName" />
+          <ScalarProperty Name="EntityTypeAssemblyQualifiedName" ColumnName="EntityTypeAssemblyQualifiedName" />
+          <ScalarProperty Name="EntityId" ColumnName="EntityId" />
+          <ScalarProperty Name="Severity" ColumnName="Severity" />
+          <ScalarProperty Name="CreationTime" ColumnName="CreationTime" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="DateCreation" ColumnName="DateCreation" />
+          <ScalarProperty Name="DateMaj" ColumnName="DateMaj" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="DataKey" ColumnName="DataKey" />
+          <ScalarProperty Name="IdTenant" ColumnName="IdTenant" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AbpTenants">
+      <EntityTypeMapping TypeName="EVALUATION.DATA.AbpTenants">
+        <MappingFragment StoreEntitySet="AbpTenants">
+          <ScalarProperty Name="IdTenant" ColumnName="IdTenant" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="TenancyName" ColumnName="TenancyName" />
+          <ScalarProperty Name="DomainName" ColumnName="DomainName" />
+          <ScalarProperty Name="ConnectionString" ColumnName="ConnectionString" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="DateCreation" ColumnName="DateCreation" />
+          <ScalarProperty Name="DateMaj" ColumnName="DateMaj" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="DataKey" ColumnName="DataKey" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AbpUserAccounts">
+      <EntityTypeMapping TypeName="EVALUATION.DATA.AbpUserAccounts">
+        <MappingFragment StoreEntitySet="AbpUserAccounts">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="UserLinkId" ColumnName="UserLinkId" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="LastLoginTime" ColumnName="LastLoginTime" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="DeleterUserId" ColumnName="DeleterUserId" />
+          <ScalarProperty Name="LastModifierUserId" ColumnName="LastModifierUserId" />
+          <ScalarProperty Name="CreationTime" ColumnName="CreationTime" />
+          <ScalarProperty Name="CreatorUserId" ColumnName="CreatorUserId" />
+          <ScalarProperty Name="DateCreation" ColumnName="DateCreation" />
+          <ScalarProperty Name="DateMaj" ColumnName="DateMaj" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="DataKey" ColumnName="DataKey" />
+          <ScalarProperty Name="Entite" ColumnName="Entite" />
+          <ScalarProperty Name="IdEntite" ColumnName="IdEntite" />
+          <ScalarProperty Name="IdTenant" ColumnName="IdTenant" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AbpUserClaims">
+      <EntityTypeMapping TypeName="EVALUATION.DATA.AbpUserClaims">
+        <MappingFragment StoreEntitySet="AbpUserClaims">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
+          <ScalarProperty Name="ClaimValue" ColumnName="ClaimValue" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="DateCreation" ColumnName="DateCreation" />
+          <ScalarProperty Name="DateMaj" ColumnName="DateMaj" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="DataKey" ColumnName="DataKey" />
+          <ScalarProperty Name="IdTenant" ColumnName="IdTenant" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AbpUserLoginAttempts">
+      <EntityTypeMapping TypeName="EVALUATION.DATA.AbpUserLoginAttempts">
+        <MappingFragment StoreEntitySet="AbpUserLoginAttempts">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="TenancyName" ColumnName="TenancyName" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="UserNameOrEmailAddress" ColumnName="UserNameOrEmailAddress" />
+          <ScalarProperty Name="ClientIpAddress" ColumnName="ClientIpAddress" />
+          <ScalarProperty Name="ClientName" ColumnName="ClientName" />
+          <ScalarProperty Name="BrowserInfo" ColumnName="BrowserInfo" />
+          <ScalarProperty Name="Result" ColumnName="Result" />
+          <ScalarProperty Name="CreationTime" ColumnName="CreationTime" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="DateCreation" ColumnName="DateCreation" />
+          <ScalarProperty Name="DateMaj" ColumnName="DateMaj" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="DataKey" ColumnName="DataKey" />
+          <ScalarProperty Name="IdTenant" ColumnName="IdTenant" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AbpUserLogins">
+      <EntityTypeMapping TypeName="EVALUATION.DATA.AbpUserLogins">
+        <MappingFragment StoreEntitySet="AbpUserLogins">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdUtilisateur" ColumnName="IdUtilisateur" />
+          <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
+          <ScalarProperty Name="ProviderKey" ColumnName="ProviderKey" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="DateCreation" ColumnName="DateCreation" />
+          <ScalarProperty Name="DateMaj" ColumnName="DateMaj" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="DataKey" ColumnName="DataKey" />
+          <ScalarProperty Name="IdTenant" ColumnName="IdTenant" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AbpUserNotifications">
+      <EntityTypeMapping TypeName="EVALUATION.DATA.AbpUserNotifications">
+        <MappingFragment StoreEntitySet="AbpUserNotifications">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="TenantNotificationId" ColumnName="TenantNotificationId" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="DateCreation" ColumnName="DateCreation" />
+          <ScalarProperty Name="DateMaj" ColumnName="DateMaj" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="DataKey" ColumnName="DataKey" />
+          <ScalarProperty Name="IdTenant" ColumnName="IdTenant" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AbpUserRoles">
+      <EntityTypeMapping TypeName="EVALUATION.DATA.AbpUserRoles">
+        <MappingFragment StoreEntitySet="AbpUserRoles">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="CreationTime" ColumnName="CreationTime" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="DateCreation" ColumnName="DateCreation" />
+          <ScalarProperty Name="DateMaj" ColumnName="DateMaj" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="DataKey" ColumnName="DataKey" />
+          <ScalarProperty Name="IdTenant" ColumnName="IdTenant" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AbpUsers">
+      <EntityTypeMapping TypeName="EVALUATION.DATA.AbpUsers">
+        <MappingFragment StoreEntitySet="AbpUsers">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="AuthenticationSource" ColumnName="AuthenticationSource" />
+          <ScalarProperty Name="Nom" ColumnName="Nom" />
+          <ScalarProperty Name="Prenoms" ColumnName="Prenoms" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="IsEmailConfirmed" ColumnName="IsEmailConfirmed" />
+          <ScalarProperty Name="EmailConfirmationCode" ColumnName="EmailConfirmationCode" />
+          <ScalarProperty Name="PasswordResetCode" ColumnName="PasswordResetCode" />
+          <ScalarProperty Name="DateDebutValidite" ColumnName="DateDebutValidite" />
+          <ScalarProperty Name="DateFinValidite" ColumnName="DateFinValidite" />
+          <ScalarProperty Name="LockoutEndDateUtc" ColumnName="LockoutEndDateUtc" />
+          <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
+          <ScalarProperty Name="IsLockoutEnabled" ColumnName="IsLockoutEnabled" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="IsPhoneNumberConfirmed" ColumnName="IsPhoneNumberConfirmed" />
+          <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+          <ScalarProperty Name="IsTwoFactorEnabled" ColumnName="IsTwoFactorEnabled" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="LastLoginTime" ColumnName="LastLoginTime" />
+          <ScalarProperty Name="IdPersonne" ColumnName="IdPersonne" />
+          <ScalarProperty Name="IdGarant" ColumnName="IdGarant" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="DeleterUserId" ColumnName="DeleterUserId" />
+          <ScalarProperty Name="LastModifierUserId" ColumnName="LastModifierUserId" />
+          <ScalarProperty Name="CreationTime" ColumnName="CreationTime" />
+          <ScalarProperty Name="CreatorUserId" ColumnName="CreatorUserId" />
+          <ScalarProperty Name="DateCreation" ColumnName="DateCreation" />
+          <ScalarProperty Name="DateMaj" ColumnName="DateMaj" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="DataKey" ColumnName="DataKey" />
+          <ScalarProperty Name="IdTenant" ColumnName="IdTenant" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Permissions">
+      <EntityTypeMapping TypeName="EVALUATION.DATA.Permissions">
+        <MappingFragment StoreEntitySet="Permissions">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="DateCreation" ColumnName="DateCreation" />
+          <ScalarProperty Name="DateMaj" ColumnName="DateMaj" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="DataKey" ColumnName="DataKey" />
+          <ScalarProperty Name="IdTenant" ColumnName="IdTenant" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Projects">
+      <EntityTypeMapping TypeName="EVALUATION.DATA.Projects">
+        <MappingFragment StoreEntitySet="Projects">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="IdResponsible" ColumnName="IdResponsible" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="DateCreation" ColumnName="DateCreation" />
+          <ScalarProperty Name="DateMaj" ColumnName="DateMaj" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="DataKey" ColumnName="DataKey" />
+          <ScalarProperty Name="IdTenant" ColumnName="IdTenant" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProjectTaskActions">
+      <EntityTypeMapping TypeName="EVALUATION.DATA.ProjectTaskActions">
+        <MappingFragment StoreEntitySet="ProjectTaskActions">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdProjectTask" ColumnName="IdProjectTask" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Overtime" ColumnName="Overtime" />
+          <ScalarProperty Name="OvertimeTime" ColumnName="OvertimeTime" />
+          <ScalarProperty Name="NewDeadline" ColumnName="NewDeadline" />
+          <ScalarProperty Name="ActionType" ColumnName="ActionType" />
+          <ScalarProperty Name="Duration" ColumnName="Duration" />
+          <ScalarProperty Name="DurationTime" ColumnName="DurationTime" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="DateCreation" ColumnName="DateCreation" />
+          <ScalarProperty Name="DateMaj" ColumnName="DateMaj" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="DataKey" ColumnName="DataKey" />
+          <ScalarProperty Name="IdTenant" ColumnName="IdTenant" />
+          <ScalarProperty Name="DateOfDay" ColumnName="DateOfDay" />
+          <ScalarProperty Name="ActionDate" ColumnName="ActionDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProjectTasks">
+      <EntityTypeMapping TypeName="EVALUATION.DATA.ProjectTasks">
+        <MappingFragment StoreEntitySet="ProjectTasks">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdProject" ColumnName="IdProject" />
+          <ScalarProperty Name="IdCurrentCollaborator" ColumnName="IdCurrentCollaborator" />
+          <ScalarProperty Name="Sequence" ColumnName="Sequence" />
+          <ScalarProperty Name="Label" ColumnName="Label" />
+          <ScalarProperty Name="Priority" ColumnName="Priority" />
+          <ScalarProperty Name="TimePlanned" ColumnName="TimePlanned" />
+          <ScalarProperty Name="TimePlannedTime" ColumnName="TimePlannedTime" />
+          <ScalarProperty Name="TimeElapsed" ColumnName="TimeElapsed" />
+          <ScalarProperty Name="TimeElapsedVarchar" ColumnName="TimeElapsedVarchar" />
+          <ScalarProperty Name="TimeRemaining" ColumnName="TimeRemaining" />
+          <ScalarProperty Name="TimeRemainingVarchar" ColumnName="TimeRemainingVarchar" />
+          <ScalarProperty Name="DateStarted" ColumnName="DateStarted" />
+          <ScalarProperty Name="Deadline" ColumnName="Deadline" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="DateCreation" ColumnName="DateCreation" />
+          <ScalarProperty Name="DateMaj" ColumnName="DateMaj" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="DataKey" ColumnName="DataKey" />
+          <ScalarProperty Name="IdTenant" ColumnName="IdTenant" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RolePermissions">
+      <EntityTypeMapping TypeName="EVALUATION.DATA.RolePermissions">
+        <MappingFragment StoreEntitySet="RolePermissions">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="PermissionId" ColumnName="PermissionId" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="DateCreation" ColumnName="DateCreation" />
+          <ScalarProperty Name="DateMaj" ColumnName="DateMaj" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="DataKey" ColumnName="DataKey" />
+          <ScalarProperty Name="IdTenant" ColumnName="IdTenant" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="EVALUATION.DATA.Roles">
+        <MappingFragment StoreEntitySet="Roles">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="DateCreation" ColumnName="DateCreation" />
+          <ScalarProperty Name="DateMaj" ColumnName="DateMaj" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="DataKey" ColumnName="DataKey" />
+          <ScalarProperty Name="IdTenant" ColumnName="IdTenant" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserRoles">
+      <EntityTypeMapping TypeName="EVALUATION.DATA.UserRoles">
+        <MappingFragment StoreEntitySet="UserRoles">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="DateCreation" ColumnName="DateCreation" />
+          <ScalarProperty Name="DateMaj" ColumnName="DateMaj" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="DataKey" ColumnName="DataKey" />
+          <ScalarProperty Name="IdTenant" ColumnName="IdTenant" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vCollaboratorTasks">
+      <EntityTypeMapping TypeName="EVALUATION.DATA.vCollaboratorTasks">
+        <MappingFragment StoreEntitySet="vCollaboratorTasks">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdProject" ColumnName="IdProject" />
+          <ScalarProperty Name="IdCurrentCollaborator" ColumnName="IdCurrentCollaborator" />
+          <ScalarProperty Name="UserFullname" ColumnName="UserFullname" />
+          <ScalarProperty Name="Sequence" ColumnName="Sequence" />
+          <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+          <ScalarProperty Name="Label" ColumnName="Label" />
+          <ScalarProperty Name="Priority" ColumnName="Priority" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="TimePlannedTime" ColumnName="TimePlannedTime" />
+          <ScalarProperty Name="TimeElapsedVarchar" ColumnName="TimeElapsedVarchar" />
+          <ScalarProperty Name="TimeRemainingVarchar" ColumnName="TimeRemainingVarchar" />
+          <ScalarProperty Name="DateStarted" ColumnName="DateStarted" />
+          <ScalarProperty Name="Deadline" ColumnName="Deadline" />
+          <ScalarProperty Name="Prolongation" ColumnName="Prolongation" />
+          <ScalarProperty Name="Bruit" ColumnName="Bruit" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vProjectTasksWithCollaborator">
+      <EntityTypeMapping TypeName="EVALUATION.DATA.vProjectTasksWithCollaborator">
+        <MappingFragment StoreEntitySet="vProjectTasksWithCollaborators">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdProject" ColumnName="IdProject" />
+          <ScalarProperty Name="IdCurrentCollaborator" ColumnName="IdCurrentCollaborator" />
+          <ScalarProperty Name="UserFullname" ColumnName="UserFullname" />
+          <ScalarProperty Name="Sequence" ColumnName="Sequence" />
+          <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+          <ScalarProperty Name="Label" ColumnName="Label" />
+          <ScalarProperty Name="Priority" ColumnName="Priority" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="TimePlannedTime" ColumnName="TimePlannedTime" />
+          <ScalarProperty Name="TimeElapsedVarchar" ColumnName="TimeElapsedVarchar" />
+          <ScalarProperty Name="TimeRemainingVarchar" ColumnName="TimeRemainingVarchar" />
+          <ScalarProperty Name="Deadline" ColumnName="Deadline" />
+          <ScalarProperty Name="Prolongation" ColumnName="Prolongation" />
+          <ScalarProperty Name="Bruit" ColumnName="Bruit" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

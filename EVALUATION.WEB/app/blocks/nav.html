@@ -1,0 +1,47 @@
+﻿<!-- first -->
+<ul class="nav" ng-controller="NavCtrl">
+    <li ng-repeat-start="element in menu">
+        <ng-switch on="element.subMenu.length">
+            <div ng-switch-when="0">
+                <a class="nav-element" ui-sref="{{element.state}}">
+                    <i class="{{element.icon}}"></i>
+                    <span ng-class="{true: 'font-bold', false: ''}[element.isBold]">{{element.span}}</span>
+                </a>
+
+            </div>
+            <div ng-switch-default>
+                <div>
+                    <a class="nav-element" href class="auto">
+                        <span class="pull-right text-muted">
+                            <i class="fa fa-fw fa-angle-right text"></i>
+                            <i class="fa fa-fw fa-angle-down text-active"></i>
+                        </span>
+                        <i class="{{element.icon}}"></i>
+                        <span ng-class="{true: 'font-bold', false: ''}[element.isBold]">{{element.span}}</span>
+                    </a>
+                    <ul class="nav nav-sub dk">
+                        <li class="nav-sub-header">
+                            <a href class="nav-element">
+                                <span ng-class="{true: 'font-bold', false: ''}[element.isBold]">{{element.span}}</span>
+                            </a>
+                        </li>
+                        <li style="cursor: pointer;">
+                            <Core-menu>
+                                <Core-item ng-repeat="item in element.subMenu">
+                                    <i class="{{item.icon}}"></i>
+                                    <span ui-sref="{{item.state}}"><small>{{item.span}}</small></span>
+                                </Core-item>      
+                            </Core-menu>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </ng-switch>
+    </li>
+    <li class="line dk" ng-if="element.hasSubLine"></li>
+    <li ng-repeat-end class="hidden-folded padder m-t m-b-sm text-muted text-xs" ng-if="element.subHeader!=null">
+        <span>{{element.subHeader.span}}</span>
+    </li>
+   
+</ul>
+<!-- / first -->

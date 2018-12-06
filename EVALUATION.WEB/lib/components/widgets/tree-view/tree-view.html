@@ -1,0 +1,53 @@
+﻿<polymer-element name="tree-view" attributes="treeOptions placeholder">
+    <template>
+        <link rel="stylesheet" href="css/kendo.common.min.css"/>
+        <link href="skin/kendo.metro.min.css" rel="stylesheet">
+        <link href="styles/examples-offline.css" rel="stylesheet">
+
+        <style scoped>
+            #treeview .k-sprite
+            {
+                background-image: url("img/coloricons-sprite.png");
+            }
+
+            .rootfolder
+            {
+                background-position: 0 0;
+            }
+
+            .folder
+            {
+                background-position: 0 -16px;
+            }
+
+            .pdf
+            {
+                background-position: 0 -32px;
+            }
+
+            .html
+            {
+                background-position: 0 -48px;
+            }
+
+            .image
+            {
+                background-position: 0 -64px;
+            }
+
+            .box-col
+            {
+                min-width: 300px;
+            }
+        </style>
+
+        <div id="treeview"></div>
+
+    </template>
+    
+    <!--<script src="js/jquery-2.0.1.min.js"></script>-->
+    <!--<script src="/lib/bower_components/angular/angular.min.js"></script>-->
+    <!--<script src="js/kendo.web.js"></script>-->
+    <!--<script src="js/kendo.web.min.js"></script>-->
+    <script src="tree-view.js"></script>
+</polymer-element>

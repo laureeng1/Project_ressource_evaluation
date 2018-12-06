@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html lang="fr" ng-app="app">
+<head>
+    <meta charset="utf-8" />
+    <title>Demo search input</title>
+
+    <!--<script src="../../../bower_components/platform/platform.js"></script>  
+    <script src="../../../bower_components/angular/angular.js"></script>
+    
+    <link rel="stylesheet" href="../../../bower_components/bootstrap/dist/css/bootstrap.css" type="text/css" /> -->
+    <script src="../../../lib/bower_components/platform/platform.js"></script>
+    <link rel="import" href="../../../lib/bower_components/polymer/polymer.html">
+    <script src="../../../lib/bower_components/angular/angular.js"></script>
+
+    <link rel="stylesheet" href="../../../lib/bower_components/bootstrap/dist/css/bootstrap.css" type="text/css" />
+    <link rel="import" href="../chart-core.html">
+</head>
+<body ng-controller="AppCtrl">
+    <!--<div class="col-lg-4 center">
+            <chart-core id="test-chart-base">
+            </chart-core>
+        </div>-->
+    <chart-core id="test-chart-base">
+    </chart-core>
+    
+    <!--<input type="number" ng-model="pers.nom"/>
+    <select ng-model="operator">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+    </select>
+    <input type="number" ng-model="pers.prenoms"/>
+    <span>{{ pers.nom + pers.prenoms }}</span>
+    <button ng-click="alert(obj.nom + ' ' + obj.prenoms)">click me !</button>-->
+
+    <script type="text/javascript">
+        if (!String.prototype.contains) {
+            String.prototype.contains = function () {
+                return String.prototype.indexOf.apply(this, arguments) !== -1;
+            };
+        }
+
+        var app = angular.module("app", []);
+
+        app.controller("AppCtrl", ["$scope", "$timeout", function ($scope, $timeout) {
+
+            $scope.data = [50, 30, 90, 150];
+            $scope.color = ["blue", "green", "yellow", "red"];
+
+            $scope.displayFullName = function(obj) {
+                alert(obj.nom + ' ' + obj.prenoms);
+            }
+
+            $timeout(function () {
+                var chart = document.querySelector('#test-chart-base');
+
+                chart.values = [[65, 59, 90, 81, 56, 55, 40], [28, 48, 40, 19, 96, 27, 100]];
+                chart.labels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'];
+                //chart.values = [65, 59, 90, 81, 56, 55, 40];
+                chart.type = 'Line';
+                chart.options = {
+                    bezierCurve: true
+                }
+                //chart.colors = ['253,180,92','247,70,74','70,191,189','148,159,177','77,83,96'];
+                //chart.options = {
+                //    responsive: false,
+                //};
+
+            }, 2000);
+
+        }]);
+    </script>
+</body>
+</html>

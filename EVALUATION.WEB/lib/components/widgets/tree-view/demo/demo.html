@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html>
+<html ng-app="app">
+  <head>
+    <meta charset="utf-8">
+    <title> Tree view </title>   
+    
+    <script src="/lib/bower_components/platform/platform.js"></script>  
+    <link rel="import"href="/lib/bower_components/polymer/polymer.html">                   
+        
+    <!-- importation de composants -->
+    <link rel="import"href="/components/tree-view/tree-view.html">
+      
+    <script src="/lib/bower_components/angular/angular.js"></script>
+
+    <script src="/js/others/modernizr.min.js"></script>
+          
+  </head>
+    <body unresolved ng-controller="myController">
+        
+        <link href="../styles/examples-offline.css" rel="stylesheet">
+
+        <tree-view id="third-tree-view"></tree-view>
+
+        <script>
+            var app = angular.module('app', []);
+            app.controller('myController', function ($scope, $timeout) {
+                $scope.name = 'oura';
+                var model = function (obj) {
+                    obj = (obj != null) ? obj : new Object();
+                    var self = this;
+
+                    self.id = obj.id;
+                    self.text = obj.text;
+                }
+                var items = [
+                    {
+                        id: 1,
+                        text: "Mes Documents",
+                        expanded: true,
+                        spriteCssClass: "rootfolder",
+                    },
+                    {
+                        id: 3,
+                        text: "about.html",
+                        spriteCssClass: "html",
+                        refParent: 1
+                    },
+                    {
+                        id: 4,
+                        text: "index.html",
+                        spriteCssClass: "html"
+                    },
+                    {
+                        id: 5,
+                        text: "logo.png",
+                        spriteCssClass: "image",
+                        refParent: 2
+                    },
+                    {
+                        id: 2,
+                        text: "Kendo UI Project",
+                        expanded: true,
+                        refParent : 1
+                    },
+                    {
+                        id: 6,
+                        text: "New Web Site",
+                        expanded: true,
+                        spriteCssClass: "folder",
+                        refParent: 5
+                    },
+                    {
+                        id: 9,
+                        text: "Reports",
+                        expanded: true,
+                        spriteCssClass: "folder",
+                    },
+                    {
+                        id: 10,
+                        text: "February.pdf",
+                        spriteCssClass: "pdf",
+                        refParent : 9
+                    },
+                    {
+                        id: 11,
+                        text: "March.pdf",
+                        spriteCssClass: "pdf"
+                    },
+                    {
+                        id: 12,
+                        text: "April.pdf",
+                        spriteCssClass: "pdf"
+                    },
+                    {
+                        id: 7,
+                        text: "mockup.jpg",
+                        spriteCssClass: "image",
+                        refParent: 2
+                    },
+                    {
+                        id: 8,
+                        text: "Research.pdf",
+                        spriteCssClass: "pdf"
+                    }
+                ];
+                var thirdTreeView = document.querySelector('#third-tree-view');
+                thirdTreeView.treeOptions = {
+                    key: 'id',
+                    parentKey: 'refParent',
+                    displayProperty: 'text',
+                    modelFactory: model,
+                    dataSource: items,
+                };
+                thirdTreeView.addEventListener('get-items-checked', function (e) {
+                    console.log(e.detail.msg.items);
+                });
+            });
+         
+        </script>
+    </body>
+</html>

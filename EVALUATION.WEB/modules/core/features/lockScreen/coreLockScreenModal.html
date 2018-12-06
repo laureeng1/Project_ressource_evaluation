@@ -1,0 +1,95 @@
+﻿<div onkeydown="_blockesc(event)" class="modal-body bg-black">
+    <div class="bg-black">
+        <section class="panel">
+            <div class="panel-body">
+                <div class="lock-wrapper">
+
+                    <div id="time">{{  displayTime }}</div>
+
+                    <div class="lock-box text-center">
+                        <div class="thumb-lg">
+                            <img style="width: 135px; height: 135px;" ng-if="item.Photo" ng-src="{{item.Photo}}" alt=""
+                                 class="img-circle">
+                            <img style="width: 135px; height: 135px;" ng-if="!item.Photo"
+                                 src="/images/shared/default_user.png" alt="" class="img-circle">
+                        </div>
+                        <p class="h4 m-t m-b">{{ item.Name }}</p>
+                        <span class="locked">Verrouillé</span>
+                        <form role="form" class="form-inline" ng-submit="authentify()">
+                            <div class="input-group text-center col-lg-5">
+                                <input type="password" class="form-control text-sm btn-rounded no-border"
+                                       placeholder="Entrer mot de passe pour continuer" ng-model="item.Password"
+                                       required encoded-data>
+                                <span class="input-group-btn">
+                                    <button class="btn btn-success btn-rounded no-border pull-left" style="margin-right: -11px;" type="submit"><i class="fa fa-arrow-right"></i></button>
+                                </span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-round btn-white btn-logout" ng-click="logout()">
+            <i class="fa fa-power-off text-info"></i>
+            Se déconnecter
+        </button>
+    </div>
+</div>
+
+<script>
+    function startTime() {
+        var today = new Date();
+        var h = today.getHours();
+        var m = today.getMinutes();
+        var s = today.getSeconds();
+        // add a zero in front of numbers<10
+        m = checkTime(m);
+        s = checkTime(s);
+        document.getElementById('time').innerHTML = h + ":" + m + ":" + s;
+        t = setTimeout(function () { startTime(); }, 500);
+    }
+
+    function checkTime(i) {
+        if (i < 10) {
+            i = "0" + i;
+        }
+        return i;
+    }
+
+
+    function _blockesc(event) {
+        if (event.keyCode == 27) {
+            event.keyCode == 0;
+            window.event.returnValue = false;
+        }
+
+    }
+    //startTime();
+</script>
+
+<style>
+    .panel {
+        background-color: transparent !important;
+    }
+
+    .thumb-lg {
+        width: 135px !important;
+    }
+
+    #time {
+        width: 100%;
+        color: rgb(255, 255, 255);
+        font-size: 60px;
+        margin-bottom: 25px;
+        display: inline-block;
+        text-align: center;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 300;
+    }
+
+    .btn-logout {
+        border-radius: 30px !important;
+    }
+</style>

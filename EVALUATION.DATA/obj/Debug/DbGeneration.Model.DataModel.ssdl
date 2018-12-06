@@ -1,0 +1,1023 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EVALUATION.DATA.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:devart="http://devart.com/schemas/edml/StorageSchemaExtensions/1.0" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="DbAFContextStoreContainer">
+    <EntitySet Name="AbpClaims" EntityType="EVALUATION.DATA.Store.AbpClaims" store:Type="Tables" Schema="dbo" Table="AbpClaims" />
+    <EntitySet Name="AbpEditions" EntityType="EVALUATION.DATA.Store.AbpEditions" store:Type="Tables" Schema="dbo" Table="AbpEditions" />
+    <EntitySet Name="AbpFeatures" EntityType="EVALUATION.DATA.Store.AbpFeatures" store:Type="Tables" Schema="dbo" Table="AbpFeatures" />
+    <EntitySet Name="AbpNotifications" EntityType="EVALUATION.DATA.Store.AbpNotifications" store:Type="Tables" Schema="dbo" Table="AbpNotifications" />
+    <EntitySet Name="AbpNotificationSubscriptions" EntityType="EVALUATION.DATA.Store.AbpNotificationSubscriptions" store:Type="Tables" Schema="dbo" Table="AbpNotificationSubscriptions" />
+    <EntitySet Name="AbpOrganizationUnits" EntityType="EVALUATION.DATA.Store.AbpOrganizationUnits" store:Type="Tables" Schema="dbo" Table="AbpOrganizationUnits" />
+    <EntitySet Name="AbpPermissions" EntityType="EVALUATION.DATA.Store.AbpPermissions" store:Type="Tables" Schema="dbo" Table="AbpPermissions" />
+    <EntitySet Name="AbpRoleClaims" EntityType="EVALUATION.DATA.Store.AbpRoleClaims" store:Type="Tables" Schema="dbo" Table="AbpRoleClaims" />
+    <EntitySet Name="AbpRoles" EntityType="EVALUATION.DATA.Store.AbpRoles" store:Type="Tables" Schema="dbo" Table="AbpRoles" />
+    <EntitySet Name="AbpTenantNotifications" EntityType="EVALUATION.DATA.Store.AbpTenantNotifications" store:Type="Tables" Schema="dbo" Table="AbpTenantNotifications" />
+    <EntitySet Name="AbpTenants" EntityType="EVALUATION.DATA.Store.AbpTenants" store:Type="Tables" Schema="dbo" Table="AbpTenants" />
+    <EntitySet Name="AbpUserAccounts" EntityType="EVALUATION.DATA.Store.AbpUserAccounts" store:Type="Tables" Schema="dbo" Table="AbpUserAccounts" />
+    <EntitySet Name="AbpUserClaims" EntityType="EVALUATION.DATA.Store.AbpUserClaims" store:Type="Tables" Schema="dbo" Table="AbpUserClaims" />
+    <EntitySet Name="AbpUserLoginAttempts" EntityType="EVALUATION.DATA.Store.AbpUserLoginAttempts" store:Type="Tables" Schema="dbo" Table="AbpUserLoginAttempts" />
+    <EntitySet Name="AbpUserLogins" EntityType="EVALUATION.DATA.Store.AbpUserLogins" store:Type="Tables" Schema="dbo" Table="AbpUserLogins" />
+    <EntitySet Name="AbpUserNotifications" EntityType="EVALUATION.DATA.Store.AbpUserNotifications" store:Type="Tables" Schema="dbo" Table="AbpUserNotifications" />
+    <EntitySet Name="AbpUserRoles" EntityType="EVALUATION.DATA.Store.AbpUserRoles" store:Type="Tables" Schema="dbo" Table="AbpUserRoles" />
+    <EntitySet Name="AbpUsers" EntityType="EVALUATION.DATA.Store.AbpUsers" store:Type="Tables" Schema="dbo" Table="AbpUsers" />
+    <EntitySet Name="Permissions" EntityType="EVALUATION.DATA.Store.Permissions" store:Type="Tables" Schema="dbo" Table="Permissions" />
+    <EntitySet Name="Projects" EntityType="EVALUATION.DATA.Store.Projects" store:Type="Tables" Schema="dbo" Table="Projects" />
+    <EntitySet Name="ProjectTaskActions" EntityType="EVALUATION.DATA.Store.ProjectTaskActions" store:Type="Tables" Schema="dbo" Table="ProjectTaskActions" />
+    <EntitySet Name="ProjectTasks" EntityType="EVALUATION.DATA.Store.ProjectTasks" store:Type="Tables" Schema="dbo" Table="ProjectTasks" />
+    <EntitySet Name="RolePermissions" EntityType="EVALUATION.DATA.Store.RolePermissions" store:Type="Tables" Schema="dbo" Table="RolePermissions" />
+    <EntitySet Name="Roles" EntityType="EVALUATION.DATA.Store.Roles" store:Type="Tables" Schema="dbo" Table="Roles" />
+    <EntitySet Name="UserRoles" EntityType="EVALUATION.DATA.Store.UserRoles" store:Type="Tables" Schema="dbo" Table="UserRoles" />
+    <EntitySet Name="vCollaboratorTasks" EntityType="EVALUATION.DATA.Store.vCollaboratorTasks" store:Type="Views" Schema="dbo" Table="vCollaboratorTasks" />
+    <EntitySet Name="vProjectTasksWithCollaborators" EntityType="EVALUATION.DATA.Store.vProjectTasksWithCollaborator" store:Type="Views" Schema="dbo" Table="vProjectTasksWithCollaborator" />
+    <AssociationSet Name="FK_dboAbpFeatures_dboAbpEditions_EditionId" Association="EVALUATION.DATA.Store.FK_dboAbpFeatures_dboAbpEditions_EditionId">
+      <End Role="AbpEditions" EntitySet="AbpEditions" />
+      <End Role="AbpFeatures" EntitySet="AbpFeatures" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dboAbpOrganizationUnits_dboAbpOrganizationUnits_ParentId" Association="EVALUATION.DATA.Store.FK_dboAbpOrganizationUnits_dboAbpOrganizationUnits_ParentId">
+      <End Role="AbpOrganizationUnits" EntitySet="AbpOrganizationUnits" />
+      <End Role="AbpOrganizationUnits1" EntitySet="AbpOrganizationUnits" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dboAbpPermissions_dboAbpRoles_RoleId" Association="EVALUATION.DATA.Store.FK_dboAbpPermissions_dboAbpRoles_RoleId">
+      <End Role="AbpRoles" EntitySet="AbpRoles" />
+      <End Role="AbpPermissions" EntitySet="AbpPermissions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dboAbpPermissions_dboAbpUsers_UserId" Association="EVALUATION.DATA.Store.FK_dboAbpPermissions_dboAbpUsers_UserId">
+      <End Role="AbpUsers" EntitySet="AbpUsers" />
+      <End Role="AbpPermissions" EntitySet="AbpPermissions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AbpRoleClaims_AbpRoleClaims" Association="EVALUATION.DATA.Store.FK_AbpRoleClaims_AbpRoleClaims">
+      <End Role="AbpRoles" EntitySet="AbpRoles" />
+      <End Role="AbpRoleClaims" EntitySet="AbpRoleClaims" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dboAbpRoles_dboAbpUsers_CreatorUserId" Association="EVALUATION.DATA.Store.FK_dboAbpRoles_dboAbpUsers_CreatorUserId">
+      <End Role="AbpUsers" EntitySet="AbpUsers" />
+      <End Role="AbpRoles" EntitySet="AbpRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dboAbpRoles_dboAbpUsers_LastModifierUserId" Association="EVALUATION.DATA.Store.FK_dboAbpRoles_dboAbpUsers_LastModifierUserId">
+      <End Role="AbpUsers" EntitySet="AbpUsers" />
+      <End Role="AbpRoles" EntitySet="AbpRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AbpUserClaims_AbpUserClaims" Association="EVALUATION.DATA.Store.FK_AbpUserClaims_AbpUserClaims">
+      <End Role="AbpUserClaims" EntitySet="AbpUserClaims" />
+      <End Role="AbpUserClaims1" EntitySet="AbpUserClaims" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AbpUserClaims_User" Association="EVALUATION.DATA.Store.FK_AbpUserClaims_User">
+      <End Role="AbpUsers" EntitySet="AbpUsers" />
+      <End Role="AbpUserClaims" EntitySet="AbpUserClaims" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AbpUserRoles_AbpRoles" Association="EVALUATION.DATA.Store.FK_AbpUserRoles_AbpRoles">
+      <End Role="AbpRoles" EntitySet="AbpRoles" />
+      <End Role="AbpUserRoles" EntitySet="AbpUserRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AbpUserRoles_AbpUserRoles" Association="EVALUATION.DATA.Store.FK_AbpUserRoles_AbpUserRoles">
+      <End Role="AbpUserRoles" EntitySet="AbpUserRoles" />
+      <End Role="AbpUserRoles1" EntitySet="AbpUserRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AbpUserRoles_AbpUsers" Association="EVALUATION.DATA.Store.FK_AbpUserRoles_AbpUsers">
+      <End Role="AbpUsers" EntitySet="AbpUsers" />
+      <End Role="AbpUserRoles" EntitySet="AbpUserRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dboAbpUsers_dboAbpUsers_CreatorUserId" Association="EVALUATION.DATA.Store.FK_dboAbpUsers_dboAbpUsers_CreatorUserId">
+      <End Role="AbpUsers" EntitySet="AbpUsers" />
+      <End Role="AbpUsers1" EntitySet="AbpUsers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dboAbpUsers_dboAbpUsers_DeleterUserId" Association="EVALUATION.DATA.Store.FK_dboAbpUsers_dboAbpUsers_DeleterUserId">
+      <End Role="AbpUsers" EntitySet="AbpUsers" />
+      <End Role="AbpUsers1" EntitySet="AbpUsers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dboAbpUsers_dboAbpUsers_LastModifierUserId" Association="EVALUATION.DATA.Store.FK_dboAbpUsers_dboAbpUsers_LastModifierUserId">
+      <End Role="AbpUsers" EntitySet="AbpUsers" />
+      <End Role="AbpUsers1" EntitySet="AbpUsers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AbpUser_Project_responsible" Association="EVALUATION.DATA.Store.FK_AbpUser_Project_responsible">
+      <End Role="AbpUsers" EntitySet="AbpUsers" />
+      <End Role="Projects" EntitySet="Projects" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProjectTaskActions_ProjectTasks" Association="EVALUATION.DATA.Store.FK_ProjectTaskActions_ProjectTasks">
+      <End Role="ProjectTasks" EntitySet="ProjectTasks" />
+      <End Role="ProjectTaskActions" EntitySet="ProjectTaskActions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AbpUser_ProjectTasks_Collaborator" Association="EVALUATION.DATA.Store.FK_AbpUser_ProjectTasks_Collaborator">
+      <End Role="AbpUsers" EntitySet="AbpUsers" />
+      <End Role="ProjectTasks" EntitySet="ProjectTasks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProjectTasks_Projects" Association="EVALUATION.DATA.Store.FK_ProjectTasks_Projects">
+      <End Role="Projects" EntitySet="Projects" />
+      <End Role="ProjectTasks" EntitySet="ProjectTasks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RolePermissions_Role" Association="EVALUATION.DATA.Store.FK_RolePermissions_Role">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="RolePermissions" EntitySet="RolePermissions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RolePermissions_Permission" Association="EVALUATION.DATA.Store.FK_RolePermissions_Permission">
+      <End Role="Permissions" EntitySet="Permissions" />
+      <End Role="RolePermissions" EntitySet="RolePermissions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserRoles_Role" Association="EVALUATION.DATA.Store.FK_UserRoles_Role">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="UserRoles" EntitySet="UserRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserRoles_User" Association="EVALUATION.DATA.Store.FK_UserRoles_User">
+      <End Role="AbpUsers" EntitySet="AbpUsers" />
+      <End Role="UserRoles" EntitySet="UserRoles" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="AbpClaims">
+    <Key>
+      <PropertyRef Name="IdAbpClaims" />
+    </Key>
+    <Property Name="IdAbpClaims" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CodeParent" Type="varchar" MaxLength="150" />
+    <Property Name="CodeAbpClaims" Type="varchar" Nullable="false" MaxLength="150" />
+    <Property Name="LibelleAbpClaims" Type="varchar" Nullable="false" MaxLength="200" />
+    <Property Name="Descriptions" Type="varchar" MaxLength="250" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="DateCreation" Type="datetime" Nullable="false" />
+    <Property Name="DateMaj" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="bigint" Nullable="false" />
+    <Property Name="ModifiedBy" Type="bigint" Nullable="false" />
+    <Property Name="DataKey" Type="varchar" MaxLength="50" />
+    <Property Name="IdTenant" Type="bigint" />
+  </EntityType>
+  <EntityType Name="AbpEditions">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="32" />
+    <Property Name="DisplayName" Type="nvarchar" Nullable="false" MaxLength="64" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="DeleterUserId" Type="bigint" />
+    <Property Name="LastModifierUserId" Type="bigint" />
+    <Property Name="CreationTime" Type="datetime" Nullable="false" />
+    <Property Name="CreatorUserId" Type="bigint" />
+    <Property Name="DateCreation" Type="datetime" Nullable="false" />
+    <Property Name="DateMaj" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="bigint" Nullable="false" />
+    <Property Name="ModifiedBy" Type="bigint" Nullable="false" />
+    <Property Name="DataKey" Type="varchar" MaxLength="50" />
+    <Property Name="IdTenant" Type="bigint" />
+  </EntityType>
+  <EntityType Name="AbpFeatures">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="Value" Type="nvarchar" Nullable="false" MaxLength="2000" />
+    <Property Name="CreationTime" Type="datetime" Nullable="false" />
+    <Property Name="CreatorUserId" Type="bigint" />
+    <Property Name="EditionId" Type="int" />
+    <Property Name="Discriminator" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="DateCreation" Type="datetime" Nullable="false" />
+    <Property Name="DateMaj" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="bigint" Nullable="false" />
+    <Property Name="ModifiedBy" Type="bigint" Nullable="false" />
+    <Property Name="DataKey" Type="varchar" MaxLength="50" />
+    <Property Name="IdTenant" Type="bigint" />
+  </EntityType>
+  <EntityType Name="AbpNotifications">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="NotificationName" Type="nvarchar" Nullable="false" MaxLength="96" />
+    <Property Name="Data" Type="nvarchar(max)" />
+    <Property Name="DataTypeName" Type="nvarchar" MaxLength="512" />
+    <Property Name="EntityTypeName" Type="nvarchar" MaxLength="250" />
+    <Property Name="EntityTypeAssemblyQualifiedName" Type="nvarchar" MaxLength="512" />
+    <Property Name="EntityId" Type="nvarchar" MaxLength="96" />
+    <Property Name="Severity" Type="tinyint" Nullable="false" />
+    <Property Name="UserIds" Type="nvarchar(max)" />
+    <Property Name="ExcludedUserIds" Type="nvarchar(max)" />
+    <Property Name="TenantIds" Type="nvarchar(max)" />
+    <Property Name="CreationTime" Type="datetime" Nullable="false" />
+    <Property Name="CreatorUserId" Type="bigint" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="DateCreation" Type="datetime" Nullable="false" />
+    <Property Name="DateMaj" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="bigint" Nullable="false" />
+    <Property Name="ModifiedBy" Type="bigint" Nullable="false" />
+    <Property Name="DataKey" Type="varchar" MaxLength="50" />
+    <Property Name="IdTenant" Type="bigint" />
+  </EntityType>
+  <EntityType Name="AbpNotificationSubscriptions">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UserId" Type="bigint" Nullable="false" />
+    <Property Name="NotificationName" Type="nvarchar" MaxLength="96" />
+    <Property Name="EntityTypeName" Type="nvarchar" MaxLength="250" />
+    <Property Name="EntityTypeAssemblyQualifiedName" Type="nvarchar" MaxLength="512" />
+    <Property Name="EntityId" Type="nvarchar" MaxLength="96" />
+    <Property Name="CreationTime" Type="datetime" Nullable="false" />
+    <Property Name="CreatorUserId" Type="bigint" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="DateCreation" Type="datetime" Nullable="false" />
+    <Property Name="DateMaj" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="bigint" Nullable="false" />
+    <Property Name="ModifiedBy" Type="bigint" Nullable="false" />
+    <Property Name="DataKey" Type="varchar" MaxLength="50" />
+    <Property Name="IdTenant" Type="bigint" />
+  </EntityType>
+  <EntityType Name="AbpOrganizationUnits">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ParentId" Type="bigint" />
+    <Property Name="Code" Type="nvarchar" Nullable="false" MaxLength="95" />
+    <Property Name="DisplayName" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="LastModifierUserId" Type="bigint" />
+    <Property Name="CreationTime" Type="datetime" Nullable="false" />
+    <Property Name="CreatorUserId" Type="bigint" />
+    <Property Name="DateCreation" Type="datetime" Nullable="false" />
+    <Property Name="DateMaj" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="bigint" Nullable="false" />
+    <Property Name="ModifiedBy" Type="bigint" Nullable="false" />
+    <Property Name="DataKey" Type="varchar" MaxLength="50" />
+    <Property Name="IdTenant" Type="bigint" />
+  </EntityType>
+  <EntityType Name="AbpPermissions">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="IsGranted" Type="bit" Nullable="false" />
+    <Property Name="CreationTime" Type="datetime" Nullable="false" />
+    <Property Name="CreatorUserId" Type="bigint" />
+    <Property Name="RoleId" Type="int" />
+    <Property Name="UserId" Type="bigint" />
+    <Property Name="IdHabilitation" Type="bigint" />
+    <Property Name="Discriminator" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="DateCreation" Type="datetime" Nullable="false" />
+    <Property Name="DateMaj" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="bigint" Nullable="false" />
+    <Property Name="ModifiedBy" Type="bigint" Nullable="false" />
+    <Property Name="DataKey" Type="varchar" MaxLength="50" />
+    <Property Name="IdTenant" Type="bigint" />
+  </EntityType>
+  <EntityType Name="AbpRoleClaims">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="RoleId" Type="int" Nullable="false" />
+    <Property Name="ClaimType" Type="nvarchar(max)" />
+    <Property Name="ClaimValue" Type="nvarchar(max)" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="DateCreation" Type="datetime" Nullable="false" />
+    <Property Name="DateMaj" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="bigint" Nullable="false" />
+    <Property Name="ModifiedBy" Type="bigint" Nullable="false" />
+    <Property Name="DataKey" Type="varchar" MaxLength="50" />
+    <Property Name="IdTenant" Type="bigint" />
+  </EntityType>
+  <EntityType Name="AbpRoles">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="RoleId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="DisplayName" Type="nvarchar" Nullable="false" MaxLength="64" />
+    <Property Name="IsStatic" Type="bit" Nullable="false" />
+    <Property Name="IsDefault" Type="bit" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="32" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="ModifiedBy" Type="bigint" />
+    <Property Name="CreatedBy" Type="bigint" />
+    <Property Name="DateCreation" Type="datetime" Nullable="false" />
+    <Property Name="DateMaj" Type="datetime" Nullable="false" />
+    <Property Name="DataKey" Type="varchar" MaxLength="50" />
+    <Property Name="IdTenant" Type="bigint" />
+    <Property Name="TypeDeRole" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="AbpTenantNotifications">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="NotificationName" Type="nvarchar" Nullable="false" MaxLength="96" />
+    <Property Name="Data" Type="nvarchar(max)" />
+    <Property Name="DataTypeName" Type="nvarchar" MaxLength="512" />
+    <Property Name="EntityTypeName" Type="nvarchar" MaxLength="250" />
+    <Property Name="EntityTypeAssemblyQualifiedName" Type="nvarchar" MaxLength="512" />
+    <Property Name="EntityId" Type="nvarchar" MaxLength="96" />
+    <Property Name="Severity" Type="tinyint" Nullable="false" />
+    <Property Name="CreationTime" Type="datetime" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="DateCreation" Type="datetime" Nullable="false" />
+    <Property Name="DateMaj" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="bigint" Nullable="false" />
+    <Property Name="ModifiedBy" Type="bigint" Nullable="false" />
+    <Property Name="DataKey" Type="varchar" MaxLength="50" />
+    <Property Name="IdTenant" Type="bigint" />
+  </EntityType>
+  <EntityType Name="AbpTenants">
+    <Key>
+      <PropertyRef Name="IdTenant" />
+    </Key>
+    <Property Name="IdTenant" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="TenancyName" Type="nvarchar" Nullable="false" MaxLength="64" />
+    <Property Name="DomainName" Type="nvarchar" MaxLength="250" />
+    <Property Name="ConnectionString" Type="nvarchar" MaxLength="1024" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="DateCreation" Type="datetime" Nullable="false" />
+    <Property Name="DateMaj" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="bigint" Nullable="false" />
+    <Property Name="ModifiedBy" Type="bigint" Nullable="false" />
+    <Property Name="DataKey" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="AbpUserAccounts">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="bigint" Nullable="false" />
+    <Property Name="UserLinkId" Type="bigint" />
+    <Property Name="UserName" Type="nvarchar(max)" />
+    <Property Name="EmailAddress" Type="nvarchar(max)" />
+    <Property Name="LastLoginTime" Type="datetime" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="DeleterUserId" Type="bigint" />
+    <Property Name="LastModifierUserId" Type="bigint" />
+    <Property Name="CreationTime" Type="datetime" Nullable="false" />
+    <Property Name="CreatorUserId" Type="bigint" />
+    <Property Name="DateCreation" Type="datetime" Nullable="false" />
+    <Property Name="DateMaj" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="bigint" Nullable="false" />
+    <Property Name="ModifiedBy" Type="bigint" Nullable="false" />
+    <Property Name="DataKey" Type="varchar" MaxLength="50" />
+    <Property Name="Entite" Type="varchar" MaxLength="50" />
+    <Property Name="IdEntite" Type="bigint" />
+    <Property Name="IdTenant" Type="bigint" />
+  </EntityType>
+  <EntityType Name="AbpUserClaims">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="bigint" />
+    <Property Name="ClaimType" Type="nvarchar(max)" />
+    <Property Name="ClaimValue" Type="nvarchar(max)" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="DateCreation" Type="datetime" Nullable="false" />
+    <Property Name="DateMaj" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="bigint" Nullable="false" />
+    <Property Name="ModifiedBy" Type="bigint" Nullable="false" />
+    <Property Name="DataKey" Type="varchar" MaxLength="50" />
+    <Property Name="IdTenant" Type="bigint" />
+  </EntityType>
+  <EntityType Name="AbpUserLoginAttempts">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="TenancyName" Type="nvarchar" MaxLength="64" />
+    <Property Name="UserId" Type="bigint" />
+    <Property Name="UserNameOrEmailAddress" Type="nvarchar" MaxLength="255" />
+    <Property Name="ClientIpAddress" Type="nvarchar" MaxLength="64" />
+    <Property Name="ClientName" Type="nvarchar" MaxLength="128" />
+    <Property Name="BrowserInfo" Type="nvarchar" MaxLength="256" />
+    <Property Name="Result" Type="tinyint" Nullable="false" />
+    <Property Name="CreationTime" Type="datetime" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="DateCreation" Type="datetime" Nullable="false" />
+    <Property Name="DateMaj" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="bigint" Nullable="false" />
+    <Property Name="ModifiedBy" Type="bigint" Nullable="false" />
+    <Property Name="DataKey" Type="varchar" MaxLength="50" />
+    <Property Name="IdTenant" Type="bigint" />
+  </EntityType>
+  <EntityType Name="AbpUserLogins">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="IdUtilisateur" Type="bigint" />
+    <Property Name="LoginProvider" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="ProviderKey" Type="nvarchar" Nullable="false" MaxLength="256" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="DateCreation" Type="datetime" Nullable="false" />
+    <Property Name="DateMaj" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="bigint" Nullable="false" />
+    <Property Name="ModifiedBy" Type="bigint" Nullable="false" />
+    <Property Name="DataKey" Type="varchar" MaxLength="50" />
+    <Property Name="IdTenant" Type="bigint" />
+  </EntityType>
+  <EntityType Name="AbpUserNotifications">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UserId" Type="bigint" Nullable="false" />
+    <Property Name="TenantNotificationId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="State" Type="int" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="DateCreation" Type="datetime" Nullable="false" />
+    <Property Name="DateMaj" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="bigint" Nullable="false" />
+    <Property Name="ModifiedBy" Type="bigint" Nullable="false" />
+    <Property Name="DataKey" Type="varchar" MaxLength="50" />
+    <Property Name="IdTenant" Type="bigint" />
+  </EntityType>
+  <EntityType Name="AbpUserRoles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="bigint" Nullable="false" />
+    <Property Name="RoleId" Type="int" Nullable="false" />
+    <Property Name="CreationTime" Type="datetime" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="DateCreation" Type="datetime" Nullable="false" />
+    <Property Name="DateMaj" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="bigint" Nullable="false" />
+    <Property Name="ModifiedBy" Type="bigint" Nullable="false" />
+    <Property Name="DataKey" Type="varchar" MaxLength="50" />
+    <Property Name="IdTenant" Type="bigint" />
+  </EntityType>
+  <EntityType Name="AbpUsers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="AuthenticationSource" Type="nvarchar" MaxLength="64" />
+    <Property Name="Nom" Type="nvarchar" Nullable="false" MaxLength="32" />
+    <Property Name="Prenoms" Type="nvarchar" MaxLength="32" />
+    <Property Name="Password" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="IsEmailConfirmed" Type="bit" />
+    <Property Name="EmailConfirmationCode" Type="nvarchar" MaxLength="328" />
+    <Property Name="PasswordResetCode" Type="nvarchar" MaxLength="328" />
+    <Property Name="DateDebutValidite" Type="datetime" />
+    <Property Name="DateFinValidite" Type="datetime" />
+    <Property Name="LockoutEndDateUtc" Type="datetime" />
+    <Property Name="AccessFailedCount" Type="int" />
+    <Property Name="IsLockoutEnabled" Type="bit" />
+    <Property Name="PhoneNumber" Type="nvarchar(max)" />
+    <Property Name="IsPhoneNumberConfirmed" Type="bit" />
+    <Property Name="SecurityStamp" Type="nvarchar(max)" />
+    <Property Name="IsTwoFactorEnabled" Type="bit" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="32" />
+    <Property Name="Email" Type="nvarchar" Nullable="false" MaxLength="256" />
+    <Property Name="LastLoginTime" Type="datetime" />
+    <Property Name="IdPersonne" Type="bigint" />
+    <Property Name="IdGarant" Type="bigint" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="DeleterUserId" Type="bigint" />
+    <Property Name="LastModifierUserId" Type="bigint" />
+    <Property Name="CreationTime" Type="datetime" />
+    <Property Name="CreatorUserId" Type="bigint" />
+    <Property Name="DateCreation" Type="datetime" />
+    <Property Name="DateMaj" Type="datetime" />
+    <Property Name="CreatedBy" Type="bigint" />
+    <Property Name="ModifiedBy" Type="bigint" />
+    <Property Name="DataKey" Type="varchar" MaxLength="50" />
+    <Property Name="IdTenant" Type="bigint" />
+  </EntityType>
+  <EntityType Name="Permissions">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="DisplayName" Type="varchar" Nullable="false" MaxLength="200" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="DateCreation" Type="datetime" />
+    <Property Name="DateMaj" Type="datetime" />
+    <Property Name="CreatedBy" Type="bigint" />
+    <Property Name="ModifiedBy" Type="bigint" />
+    <Property Name="DataKey" Type="varchar" MaxLength="50" />
+    <Property Name="IdTenant" Type="bigint" />
+  </EntityType>
+  <EntityType Name="Projects">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="250" />
+    <Property Name="Description" Type="text" />
+    <Property Name="IdResponsible" Type="bigint" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="DateCreation" Type="datetime" />
+    <Property Name="DateMaj" Type="datetime" />
+    <Property Name="CreatedBy" Type="bigint" />
+    <Property Name="ModifiedBy" Type="bigint" />
+    <Property Name="DataKey" Type="varchar" MaxLength="50" />
+    <Property Name="IdTenant" Type="int" />
+  </EntityType>
+  <EntityType Name="ProjectTaskActions">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="IdProjectTask" Type="bigint" Nullable="false" />
+    <Property Name="Description" Type="text" Nullable="false" />
+    <Property Name="Overtime" Type="float" />
+    <Property Name="OvertimeTime" Type="time" />
+    <Property Name="NewDeadline" Type="datetime" />
+    <Property Name="ActionType" Type="varchar" Nullable="false" MaxLength="15" />
+    <Property Name="Duration" Type="float" />
+    <Property Name="DurationTime" Type="time" />
+    <Property Name="ActionDate" Type="datetime" />
+    <Property Name="DateOfDay" Type="datetime" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="DateCreation" Type="datetime" />
+    <Property Name="DateMaj" Type="datetime" />
+    <Property Name="CreatedBy" Type="bigint" />
+    <Property Name="ModifiedBy" Type="bigint" />
+    <Property Name="DataKey" Type="varchar" MaxLength="50" />
+    <Property Name="IdTenant" Type="int" />
+  </EntityType>
+  <EntityType Name="ProjectTasks">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="IdProject" Type="bigint" Nullable="false" />
+    <Property Name="IdCurrentCollaborator" Type="bigint" Nullable="false" DefaultValue="3" />
+    <Property Name="Sequence" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Label" Type="varchar" Nullable="false" MaxLength="200" />
+    <Property Name="Priority" Type="varchar" MaxLength="10" />
+    <Property Name="TimePlanned" Type="float" />
+    <Property Name="TimePlannedTime" Type="time" Nullable="false" />
+    <Property Name="TimeElapsed" Type="float" />
+    <Property Name="TimeElapsedVarchar" Type="varchar" MaxLength="5" />
+    <Property Name="TimeRemaining" Type="float" />
+    <Property Name="TimeRemainingVarchar" Type="varchar" MaxLength="5" />
+    <Property Name="DateStarted" Type="datetime" />
+    <Property Name="Deadline" Type="datetime" />
+    <Property Name="Status" Type="varchar" Nullable="false" MaxLength="15" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="DateCreation" Type="datetime" Nullable="false" />
+    <Property Name="DateMaj" Type="datetime" />
+    <Property Name="CreatedBy" Type="bigint" />
+    <Property Name="ModifiedBy" Type="bigint" />
+    <Property Name="DataKey" Type="varchar" MaxLength="50" />
+    <Property Name="IdTenant" Type="int" />
+  </EntityType>
+  <EntityType Name="RolePermissions">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="RoleId" Type="int" Nullable="false" />
+    <Property Name="PermissionId" Type="int" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="DateCreation" Type="datetime" />
+    <Property Name="DateMaj" Type="datetime" />
+    <Property Name="CreatedBy" Type="bigint" />
+    <Property Name="ModifiedBy" Type="bigint" />
+    <Property Name="DataKey" Type="varchar" MaxLength="50" />
+    <Property Name="IdTenant" Type="bigint" />
+  </EntityType>
+  <EntityType Name="Roles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="varchar" MaxLength="32" />
+    <Property Name="DisplayName" Type="varchar" MaxLength="64" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="DateCreation" Type="datetime" />
+    <Property Name="DateMaj" Type="datetime" />
+    <Property Name="CreatedBy" Type="bigint" />
+    <Property Name="ModifiedBy" Type="bigint" />
+    <Property Name="DataKey" Type="varchar" MaxLength="50" />
+    <Property Name="IdTenant" Type="bigint" />
+  </EntityType>
+  <EntityType Name="UserRoles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="bigint" Nullable="false" />
+    <Property Name="RoleId" Type="int" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="DateCreation" Type="datetime" />
+    <Property Name="DateMaj" Type="datetime" />
+    <Property Name="CreatedBy" Type="bigint" />
+    <Property Name="ModifiedBy" Type="bigint" />
+    <Property Name="DataKey" Type="varchar" MaxLength="50" />
+    <Property Name="IdTenant" Type="bigint" />
+  </EntityType>
+  <EntityType Name="vCollaboratorTasks">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="IdProject" />
+      <PropertyRef Name="IdCurrentCollaborator" />
+      <PropertyRef Name="Sequence" />
+      <PropertyRef Name="ProjectName" />
+      <PropertyRef Name="Label" />
+      <PropertyRef Name="Status" />
+      <PropertyRef Name="TimePlannedTime" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" />
+    <Property Name="IdProject" Type="bigint" Nullable="false" />
+    <Property Name="IdCurrentCollaborator" Type="bigint" Nullable="false" />
+    <Property Name="UserFullname" Type="nvarchar" MaxLength="32" />
+    <Property Name="Sequence" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="ProjectName" Type="varchar" Nullable="false" MaxLength="250" />
+    <Property Name="Label" Type="varchar" Nullable="false" MaxLength="200" />
+    <Property Name="Priority" Type="varchar" MaxLength="10" />
+    <Property Name="Status" Type="varchar" Nullable="false" MaxLength="15" />
+    <Property Name="TimePlannedTime" Type="time" Nullable="false" />
+    <Property Name="TimeElapsedVarchar" Type="varchar" MaxLength="5" />
+    <Property Name="TimeRemainingVarchar" Type="varchar" MaxLength="5" />
+    <Property Name="DateStarted" Type="datetime" />
+    <Property Name="Deadline" Type="datetime" />
+    <Property Name="Prolongation" Type="varchar" MaxLength="5" />
+    <Property Name="Bruit" Type="varchar" MaxLength="5" />
+    <Property Name="Note" Type="float" />
+    <Property Name="IsDeleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="vProjectTasksWithCollaborator">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="IdProject" />
+      <PropertyRef Name="IdCurrentCollaborator" />
+      <PropertyRef Name="Sequence" />
+      <PropertyRef Name="ProjectName" />
+      <PropertyRef Name="Label" />
+      <PropertyRef Name="Status" />
+      <PropertyRef Name="TimePlannedTime" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" />
+    <Property Name="IdProject" Type="bigint" Nullable="false" />
+    <Property Name="IdCurrentCollaborator" Type="bigint" Nullable="false" />
+    <Property Name="UserFullname" Type="nvarchar" MaxLength="65" />
+    <Property Name="Sequence" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="ProjectName" Type="varchar" Nullable="false" MaxLength="250" />
+    <Property Name="Label" Type="varchar" Nullable="false" MaxLength="200" />
+    <Property Name="Priority" Type="varchar" MaxLength="10" />
+    <Property Name="Status" Type="varchar" Nullable="false" MaxLength="15" />
+    <Property Name="TimePlannedTime" Type="time" Nullable="false" />
+    <Property Name="TimeElapsedVarchar" Type="varchar" MaxLength="5" />
+    <Property Name="TimeRemainingVarchar" Type="varchar" MaxLength="5" />
+    <Property Name="Deadline" Type="datetime" />
+    <Property Name="Prolongation" Type="varchar" MaxLength="5" />
+    <Property Name="Bruit" Type="varchar" MaxLength="5" />
+    <Property Name="Note" Type="float" />
+    <Property Name="IsDeleted" Type="bit" />
+  </EntityType>
+  <Association Name="FK_dboAbpFeatures_dboAbpEditions_EditionId">
+    <End Role="AbpEditions" Type="EVALUATION.DATA.Store.AbpEditions" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AbpFeatures" Type="EVALUATION.DATA.Store.AbpFeatures" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AbpEditions">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AbpFeatures">
+        <PropertyRef Name="EditionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dboAbpOrganizationUnits_dboAbpOrganizationUnits_ParentId">
+    <End Role="AbpOrganizationUnits" Type="EVALUATION.DATA.Store.AbpOrganizationUnits" Multiplicity="0..1" />
+    <End Role="AbpOrganizationUnits1" Type="EVALUATION.DATA.Store.AbpOrganizationUnits" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AbpOrganizationUnits">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AbpOrganizationUnits1">
+        <PropertyRef Name="ParentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dboAbpPermissions_dboAbpRoles_RoleId">
+    <End Role="AbpRoles" Type="EVALUATION.DATA.Store.AbpRoles" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AbpPermissions" Type="EVALUATION.DATA.Store.AbpPermissions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AbpRoles">
+        <PropertyRef Name="RoleId" />
+      </Principal>
+      <Dependent Role="AbpPermissions">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dboAbpPermissions_dboAbpUsers_UserId">
+    <End Role="AbpUsers" Type="EVALUATION.DATA.Store.AbpUsers" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AbpPermissions" Type="EVALUATION.DATA.Store.AbpPermissions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AbpUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AbpPermissions">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AbpRoleClaims_AbpRoleClaims">
+    <End Role="AbpRoles" Type="EVALUATION.DATA.Store.AbpRoles" Multiplicity="1" />
+    <End Role="AbpRoleClaims" Type="EVALUATION.DATA.Store.AbpRoleClaims" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AbpRoles">
+        <PropertyRef Name="RoleId" />
+      </Principal>
+      <Dependent Role="AbpRoleClaims">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dboAbpRoles_dboAbpUsers_CreatorUserId">
+    <End Role="AbpUsers" Type="EVALUATION.DATA.Store.AbpUsers" Multiplicity="0..1" />
+    <End Role="AbpRoles" Type="EVALUATION.DATA.Store.AbpRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AbpUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AbpRoles">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dboAbpRoles_dboAbpUsers_LastModifierUserId">
+    <End Role="AbpUsers" Type="EVALUATION.DATA.Store.AbpUsers" Multiplicity="0..1" />
+    <End Role="AbpRoles" Type="EVALUATION.DATA.Store.AbpRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AbpUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AbpRoles">
+        <PropertyRef Name="ModifiedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AbpUserClaims_AbpUserClaims">
+    <End Role="AbpUserClaims" Type="EVALUATION.DATA.Store.AbpUserClaims" Multiplicity="1" />
+    <End Role="AbpUserClaims1" Type="EVALUATION.DATA.Store.AbpUserClaims" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="AbpUserClaims">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AbpUserClaims1">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AbpUserClaims_User">
+    <End Role="AbpUsers" Type="EVALUATION.DATA.Store.AbpUsers" Multiplicity="0..1" />
+    <End Role="AbpUserClaims" Type="EVALUATION.DATA.Store.AbpUserClaims" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AbpUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AbpUserClaims">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AbpUserRoles_AbpRoles">
+    <End Role="AbpRoles" Type="EVALUATION.DATA.Store.AbpRoles" Multiplicity="1" />
+    <End Role="AbpUserRoles" Type="EVALUATION.DATA.Store.AbpUserRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AbpRoles">
+        <PropertyRef Name="RoleId" />
+      </Principal>
+      <Dependent Role="AbpUserRoles">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AbpUserRoles_AbpUserRoles">
+    <End Role="AbpUserRoles" Type="EVALUATION.DATA.Store.AbpUserRoles" Multiplicity="1" />
+    <End Role="AbpUserRoles1" Type="EVALUATION.DATA.Store.AbpUserRoles" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="AbpUserRoles">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AbpUserRoles1">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AbpUserRoles_AbpUsers">
+    <End Role="AbpUsers" Type="EVALUATION.DATA.Store.AbpUsers" Multiplicity="1" />
+    <End Role="AbpUserRoles" Type="EVALUATION.DATA.Store.AbpUserRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AbpUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AbpUserRoles">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dboAbpUsers_dboAbpUsers_CreatorUserId">
+    <End Role="AbpUsers" Type="EVALUATION.DATA.Store.AbpUsers" Multiplicity="0..1" />
+    <End Role="AbpUsers1" Type="EVALUATION.DATA.Store.AbpUsers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AbpUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AbpUsers1">
+        <PropertyRef Name="CreatorUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dboAbpUsers_dboAbpUsers_DeleterUserId">
+    <End Role="AbpUsers" Type="EVALUATION.DATA.Store.AbpUsers" Multiplicity="0..1" />
+    <End Role="AbpUsers1" Type="EVALUATION.DATA.Store.AbpUsers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AbpUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AbpUsers1">
+        <PropertyRef Name="DeleterUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dboAbpUsers_dboAbpUsers_LastModifierUserId">
+    <End Role="AbpUsers" Type="EVALUATION.DATA.Store.AbpUsers" Multiplicity="0..1" />
+    <End Role="AbpUsers1" Type="EVALUATION.DATA.Store.AbpUsers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AbpUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AbpUsers1">
+        <PropertyRef Name="LastModifierUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AbpUser_Project_responsible">
+    <End Role="AbpUsers" Type="EVALUATION.DATA.Store.AbpUsers" Multiplicity="0..1" />
+    <End Role="Projects" Type="EVALUATION.DATA.Store.Projects" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AbpUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Projects">
+        <PropertyRef Name="IdResponsible" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProjectTaskActions_ProjectTasks">
+    <End Role="ProjectTasks" Type="EVALUATION.DATA.Store.ProjectTasks" Multiplicity="1" />
+    <End Role="ProjectTaskActions" Type="EVALUATION.DATA.Store.ProjectTaskActions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProjectTasks">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProjectTaskActions">
+        <PropertyRef Name="IdProjectTask" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AbpUser_ProjectTasks_Collaborator">
+    <End Role="AbpUsers" Type="EVALUATION.DATA.Store.AbpUsers" Multiplicity="1" />
+    <End Role="ProjectTasks" Type="EVALUATION.DATA.Store.ProjectTasks" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AbpUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProjectTasks">
+        <PropertyRef Name="IdCurrentCollaborator" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProjectTasks_Projects">
+    <End Role="Projects" Type="EVALUATION.DATA.Store.Projects" Multiplicity="1" />
+    <End Role="ProjectTasks" Type="EVALUATION.DATA.Store.ProjectTasks" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Projects">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProjectTasks">
+        <PropertyRef Name="IdProject" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RolePermissions_Role">
+    <End Role="Roles" Type="EVALUATION.DATA.Store.Roles" Multiplicity="1" />
+    <End Role="RolePermissions" Type="EVALUATION.DATA.Store.RolePermissions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RolePermissions">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RolePermissions_Permission">
+    <End Role="Permissions" Type="EVALUATION.DATA.Store.Permissions" Multiplicity="1" />
+    <End Role="RolePermissions" Type="EVALUATION.DATA.Store.RolePermissions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Permissions">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RolePermissions">
+        <PropertyRef Name="PermissionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserRoles_Role">
+    <End Role="Roles" Type="EVALUATION.DATA.Store.Roles" Multiplicity="1" />
+    <End Role="UserRoles" Type="EVALUATION.DATA.Store.UserRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserRoles">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserRoles_User">
+    <End Role="AbpUsers" Type="EVALUATION.DATA.Store.AbpUsers" Multiplicity="1" />
+    <End Role="UserRoles" Type="EVALUATION.DATA.Store.UserRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AbpUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserRoles">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="AbpUsers_Insert" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="AbpUsers_Insert">
+    <Parameter Name="AuthenticationSource" Type="varchar" Mode="In" MaxLength="64" />
+    <Parameter Name="Nom" Type="varchar" Mode="In" MaxLength="150" />
+    <Parameter Name="Prenom" Type="varchar" Mode="In" MaxLength="150" />
+    <Parameter Name="Password" Type="varchar" Mode="In" MaxLength="128" />
+    <Parameter Name="IsEmailConfirmed" Type="bit" Mode="In" />
+    <Parameter Name="EmailConfirmationCode" Type="nvarchar" Mode="In" MaxLength="328" />
+    <Parameter Name="PasswordResetCode" Type="nvarchar" Mode="In" MaxLength="328" />
+    <Parameter Name="DateDebutValidite" Type="datetime" Mode="In" />
+    <Parameter Name="DateFinValidite" Type="datetime" Mode="In" />
+    <Parameter Name="LockoutEndDateUtc" Type="datetime" Mode="In" />
+    <Parameter Name="AccessFailedCount" Type="int" Mode="In" />
+    <Parameter Name="IsLockoutEnabled" Type="bit" Mode="In" />
+    <Parameter Name="PhoneNumber" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="IsPhoneNumberConfirmed" Type="bit" Mode="In" />
+    <Parameter Name="SecurityStamp" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="IsTwoFactorEnabled" Type="bit" Mode="In" />
+    <Parameter Name="IsActive" Type="bit" Mode="In" />
+    <Parameter Name="UserName" Type="nvarchar" Mode="In" MaxLength="32" />
+    <Parameter Name="Email" Type="nvarchar" Mode="In" MaxLength="256" />
+    <Parameter Name="LastLoginTime" Type="datetime" Mode="In" />
+    <Parameter Name="IdPersonne" Type="bigint" Mode="In" />
+    <Parameter Name="IdGarant" Type="bigint" Mode="In" />
+    <Parameter Name="IsDeleted" Type="bit" Mode="In" />
+    <Parameter Name="DeleterUserId" Type="bigint" Mode="In" />
+    <Parameter Name="LastModifierUserId" Type="bigint" Mode="In" />
+    <Parameter Name="CreationTime" Type="datetime" Mode="In" />
+    <Parameter Name="CreatorUserId" Type="bigint" Mode="In" />
+    <Parameter Name="DateCreation" Type="datetime" Mode="In" />
+    <Parameter Name="DateMaj" Type="datetime" Mode="In" />
+    <Parameter Name="CreatedBy" Type="bigint" Mode="In" />
+    <Parameter Name="ModifiedBy" Type="bigint" Mode="In" />
+    <Parameter Name="DataKey" Type="varchar" Mode="In" MaxLength="50" />
+    <Parameter Name="IdTenant" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="AJOUTER_COLONNE" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="AJOUTER_COLONNE">
+    <Parameter Name="COLONNE" Type="varchar" Mode="In" MaxLength="100" />
+    <Parameter Name="TYPE" Type="varchar" Mode="In" MaxLength="100" />
+    <Parameter Name="ISNULL" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="fnUserTasksByProject" IsComposable="true" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="fnUserTasksByProject">
+    <Parameter Name="IdProject" Type="bigint" Mode="In" />
+    <ReturnType>
+      <CollectionType>
+        <RowType>
+          <Property Name="Id" Type="bigint" Nullable="false" />
+          <Property Name="IdProject" Type="bigint" Nullable="false" />
+          <Property Name="IdCurrentCollaborator" Type="bigint" />
+          <Property Name="Sequence" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Label" Type="varchar" Nullable="false" MaxLength="200" />
+          <Property Name="Priority" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="Status" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="TimePlanned" Type="time" Nullable="false" />
+          <Property Name="TimeElapsed" Type="time" Nullable="false" />
+          <Property Name="TimeRemaining" Type="time" Nullable="false" />
+          <Property Name="Deadline" Type="datetime" />
+          <Property Name="IsDeleted" Type="bit" />
+          <Property Name="NomUser" Type="nvarchar" Nullable="false" MaxLength="32" />
+          <Property Name="PrenomsUser" Type="nvarchar" MaxLength="32" />
+        </RowType>
+      </CollectionType>
+    </ReturnType>
+  </Function>
+  <Function Name="ufnGeProjectTaskBruit" IsComposable="true" ReturnType="varchar" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="ufnGeProjectTaskBruit">
+    <Parameter Name="IdProjectTask" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="ufnGeProjectTaskInfoWithNote" IsComposable="true" ReturnType="float" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="ufnGeProjectTaskInfoWithNote">
+    <Parameter Name="IdProjectTask" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="ufnGeProjectTaskProlongation" IsComposable="true" ReturnType="varchar" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="ufnGeProjectTaskProlongation">
+    <Parameter Name="IdProjectTask" Type="bigint" Mode="In" />
+  </Function>
+</Schema>

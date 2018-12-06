@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D8525797-4230-4C2C-98D1-CD4F6F64A2E9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EVALUATION.DATA</RootNamespace>
+    <AssemblyName>EVALUATION.DATA</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Dapper">
+      <HintPath>..\packages\Dapper.1.50.2\lib\net451\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DbManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ProviderBase.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Provider\AbpClaimsProvider.cs" />
+    <Compile Include="Provider\AbpEditionsProvider.cs" />
+    <Compile Include="Provider\AbpFeaturesProvider.cs" />
+    <Compile Include="Provider\AbpNotificationsProvider.cs" />
+    <Compile Include="Provider\AbpNotificationSubscriptionsProvider.cs" />
+    <Compile Include="Provider\AbpOrganizationUnitsProvider.cs" />
+    <Compile Include="Provider\AbpPermissionsProvider.cs" />
+    <Compile Include="Provider\AbpRoleClaimsProvider.cs" />
+    <Compile Include="Provider\AbpRolesProvider.cs" />
+    <Compile Include="Provider\AbpTenantNotificationsProvider.cs" />
+    <Compile Include="Provider\AbpTenantsProvider.cs" />
+    <Compile Include="Provider\AbpUserAccountsProvider.cs" />
+    <Compile Include="Provider\AbpUserClaimsProvider.cs" />
+    <Compile Include="Provider\AbpUserLoginAttemptsProvider.cs" />
+    <Compile Include="Provider\AbpUserLoginsProvider.cs" />
+    <Compile Include="Provider\AbpUserNotificationsProvider.cs" />
+    <Compile Include="Provider\AbpUserRolesProvider.cs" />
+    <Compile Include="Provider\AbpUsersProvider.cs" />
+    <Compile Include="Provider\PermissionsProvider.cs" />
+    <Compile Include="Provider\ProjectFsDbContextProvider.cs" />
+    <Compile Include="Provider\ProjectsProvider.cs" />
+    <Compile Include="Provider\ProjectTaskActionsProvider.cs" />
+    <Compile Include="Provider\ProjectTasksProvider.cs" />
+    <Compile Include="Provider\RolePermissionsProvider.cs" />
+    <Compile Include="Provider\RolesProvider.cs" />
+    <Compile Include="Provider\UserRolesProvider.cs" />
+    <Compile Include="Provider\vCollaboratorTasksProvider.cs" />
+    <Compile Include="Provider\vProjectTasksWithCollaboratorProvider.cs" />
+    <Compile Include="Repository\Connexion.cs" />
+    <Compile Include="Repository\DapperSqlGenerator.cs" />
+    <Compile Include="Repository\GenericProvider.cs" />
+    <Compile Include="SpProvider\DbManager.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <DevartEntityDeploy Include="DbGeneration\Model\DataModel.edml">
+      <Generator>DevartEfGenerator</Generator>
+      <LastGenOutput>DataModel1.info</LastGenOutput>
+    </DevartEntityDeploy>
+    <None Include="DbGeneration\Model\DataModel.edps">
+      <DependentUpon>DataModel.edml</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DbGeneration\Model\DataModel.EVALUATION.DATADiagram.view">
+      <DependentUpon>DataModel.edml</DependentUpon>
+    </None>
+    <None Include="DbGeneration\Model\DataModel.info" />
+    <None Include="DbGeneration\Model\DataModel1.info">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataModel.edml</DependentUpon>
+    </None>
+    <None Include="DbGeneration\Model\DataModel9.info" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Provider\Custom\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Admin.Commons\Admin.Common.csproj">
+      <Project>{261d746d-bd5e-4652-9781-ee4bcda8329a}</Project>
+      <Name>Admin.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EVALUATION.CORE\EVALUATION.CORE.csproj">
+      <Project>{602b0192-b487-4570-9a72-2d556a8d20c3}</Project>
+      <Name>EVALUATION.CORE</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

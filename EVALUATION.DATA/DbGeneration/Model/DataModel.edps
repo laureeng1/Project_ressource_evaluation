@@ -1,0 +1,248 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityDeveloper Version="6.2.366.0">
+  <ModelSettings xmlns:ed="http://devart.com/schemas/EntityDeveloper/1.0" AppConnectionStringName="Default_entity" ConnectionStringInAppConfig="True" RegenareteConnectionStringInAppConfig="True" TargetFramework="Net45" DetectManyToManyAssociations="False" DetectTPTInheritance="True" EntityFrameworkVersion="Version6" IncludeForeignKeysInModel="true" DetectFunctionBasedColumnDefault="true">
+    <Connection ConnectionString="Data Source=localhost;Initial Catalog=BD_DEV_EVAL;Integrated Security=False;Persist Security Info=True;User ID=sa;Password=P@ssword" Provider="System.Data.SqlClient" />
+    <Generation>
+      <GeneratedFiles>
+        <File Name="Models.cs" Project="Admin.Common" ProjectFolder="CodeInterface" />
+        <File Name="Services.cs" Project="Admin.Common" ProjectFolder="CodeInterface" />
+        <File Name="NodeApi.cs" Project="Admin.Common" ProjectFolder="CodeInterface" />
+        <File Name="ProjectFsDbContextProvider.cs" Project="EVALUATION.DATA" ProjectFolder="Provider" />
+        <File Name="AbpClaimsProvider.cs" Project="EVALUATION.DATA" ProjectFolder="Provider" />
+        <File Name="AbpEditionsProvider.cs" Project="EVALUATION.DATA" ProjectFolder="Provider" />
+        <File Name="AbpFeaturesProvider.cs" Project="EVALUATION.DATA" ProjectFolder="Provider" />
+        <File Name="AbpNotificationsProvider.cs" Project="EVALUATION.DATA" ProjectFolder="Provider" />
+        <File Name="AbpNotificationSubscriptionsProvider.cs" Project="EVALUATION.DATA" ProjectFolder="Provider" />
+        <File Name="AbpOrganizationUnitsProvider.cs" Project="EVALUATION.DATA" ProjectFolder="Provider" />
+        <File Name="AbpPermissionsProvider.cs" Project="EVALUATION.DATA" ProjectFolder="Provider" />
+        <File Name="AbpRoleClaimsProvider.cs" Project="EVALUATION.DATA" ProjectFolder="Provider" />
+        <File Name="AbpRolesProvider.cs" Project="EVALUATION.DATA" ProjectFolder="Provider" />
+        <File Name="AbpTenantNotificationsProvider.cs" Project="EVALUATION.DATA" ProjectFolder="Provider" />
+        <File Name="AbpTenantsProvider.cs" Project="EVALUATION.DATA" ProjectFolder="Provider" />
+        <File Name="AbpUserAccountsProvider.cs" Project="EVALUATION.DATA" ProjectFolder="Provider" />
+        <File Name="AbpUserClaimsProvider.cs" Project="EVALUATION.DATA" ProjectFolder="Provider" />
+        <File Name="AbpUserLoginAttemptsProvider.cs" Project="EVALUATION.DATA" ProjectFolder="Provider" />
+        <File Name="AbpUserLoginsProvider.cs" Project="EVALUATION.DATA" ProjectFolder="Provider" />
+        <File Name="AbpUserNotificationsProvider.cs" Project="EVALUATION.DATA" ProjectFolder="Provider" />
+        <File Name="AbpUserRolesProvider.cs" Project="EVALUATION.DATA" ProjectFolder="Provider" />
+        <File Name="AbpUsersProvider.cs" Project="EVALUATION.DATA" ProjectFolder="Provider" />
+        <File Name="PermissionsProvider.cs" Project="EVALUATION.DATA" ProjectFolder="Provider" />
+        <File Name="ProjectsProvider.cs" Project="EVALUATION.DATA" ProjectFolder="Provider" />
+        <File Name="ProjectTaskActionsProvider.cs" Project="EVALUATION.DATA" ProjectFolder="Provider" />
+        <File Name="ProjectTasksProvider.cs" Project="EVALUATION.DATA" ProjectFolder="Provider" />
+        <File Name="RolePermissionsProvider.cs" Project="EVALUATION.DATA" ProjectFolder="Provider" />
+        <File Name="RolesProvider.cs" Project="EVALUATION.DATA" ProjectFolder="Provider" />
+        <File Name="UserRolesProvider.cs" Project="EVALUATION.DATA" ProjectFolder="Provider" />
+        <File Name="vCollaboratorTasksProvider.cs" Project="EVALUATION.DATA" ProjectFolder="Provider" />
+        <File Name="vProjectTasksWithCollaboratorProvider.cs" Project="EVALUATION.DATA" ProjectFolder="Provider" />
+        <File Name="DataModel.DTOs.cs" Project="EVALUATION.CORE" ProjectFolder="Dto\Generated" />
+        <File Name="ProjectFsDbContextManager.cs" Project="EVALUATION.SERVICE" ProjectFolder="Manager" OverwriteMode="None" />
+        <File Name="AbpClaimsManager.cs" Project="EVALUATION.SERVICE" ProjectFolder="Manager" OverwriteMode="None" />
+        <File Name="AbpEditionsManager.cs" Project="EVALUATION.SERVICE" ProjectFolder="Manager" OverwriteMode="None" />
+        <File Name="AbpFeaturesManager.cs" Project="EVALUATION.SERVICE" ProjectFolder="Manager" OverwriteMode="None" />
+        <File Name="AbpNotificationsManager.cs" Project="EVALUATION.SERVICE" ProjectFolder="Manager" OverwriteMode="None" />
+        <File Name="AbpNotificationSubscriptionsManager.cs" Project="EVALUATION.SERVICE" ProjectFolder="Manager" OverwriteMode="None" />
+        <File Name="AbpOrganizationUnitsManager.cs" Project="EVALUATION.SERVICE" ProjectFolder="Manager" OverwriteMode="None" />
+        <File Name="AbpPermissionsManager.cs" Project="EVALUATION.SERVICE" ProjectFolder="Manager" OverwriteMode="None" />
+        <File Name="AbpRoleClaimsManager.cs" Project="EVALUATION.SERVICE" ProjectFolder="Manager" OverwriteMode="None" />
+        <File Name="AbpRolesManager.cs" Project="EVALUATION.SERVICE" ProjectFolder="Manager" OverwriteMode="None" />
+        <File Name="AbpTenantNotificationsManager.cs" Project="EVALUATION.SERVICE" ProjectFolder="Manager" OverwriteMode="None" />
+        <File Name="AbpTenantsManager.cs" Project="EVALUATION.SERVICE" ProjectFolder="Manager" OverwriteMode="None" />
+        <File Name="AbpUserAccountsManager.cs" Project="EVALUATION.SERVICE" ProjectFolder="Manager" OverwriteMode="None" />
+        <File Name="AbpUserClaimsManager.cs" Project="EVALUATION.SERVICE" ProjectFolder="Manager" OverwriteMode="None" />
+        <File Name="AbpUserLoginAttemptsManager.cs" Project="EVALUATION.SERVICE" ProjectFolder="Manager" OverwriteMode="None" />
+        <File Name="AbpUserLoginsManager.cs" Project="EVALUATION.SERVICE" ProjectFolder="Manager" OverwriteMode="None" />
+        <File Name="AbpUserNotificationsManager.cs" Project="EVALUATION.SERVICE" ProjectFolder="Manager" OverwriteMode="None" />
+        <File Name="AbpUserRolesManager.cs" Project="EVALUATION.SERVICE" ProjectFolder="Manager" OverwriteMode="None" />
+        <File Name="AbpUsersManager.cs" Project="EVALUATION.SERVICE" ProjectFolder="Manager" OverwriteMode="None" />
+        <File Name="PermissionsManager.cs" Project="EVALUATION.SERVICE" ProjectFolder="Manager" OverwriteMode="None" />
+        <File Name="ProjectsManager.cs" Project="EVALUATION.SERVICE" ProjectFolder="Manager" OverwriteMode="None" />
+        <File Name="ProjectTaskActionsManager.cs" Project="EVALUATION.SERVICE" ProjectFolder="Manager" OverwriteMode="None" />
+        <File Name="ProjectTasksManager.cs" Project="EVALUATION.SERVICE" ProjectFolder="Manager" OverwriteMode="None" />
+        <File Name="RolePermissionsManager.cs" Project="EVALUATION.SERVICE" ProjectFolder="Manager" OverwriteMode="None" />
+        <File Name="RolesManager.cs" Project="EVALUATION.SERVICE" ProjectFolder="Manager" OverwriteMode="None" />
+        <File Name="UserRolesManager.cs" Project="EVALUATION.SERVICE" ProjectFolder="Manager" OverwriteMode="None" />
+        <File Name="vCollaboratorTasksManager.cs" Project="EVALUATION.SERVICE" ProjectFolder="Manager" OverwriteMode="None" />
+        <File Name="vProjectTasksWithCollaboratorManager.cs" Project="EVALUATION.SERVICE" ProjectFolder="Manager" OverwriteMode="None" />
+      </GeneratedFiles>
+    </Generation>
+    <DatabaseFirstNamingRules>
+      <EntitySet PluralizationName="Unchanged" />
+      <Class UseSchemaAsPrefix="False" PluralizeCollectionNavigationPropertyName="True" AddConstraintColumnsToNavigationPropertyName="False" RemoveUnderscores="False" AddUnderscores="False" RemoveInvalidCharacters="True" CodeCase="Unchanged" AddPrefix="" AddSuffix="" RemovePrefixes="" RemoveSuffixes="" PluralizationName="Unchanged" />
+      <Property RemoveUnderscores="True" AddUnderscores="False" RemoveInvalidCharacters="True" CodeCase="Unchanged" AddPrefix="" AddSuffix="" RemovePrefixes="" RemoveSuffixes="" PluralizationName="Unchanged" />
+    </DatabaseFirstNamingRules>
+    <ModelFirst StorageSynchronizationEnabled="False" TargetSchema="dbo" TargetProviderName="System.Data.SqlClient">
+      <TargetServer Server="SQL Server" ServerVersion="2014" />
+      <ModelFirstNamingRules>
+        <Table RemoveUnderscores="False" AddUnderscores="False" RemoveInvalidCharacters="True" CodeCase="Unchanged" AddPrefix="" AddSuffix="" RemovePrefixes="" RemoveSuffixes="" PluralizationName="Pluralize" />
+        <Column RemoveUnderscores="False" AddUnderscores="False" RemoveInvalidCharacters="True" CodeCase="Unchanged" AddPrefix="" AddSuffix="" RemovePrefixes="" RemoveSuffixes="" PluralizationName="Unchanged" />
+      </ModelFirstNamingRules>
+    </ModelFirst>
+    <Diagrams>
+      <Diagram Name="EVALUATION.DATADiagram" DefaultDiagram="True" />
+    </Diagrams>
+    <Templates>
+      <Template Name="ISD-CodeInterfaceGeneration" Enabled="True" File="..\..\..\_Commons\Devart_template\ISD-CodeInterfaceGeneration.tmpl">
+        <ed:Property Name="Output" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.2.366.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+          <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <Project>Admin.Common</Project>
+            <ProjectFolder>CodeInterface</ProjectFolder>
+            <DestinationFolder />
+          </OutputInfo>
+        </ed:Property>
+        <ed:Property Name="AbregeModule" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <string>Admin</string>
+        </ed:Property>
+        <ed:Property Name="CanAddAbregeModuleToNode" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <boolean>false</boolean>
+        </ed:Property>
+        <ed:Property Name="Namespace" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <string d6p1:nil="true" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance" />
+        </ed:Property>
+        <ed:Property Name="GeneratedControllerName" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <string>AdminGeneratedCtrl</string>
+        </ed:Property>
+        <ed:Property Name="RemoteTablePrefix" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <boolean>false</boolean>
+        </ed:Property>
+      </Template>
+      <Template Name="ISD-ProvidersGeneration" Enabled="True" File="..\..\..\_Commons\Devart_template\ISD-ProvidersGeneration.tmpl">
+        <ed:Property Name="RemoteTablePrefix" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <boolean>false</boolean>
+        </ed:Property>
+        <ed:Property Name="Output" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.2.366.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+          <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <Project>EVALUATION.DATA</Project>
+            <ProjectFolder>Provider</ProjectFolder>
+            <DestinationFolder />
+          </OutputInfo>
+        </ed:Property>
+        <ed:Property Name="AbregeModule" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <string d6p1:nil="true" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance" />
+        </ed:Property>
+        <ed:Property Name="Namespace" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <string>EVALUATION.DATA.Provider</string>
+        </ed:Property>
+        <ed:Property Name="GeneratePartialProvider" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <boolean>false</boolean>
+        </ed:Property>
+        <ed:Property Name="DomainNamespace" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <string>Admin.Common.Domain</string>
+        </ed:Property>
+        <ed:Property Name="EnumsNamespace" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <string>Admin.Common.Enum</string>
+        </ed:Property>
+        <ed:Property Name="HelperNamespace" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <string>Admin.Common.Helper</string>
+        </ed:Property>
+        <ed:Property Name="RepositoryNamespace" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <string>EVALUATION.DATA.Repository</string>
+        </ed:Property>
+        <ed:Property Name="DtoRootNamespace" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <string>EVALUATION.CORE.Dto</string>
+        </ed:Property>
+        <ed:Property Name="DalRootNamespace" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <string>EVALUATION.DATA</string>
+        </ed:Property>
+      </Template>
+      <Template Name="ISD-Data Transfer Object" Enabled="True" File="..\..\..\_Commons\Devart_template\ISD-Data Transfer Object.tmpl">
+        <ed:Property Name="FilePerClass" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <boolean>false</boolean>
+        </ed:Property>
+        <ed:Property Name="DtosOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.2.366.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+          <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <Project>EVALUATION.CORE</Project>
+            <ProjectFolder>Dto\Generated</ProjectFolder>
+            <DestinationFolder />
+          </OutputInfo>
+        </ed:Property>
+        <ed:Property Name="AbregeModule" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <string d6p1:nil="true" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance" />
+        </ed:Property>
+        <ed:Property Name="InfraNamespace" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <string d6p1:nil="true" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance" />
+        </ed:Property>
+        <ed:Property Name="ConvertersOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.2.366.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+          <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <Project />
+            <ProjectFolder />
+            <DestinationFolder />
+          </OutputInfo>
+        </ed:Property>
+        <ed:Property Name="GeneratePartialDtos" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <boolean>true</boolean>
+        </ed:Property>
+        <ed:Property Name="GeneratePartialConverters" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <boolean>false</boolean>
+        </ed:Property>
+        <ed:Property Name="DtoNamespace" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <string>EVALUATION.CORE.Dto</string>
+        </ed:Property>
+        <ed:Property Name="HeaderTimestampVersionControlTag" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <string d6p1:nil="true" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance" />
+        </ed:Property>
+        <ed:Property Name="DtoClassNamePrefix" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <string d6p1:nil="true" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance" />
+        </ed:Property>
+        <ed:Property Name="DtoClassNameSuffix" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <string>Dto</string>
+        </ed:Property>
+        <ed:Property Name="WcfDataContractAttributes" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <boolean>false</boolean>
+        </ed:Property>
+        <ed:Property Name="GenerateDtoConstructors" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <boolean>true</boolean>
+        </ed:Property>
+        <ed:Property Name="UseDtoClassesInAssociations" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <boolean>true</boolean>
+        </ed:Property>
+        <ed:Property Name="GenerateConverters" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <boolean>false</boolean>
+        </ed:Property>
+        <ed:Property Name="ConverterClassNamePrefix" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <string d6p1:nil="true" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance" />
+        </ed:Property>
+        <ed:Property Name="ConverterClassNameSuffix" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <string>Converter</string>
+        </ed:Property>
+        <ed:Property Name="DomainNamespace" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <string>Admin.Common.Domain</string>
+        </ed:Property>
+      </Template>
+      <Template Name="ISD-ManagersGeneration" Enabled="True" File="..\..\..\_Commons\Devart_template\ISD-ManagersGeneration.tmpl">
+        <ed:Property Name="RemoteTablePrefix" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <boolean>false</boolean>
+        </ed:Property>
+        <ed:Property Name="GenerateManagers" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <boolean>true</boolean>
+        </ed:Property>
+        <ed:Property Name="Namespace" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <string>EVALUATION.SERVICE.Manager</string>
+        </ed:Property>
+        <ed:Property Name="EnumsNamespace" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <string>Admin.Common.Enum</string>
+        </ed:Property>
+        <ed:Property Name="HelperNamespace" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <string>Admin.Common.Helper</string>
+        </ed:Property>
+        <ed:Property Name="ProvidersNamespace" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <string>EVALUATION.DATA.Provider</string>
+        </ed:Property>
+        <ed:Property Name="DtoRootNamespace" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <string>EVALUATION.CORE.Dto</string>
+        </ed:Property>
+        <ed:Property Name="DomainNamespace" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <string>Admin.Common.Domain</string>
+        </ed:Property>
+        <ed:Property Name="ManagersOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.2.366.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+          <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <Project>EVALUATION.SERVICE</Project>
+            <ProjectFolder>Manager</ProjectFolder>
+            <DestinationFolder />
+          </OutputInfo>
+        </ed:Property>
+      </Template>
+    </Templates>
+    <AttributeAssemblies />
+  </ModelSettings>
+</EntityDeveloper>

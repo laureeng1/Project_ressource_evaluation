@@ -1,0 +1,37 @@
+﻿
+<!---<div class="modal-header">
+    <h4 class="modal-title">Lire une notification </h4>
+</div>
+<div class="modal-body">
+    <div class="form-group">
+        <div><label style="font-weight: bold;">Date de réception : </label> <small> {{ no.dateCreation | jsonDate:'dd/MM/yyyy' }} ({{ no.dateCreation | computeDateToNowJsonFormat }})</small></div>
+        <div><label style="font-weight: bold;">Objet : </label> <small> {{ no.notificationName}}</small></div>
+        <div><label for="message" style="font-weight: bold; display: block">Message : </label></div>
+        <textarea class="form-control" name="message" readonly="readonly"> {{ no.notificationContent }} </textarea>
+    </div>
+</div>
+<div class="modal-footer">    
+    <button type="button" class="btn btn-primary" ng-click="marquerCommeLue()">Marquer comme lue</button>
+    <button type="button" class="btn btn-default" ng-click="cancel()">Annuler</button>
+</div>-->
+
+<div class="modal-header">
+    <h4 class="modal-title">Lire une notification </h4>
+</div>
+<div class="modal-body">
+    <div class="form-group">
+        <div><label style="font-weight: bold;">Date de réception : </label> <input type="date" class="form-control input-sm" formatted-date-time-json ng-model="no.dateCreation" readonly /></div>
+        <div><label style="font-weight: bold;">Objet : </label> <small> {{ no.notificationName}}</small></div>
+        <div><label for="message" style="font-weight: bold; display: block">Message : </label></div>
+        <textarea class="form-control" name="message" readonly="readonly"> {{ no.notificationContent }} </textarea>
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-success" ng-click="suivreLien()">Suivre le lien</button>
+    <button type="button" class="btn btn-primary" ng-click="marquerCommeLue()">Marquer comme lue</button>
+    <button type="button" class="btn btn-default" ng-click="cancel()">Annuler</button>
+</div>
+
+
+
+

@@ -1,0 +1,57 @@
+﻿
+<polymer-element name="t-pagination" attributes="perPage totalItems">
+    <template>
+        <link rel="stylesheet" href="css/bootstrap.min.css"/>
+        <link rel="stylesheet" href='css/bootstrap-reset.css' />
+        <link rel="stylesheet" href='css/font-awesome.css' /> 
+        <link rel="stylesheet" href='css/style.css' />
+        <link href="css/style-responsive.css" rel="stylesheet"/>
+
+        <style>
+            .form-group {
+                margin-bottom: -20px !important;
+            }
+        </style>
+
+        <div class="row col-md-12">
+            <div class="form-group col-md-12 form-horizontal text-left">
+                <label class="control-label" style="font-weight: bold; font-size: 11px;">
+                    Affichage: {{ positionDebut }} - {{ positionFin }} ({{ currentPage }}/ {{ nbPagesTotal }} pages) - Total : {{ totalItems }} entrée(s)
+                </label>              
+            </div>
+            <div class="form-group col-md-12">
+                <div class="dataTables_paginate paging_bootstrap pagination" style="margin-bottom: 0px !important; margin-top: -15px !important;">
+                    <ul>
+                        <li class="prev" hidden?="{{ nbPagesTotal == 0 }}" on-click="{{ goBack }}">
+                            <a href="#" onclick="return false;"><i class="fa fa-arrow-left"></i></a>
+                        </li>
+
+                        <template if="{{ currentPage > nbMaxNumPagesShowed }}">
+                            <li on-click="{{ goBackNumPageToShow }}">
+                                <a href="#" onclick="return false;">...</a>
+                            </li>
+                        </template>
+
+                        <template repeat="{{ num in numPages }}">
+                            <li class="{{ { active: num == currentPage } | tokenList }}" on-click="{{ changeCurrentPage }}">
+                                <a href="#" onclick="return false;"> {{ num }} </a>
+                            </li>
+                        </template>
+
+                        <template if="{{ pageFin < nbPagesTotal }}">
+                            <li on-click="{{ goNextNumPageToShow }}">
+                                <a href="#" onclick="return false;">...</a>
+                            </li>
+                        </template>
+
+                        <li class="next" hidden?="{{ nbPagesTotal == 0 }}" on-click="{{ goNext }}">
+                            <a href="#" onclick="return false;"><i class="fa fa-arrow-right"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>                     
+    </template>
+
+  <script src="t-pagination.js"></script>
+</polymer-element>

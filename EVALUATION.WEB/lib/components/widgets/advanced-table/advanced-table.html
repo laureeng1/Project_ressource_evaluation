@@ -1,0 +1,243 @@
+﻿<link rel="import" href="../search-input-core/search-input-core.html">
+<link rel="import" href="../t-pagination/t-pagination.html">
+
+<polymer-element name="advanced-table" attributes="tableOptions data orderByParams" on-current-page-changed="{{ launchSearch }}" backgroundcolor>
+    <template>
+        <link href="../../vendors/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/bootstrap-reset.css" rel="stylesheet">
+        <!--external css-->
+        <link href="../../vendors/assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+        <link href="css/demo_page.css" rel="stylesheet" />
+        <link href="css/demo_table.css" rel="stylesheet" />
+        <link rel="stylesheet" href="css/DT_bootstrap.css" />
+        <link rel="stylesheet" href='css/table-responsive.css' />
+
+        <!-- Custom styles for this template -->
+        <link href="css/style.css" rel="stylesheet">
+        <link href="css/style-responsive.css" rel="stylesheet" />
+
+        <style>
+            .selectedRow {
+                background-color: rgb(223, 241, 246) !important;
+            }
+
+            .table > thead > tr, .table > tbody > tr, .table > tfoot > tr {
+                border-top: 0;
+                height: 15px !important;
+            }
+
+            /*.table > tbody:nth-of-type(n+2):nth-last-of-type(n+2) > tr {
+                border-top: 0;
+                border-bottom : 0;
+                border-bottom-width: 0;
+            }*/
+
+            .form-group {
+                margin-bottom: -5px !important;
+            }
+
+            .table > tbody + tbody {
+                border-top: none;
+            }
+
+           
+        </style>
+
+        <template if="{{ tableOptions.tableIsBasic == false && tableOptions.showHeader }}">
+            <div class="row" style="margin-bottom: 0;">
+                <div class="form-group form-horizontal col-md-6" style="margin-bottom: 0">
+                    <div class="col-md-4" hidden?="{{ tableOptions.showCountSelector == false || tableOptions.showHeader == false }}">
+                        <select class="form-control input-sm" id="nbEntreesParPage" name="nbEntreesParPage" style="color: black; height: 25px !important; font-size: 11px !important;" on-change="{{ valuePerPageChanged }}">
+                            <option template repeat="{{pp in perPages}}" value="{{ pp }}">{{ pp }}</option>
+                        </select>
+                    </div>
+                    <label hidden?="{{ tableOptions.showCountSelector == false || tableOptions.showHeader == false }}" for="nbEntreesParPage" class="col-md-8 col-sm-8 control-label">Entrées/page</label>
+                </div>
+                <div class="form-group col-md-6" style="margin-bottom: 0">
+                    <div class="col-md-12">
+                        <search-input-core id="searchInput" searchoptions="{{ paramsSearchInput }}" placeholder="Rechercher..." on-search-is-launched-core="{{ doMonoSearchOfItems }}"></search-input-core>
+                    </div>
+                </div>
+            </div>
+        </template>
+
+        <div class="adv-table col-md-12" style="padding: 0;overflow:scroll;">
+            <table class="display table table-bordered" style="padding: 0; background-color: {{ backgroundColor }}; overflow-x:auto;">
+                <thead>
+                    <tr style="background-color: {{ getHeaderColor(tableOptions.headerColor) }} !important; color: {{ getHeaderFontColor(tableOptions.headerFontColor) }} !important;">
+                        <th hidden?="{{ !(tableOptions.tableIsSimple && !tableOptions.tableIsBasic) }}"
+                             on-click="{{ hideSearchBar }}">
+                            <a><i class="fa fa-search" style="color: maroon; cursor: pointer;"></i></a>
+                        </th>
+
+                        <th hidden?="{{ !(!tableOptions.tableIsSimple && !tableOptions.tableIsBasic) }}"
+                            on-click="{{ hideSearchBar }}">
+                            <a><i class="fa fa-search" style="color: maroon; cursor: pointer;"></i></a>
+                        </th>
+
+                        <th hidden?="{{ !(!tableOptions.tableIsSimple && tableOptions.tableIsBasic) }}"
+                            on-click="{{ hideSearchBar }}">
+                            <a><i class="fa fa-search" style="color: maroon; cursor: pointer;"></i></a>
+                        </th>
+
+                        <th hidden?="{{ !tableOptions.showIDColumn }}"
+                             on-click="{{ doRefreshItems }}">
+                            <i class="fa fa-refresh" style="color: maroon; cursor: pointer;"></i>
+                        </th>
+
+                        <th hidden?="{{ tableOptions.tableIsSimple }}">
+                            #
+                        </th>
+
+                        <th hidden?="{{ !(tableOptions.tableIsSimple && tableOptions.tableIsBasic) }}">
+                            #
+                        </th>
+
+                        <th template repeat="{{ col in tableOptions.columns }}" hidden?="{{ !col.visible }}"
+                            id="{{ col.idRow }}" on-click="{{ doOrderItems }}" field="{{ col.fieldSearch }}"
+                            style="width: {{ col.width }}px;">
+                            {{ col.title }}
+                            <span class="pull-right"><i class="{{ col.faSort }}" style="color: green; cursor: pointer;"></i></span>
+                        </th>
+
+                        <th hidden?="{{ !tableOptions.enableColVisualize }}" style="text-align: center;"></th>
+                        <th hidden?="{{ !tableOptions.enableColModify  }}" style="text-align: center;"></th>
+                        <th hidden?="{{ !tableOptions.enableColDelete  }}" style="text-align: center;"></th>
+                    </tr>
+                    <tr hidden?="{{ isSearchBarHidden }}">
+                        <th hidden?="{{ tableOptions.tableIsSimple }}" class="col-lg-1.5"></th>
+                        <th hidden?="{{ !tableOptions.showIDColumn }}" class="col-lg-1.5"></th>
+                        <th class="col-lg-1.5"></th>
+                        <th template repeat="{{ col in tableOptions.columns }}">
+                            <input hidden?="{{ !(col.isCriteria && col.type == 'date') }}"  type="date"  value="{{ col.fieldSearchValue }}" on-change="{{ doMultiSearchOfItems }}" />
+                            <input hidden?="{{ !(col.isCriteria && col.type != 'date') }}"  type="text" value="{{ col.fieldSearchValue }}" on-change="{{ doMultiSearchOfItems }}" />
+                        </th>
+
+                        <th hidden?="{{ !tableOptions.enableColVisualize }}"></th>
+                        <th hidden?="{{ !tableOptions.enableColModify }}"></th>
+                        <th hidden?="{{ !tableOptions.enableColDelete }}"></th>
+                    </tr>
+                </thead>
+                <tbody template if="{{ data.length == 0 }}">
+                    <tr>
+                        <td class="center" colspan="{{ columnsCount }}"> Aucune donnée disponible </td>
+                    </tr>
+                </tbody>
+                <tbody template if="{{ data.length > 0 }}" repeat="{{ item in data }}">
+
+                    <tr class="{{ { selectedRow: item.selected } | tokenList }}" style="background-color: {{ getRowColor(item.idRow,2, item, tableOptions.columns) }}! important; color: {{ getFontColor(item, tableOptions.columns) }}">
+                        <td hidden?="{{ tableOptions.tableIsSimple }}" class="center" style="vertical-align: middle;">
+                            <img src="{{ item.imageUrl }}" on-click="{{ showCurrentDetails }}" style="width: 15px" />
+                        </td>
+                        <td hidden?="{{ !tableOptions.multiChecked }}" class="center" style="cursor: pointer; vertical-align: middle;">
+                            <input type="checkbox" name="selectItem" value="{{ item.idRow }}" on-click="{{ selectCurrentItem }}" checked?="{{ item.selected }}" style="cursor: pointer; width: 11px !important;" />
+                        </td>
+                        <td hidden?="{{ tableOptions.multiChecked }}" class="center" style="cursor: pointer; vertical-align: middle;">
+                            <input type="radio" name="selectItem" value="{{ item.idRow }}" on-click="{{ selectCurrentItem }}" checked?="{{ item.selected }}" style="cursor: pointer; width: 11px !important;" />
+                        </td>
+                        <td hidden?="{{ !tableOptions.showIDColumn }}" class="center" style="vertical-align: middle;">{{ getColumnId(tableOptions.paginationParams.positionDebut, item.idRow) }}</td>
+                        <td template repeat="{{ prop in tableOptions.columns }}" style="vertical-align: middle;  text-align: {{ getTextAlign(prop.type) }} !important;">
+                            <span style="font-size: {{ getPropertyFontSize(prop.fontSize) }}px !important; color: {{ prop.color }} !important;">
+                                <template if="{{ prop.visible }}">
+                                    <template if="{{ prop.type == 'date' }}">
+                                        <template if="{{ prop.encoding == 'json' }}">
+                                            {{ item | getPropertyValue(prop.fieldResult) | jsonToDate(prop.format)}}
+                                        </template>
+                                        <template if="{{ prop.encoding == 'utc' }}">
+                                            {{ item | getPropertyValue(prop.fieldResult) }}
+                                        </template>
+                                        <template if="{{ prop.encoding == 'tZone' }}">
+                                            {{ item | getPropertyValue(prop.fieldResult) | toDate(prop.format) }}
+                                        </template>
+                                    </template>
+                                    <template if="{{ prop.type == 'money' }}">
+                                         {{ item | getPropertyValue(prop.fieldResult) | formatMillier }}
+                                    </template>
+                                    <template if="{{ prop.type == 'img' }}">
+                                        <img src="{{ item | getPropertyValue(prop.fieldResult) | textToImage }}"
+                                             style="height: {{ prop.height }}px; width: {{ prop.width }}px;"/>
+                                    </template>
+                                    <template if="{{ prop.type == 'text' }}">
+                                        <span class="col-text"> {{ item | getPropertyValue(prop.fieldResult) }} </span>
+                                    </template>
+                                     <template if="{{ prop.type == 'inputText' }}">
+                                        <!--<span class="col-text"> {{ item | getPropertyValue(prop.fieldResult) }} </span>-->
+                                        <input type="number" ng-model ="item | getPropertyValue(prop.fieldResult)"  />
+                                    </template>
+                                </template>
+                            </span>
+                        </td>
+
+                        <td hidden?="{{ !tableOptions.enableColVisualize }}" on-click="{{ wantToVisualizeItem }}" style="text-align: center; vertical-align: middle !important;">
+                            <a><i class="fa fa-eye" style="color: blue; cursor: pointer; vertical-align: middle;"></i></a>
+                        </td>
+                        <td hidden?="{{ !tableOptions.enableColModify }}" on-click="{{ wantToModifyItem }}" style="text-align: center; vertical-align: middle !important;">
+                            <a><i class="fa fa-pencil-square-o" style="color: green; cursor: pointer;"></i></a>
+                        </td>
+                        <td hidden?="{{ !tableOptions.enableColDelete }}" on-click="{{ wantToDeleteItem }}" style="text-align: center; vertical-align: middle !important;">
+                            <a><i class="fa fa-trash-o" style="color: #FF0202; cursor: pointer;"></i></a>
+                        </td>
+                    </tr>
+                    <tr hidden?="{{ !item.isDetailsVisible }}">
+                        <td class="details" colspan="{{ columnsCount }}" id="{{ item.idRow }}">
+                            <content id="content" select='[data-index="{{ item.idRow }}"]'></content>
+                        </td>
+                    </tr>
+                </tbody>
+                <tfoot template if="{{ data.length > 0 && tableOptions.showSumRow }}">
+                <tr>
+                    <td hidden?="{{ !(tableOptions.tableIsSimple && !tableOptions.tableIsBasic) }}"
+                        style="text-align: center;" class="col-lg-1.5" >
+
+                    </td>
+
+                    <td hidden?="{{ !(!tableOptions.tableIsSimple && !tableOptions.tableIsBasic) }}"
+                        style="text-align: center;" class="col-lg-1.5">
+
+                    </td>
+
+                    <td hidden?="{{ !(!tableOptions.tableIsSimple && tableOptions.tableIsBasic) }}"
+                        style="text-align: center;" class="col-lg-1.5" >
+                    </td>
+
+                    <td hidden?="{{ !tableOptions.showIDColumn }}"
+                        style="text-align: center;" class="col-lg-1.5">
+                    </td>
+
+                    <td hidden?="{{ tableOptions.tableIsSimple }}" style="text-align: center;" class="col-lg-1.5">
+                    </td>
+
+                    <td hidden?="{{ !(tableOptions.tableIsSimple && tableOptions.tableIsBasic) }}" style="text-align: center;" class="col-lg-1.5">
+                    </td>
+
+                    <td template repeat="{{ prop in tableOptions.columns }}" style="vertical-align: middle; text-align: right !important;">
+                        <span style="font-size: { {getPropertyFontSize(prop.fontSize)}}px ! important; font-weight: bold; ">
+                                <template if="{{ prop.isSumField }}">
+                                    <template if="{{ prop.type == 'money' }}">
+                                        {{ sumData['InfoSearch' + prop.fieldResult]['Sum'] | formatMillier }}
+                                    </template>
+                                </template>
+                            </span>
+                    </td>
+                    <td hidden?="{{ !tableOptions.enableColVisualize }}" on-click="{{ wantToVisualizeItem }}" style="text-align: center; vertical-align: middle !important;">
+                    </td>
+                    <td hidden?="{{ !tableOptions.enableColModify }}" on-click="{{ wantToModifyItem }}" style="text-align: center; vertical-align: middle !important;">
+                    </td>
+                    <td hidden?="{{ !tableOptions.enableColDelete }}" on-click="{{ wantToDeleteItem }}" style="text-align: center; vertical-align: middle !important;">
+                    </td>
+                </tr>
+                </tfoot>
+            </table>
+        </div>
+
+        <template if="{{ tableOptions.tableIsBasic == false || (tableOptions.tableIsBasic == false && tableOptions.showFooter) }}">
+            <div class="row">
+                <t-pagination id="pagination" totalitems="{{ tableOptions.paginationParams.count }}" perpage="{{ tableOptions.paginationParams.perPage }}"></t-pagination>
+            </div>
+        </template>
+
+        <!-- <content></content>-->
+    </template>
+
+    <script src="advanced-table.js"></script>
+</polymer-element>

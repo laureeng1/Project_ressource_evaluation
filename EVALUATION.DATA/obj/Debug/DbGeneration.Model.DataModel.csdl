@@ -1,0 +1,997 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EVALUATION.DATA" Alias="Self" d4p1:ViewGeneration="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:devart="http://devart.com/schemas/edml/ConceptualSchemaExtensions/1.0" xmlns:ed="http://devart.com/schemas/EntityDeveloper/1.0" annotation:UseStrongSpatialTypes="false" xmlns:d4p1="http://devart.com/schemas/edml/ConceptualSchemaExtensions/1.0" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="ProjectFsDbContext" annotation:LazyLoadingEnabled="true" ed:Guid="8c54633b-53f7-478c-9774-079b4efcd2da">
+    <EntitySet Name="AbpClaims" EntityType="EVALUATION.DATA.AbpClaims" />
+    <EntitySet Name="AbpEditions" EntityType="EVALUATION.DATA.AbpEditions" />
+    <EntitySet Name="AbpFeatures" EntityType="EVALUATION.DATA.AbpFeatures" />
+    <EntitySet Name="AbpNotifications" EntityType="EVALUATION.DATA.AbpNotifications" />
+    <EntitySet Name="AbpNotificationSubscriptions" EntityType="EVALUATION.DATA.AbpNotificationSubscriptions" />
+    <EntitySet Name="AbpOrganizationUnits" EntityType="EVALUATION.DATA.AbpOrganizationUnits" />
+    <EntitySet Name="AbpPermissions" EntityType="EVALUATION.DATA.AbpPermissions" />
+    <EntitySet Name="AbpRoleClaims" EntityType="EVALUATION.DATA.AbpRoleClaims" />
+    <EntitySet Name="AbpRoles" EntityType="EVALUATION.DATA.AbpRoles" />
+    <EntitySet Name="AbpTenantNotifications" EntityType="EVALUATION.DATA.AbpTenantNotifications" />
+    <EntitySet Name="AbpTenants" EntityType="EVALUATION.DATA.AbpTenants" />
+    <EntitySet Name="AbpUserAccounts" EntityType="EVALUATION.DATA.AbpUserAccounts" />
+    <EntitySet Name="AbpUserClaims" EntityType="EVALUATION.DATA.AbpUserClaims" />
+    <EntitySet Name="AbpUserLoginAttempts" EntityType="EVALUATION.DATA.AbpUserLoginAttempts" />
+    <EntitySet Name="AbpUserLogins" EntityType="EVALUATION.DATA.AbpUserLogins" />
+    <EntitySet Name="AbpUserNotifications" EntityType="EVALUATION.DATA.AbpUserNotifications" />
+    <EntitySet Name="AbpUserRoles" EntityType="EVALUATION.DATA.AbpUserRoles" />
+    <EntitySet Name="AbpUsers" EntityType="EVALUATION.DATA.AbpUsers" />
+    <EntitySet Name="Permissions" EntityType="EVALUATION.DATA.Permissions" />
+    <EntitySet Name="Projects" EntityType="EVALUATION.DATA.Projects" />
+    <EntitySet Name="ProjectTaskActions" EntityType="EVALUATION.DATA.ProjectTaskActions" />
+    <EntitySet Name="ProjectTasks" EntityType="EVALUATION.DATA.ProjectTasks" />
+    <EntitySet Name="RolePermissions" EntityType="EVALUATION.DATA.RolePermissions" />
+    <EntitySet Name="Roles" EntityType="EVALUATION.DATA.Roles" />
+    <EntitySet Name="UserRoles" EntityType="EVALUATION.DATA.UserRoles" />
+    <EntitySet Name="vCollaboratorTasks" EntityType="EVALUATION.DATA.vCollaboratorTasks" />
+    <EntitySet Name="vProjectTasksWithCollaborator" EntityType="EVALUATION.DATA.vProjectTasksWithCollaborator" />
+    <AssociationSet Name="FK_dboAbpFeatures_dboAbpEditions_EditionIdSet" Association="EVALUATION.DATA.FK_dboAbpFeatures_dboAbpEditions_EditionId">
+      <End Role="AbpEditions" EntitySet="AbpEditions" />
+      <End Role="AbpFeatures" EntitySet="AbpFeatures" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dboAbpOrganizationUnits_dboAbpOrganizationUnits_ParentIdSet" Association="EVALUATION.DATA.FK_dboAbpOrganizationUnits_dboAbpOrganizationUnits_ParentId">
+      <End Role="AbpOrganizationUnits_ParentId" EntitySet="AbpOrganizationUnits" />
+      <End Role="AbpOrganizationUnits_ParentId1" EntitySet="AbpOrganizationUnits" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dboAbpPermissions_dboAbpRoles_RoleIdSet" Association="EVALUATION.DATA.FK_dboAbpPermissions_dboAbpRoles_RoleId">
+      <End Role="AbpRoles" EntitySet="AbpRoles" />
+      <End Role="AbpPermissions" EntitySet="AbpPermissions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dboAbpPermissions_dboAbpUsers_UserIdSet" Association="EVALUATION.DATA.FK_dboAbpPermissions_dboAbpUsers_UserId">
+      <End Role="AbpUsers" EntitySet="AbpUsers" />
+      <End Role="AbpPermissions" EntitySet="AbpPermissions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AbpRoleClaims_AbpRoleClaimsSet" Association="EVALUATION.DATA.FK_AbpRoleClaims_AbpRoleClaims">
+      <End Role="AbpRoles" EntitySet="AbpRoles" />
+      <End Role="AbpRoleClaims" EntitySet="AbpRoleClaims" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dboAbpRoles_dboAbpUsers_CreatorUserIdSet" Association="EVALUATION.DATA.FK_dboAbpRoles_dboAbpUsers_CreatorUserId">
+      <End Role="AbpUsers_CreatedBy" EntitySet="AbpUsers" />
+      <End Role="AbpRoles_CreatedBy" EntitySet="AbpRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dboAbpRoles_dboAbpUsers_LastModifierUserIdSet" Association="EVALUATION.DATA.FK_dboAbpRoles_dboAbpUsers_LastModifierUserId">
+      <End Role="AbpUsers_ModifiedBy" EntitySet="AbpUsers" />
+      <End Role="AbpRoles_ModifiedBy" EntitySet="AbpRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AbpUserClaims_AbpUserClaimsSet" Association="EVALUATION.DATA.FK_AbpUserClaims_AbpUserClaims">
+      <End Role="AbpUserClaims_Id" EntitySet="AbpUserClaims" />
+      <End Role="AbpUserClaims_Id1" EntitySet="AbpUserClaims" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AbpUserClaims_UserSet" Association="EVALUATION.DATA.FK_AbpUserClaims_User">
+      <End Role="AbpUsers" EntitySet="AbpUsers" />
+      <End Role="AbpUserClaims" EntitySet="AbpUserClaims" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AbpUserRoles_AbpRolesSet" Association="EVALUATION.DATA.FK_AbpUserRoles_AbpRoles">
+      <End Role="AbpRoles" EntitySet="AbpRoles" />
+      <End Role="AbpUserRoles" EntitySet="AbpUserRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AbpUserRoles_AbpUserRolesSet" Association="EVALUATION.DATA.FK_AbpUserRoles_AbpUserRoles">
+      <End Role="AbpUserRoles_Id" EntitySet="AbpUserRoles" />
+      <End Role="AbpUserRoles_Id1" EntitySet="AbpUserRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AbpUserRoles_AbpUsersSet" Association="EVALUATION.DATA.FK_AbpUserRoles_AbpUsers">
+      <End Role="AbpUsers" EntitySet="AbpUsers" />
+      <End Role="AbpUserRoles" EntitySet="AbpUserRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dboAbpUsers_dboAbpUsers_CreatorUserIdSet" Association="EVALUATION.DATA.FK_dboAbpUsers_dboAbpUsers_CreatorUserId">
+      <End Role="AbpUsers_CreatorUserId" EntitySet="AbpUsers" />
+      <End Role="AbpUsers_CreatorUserId1" EntitySet="AbpUsers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dboAbpUsers_dboAbpUsers_DeleterUserIdSet" Association="EVALUATION.DATA.FK_dboAbpUsers_dboAbpUsers_DeleterUserId">
+      <End Role="AbpUsers_DeleterUserId" EntitySet="AbpUsers" />
+      <End Role="AbpUsers_DeleterUserId1" EntitySet="AbpUsers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dboAbpUsers_dboAbpUsers_LastModifierUserIdSet" Association="EVALUATION.DATA.FK_dboAbpUsers_dboAbpUsers_LastModifierUserId">
+      <End Role="AbpUsers_LastModifierUserId" EntitySet="AbpUsers" />
+      <End Role="AbpUsers_LastModifierUserId1" EntitySet="AbpUsers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AbpUser_Project_responsibleSet" Association="EVALUATION.DATA.FK_AbpUser_Project_responsible">
+      <End Role="AbpUsers" EntitySet="AbpUsers" />
+      <End Role="Projects" EntitySet="Projects" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProjectTaskActions_ProjectTasksSet" Association="EVALUATION.DATA.FK_ProjectTaskActions_ProjectTasks">
+      <End Role="ProjectTasks" EntitySet="ProjectTasks" />
+      <End Role="ProjectTaskActions" EntitySet="ProjectTaskActions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AbpUser_ProjectTasks_CollaboratorSet" Association="EVALUATION.DATA.FK_AbpUser_ProjectTasks_Collaborator">
+      <End Role="AbpUsers" EntitySet="AbpUsers" />
+      <End Role="ProjectTasks" EntitySet="ProjectTasks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProjectTasks_ProjectsSet" Association="EVALUATION.DATA.FK_ProjectTasks_Projects">
+      <End Role="Projects" EntitySet="Projects" />
+      <End Role="ProjectTasks" EntitySet="ProjectTasks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RolePermissions_RoleSet" Association="EVALUATION.DATA.FK_RolePermissions_Role">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="RolePermissions" EntitySet="RolePermissions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RolePermissions_PermissionSet" Association="EVALUATION.DATA.FK_RolePermissions_Permission">
+      <End Role="Permissions" EntitySet="Permissions" />
+      <End Role="RolePermissions" EntitySet="RolePermissions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserRoles_RoleSet" Association="EVALUATION.DATA.FK_UserRoles_Role">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="UserRoles" EntitySet="UserRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserRoles_UserSet" Association="EVALUATION.DATA.FK_UserRoles_User">
+      <End Role="AbpUsers" EntitySet="AbpUsers" />
+      <End Role="UserRoles" EntitySet="UserRoles" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="AbpClaims" ed:Guid="ae7e0b05-a216-4f77-99da-1e2f0cdbbf5b">
+    <Key>
+      <PropertyRef Name="IdAbpClaims" />
+    </Key>
+    <Property Name="IdAbpClaims" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" ed:ValidateRequired="true" ed:Guid="6446f468-b16a-4df6-9028-525dd1deef6e" />
+    <Property Name="CodeParent" Type="String" MaxLength="150" ed:ValidateMaxLength="150" ed:ValidateRequired="false" ed:Guid="28967fec-cfea-498b-a12a-72f6d800b2c4" />
+    <Property Name="CodeAbpClaims" Type="String" Nullable="false" MaxLength="150" ed:ValidateMaxLength="150" ed:ValidateRequired="true" ed:Guid="d11ebcca-11bb-4bf0-b367-3a9dc4a0aeb1" />
+    <Property Name="LibelleAbpClaims" Type="String" Nullable="false" MaxLength="200" ed:ValidateMaxLength="200" ed:ValidateRequired="true" ed:Guid="3a241ff4-2be5-4814-85c5-7c42f2f0e9e1" />
+    <Property Name="Descriptions" Type="String" MaxLength="250" ed:ValidateMaxLength="250" ed:ValidateRequired="false" ed:Guid="c35af690-3f96-4bc7-9f10-41cc8e63d9ba" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" ed:ValidateRequired="true" ed:Guid="7ed4579b-beec-4e71-922e-f81723b7fbb1" />
+    <Property Name="DateCreation" Type="DateTime" Nullable="false" ed:ValidateRequired="true" ed:Guid="aeb59b21-8932-403b-9dc4-4b94308c3ca1" />
+    <Property Name="DateMaj" Type="DateTime" Nullable="false" ed:ValidateRequired="true" ed:Guid="a22c6b7e-9cb9-4d4e-ad1e-e19c03481a0c" />
+    <Property Name="CreatedBy" Type="Int64" Nullable="false" ed:ValidateRequired="true" ed:Guid="e420340e-2cf9-4e45-a62e-3e197e344e48" />
+    <Property Name="ModifiedBy" Type="Int64" Nullable="false" ed:ValidateRequired="true" ed:Guid="276906cc-148e-4133-8a0c-bc6ac1714bda" />
+    <Property Name="DataKey" Type="String" MaxLength="50" ed:ValidateMaxLength="50" ed:ValidateRequired="false" ed:Guid="1d339c47-0005-406d-b7e8-a40e84e3723c" />
+    <Property Name="IdTenant" Type="Int64" ed:ValidateRequired="false" ed:Guid="b5c542cf-09df-46df-9a5e-98d42005988c" />
+  </EntityType>
+  <EntityType Name="AbpEditions" ed:Guid="6264f168-24db-4852-ab3e-649a985c4dcd">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" ed:ValidateRequired="true" ed:Guid="c6023780-c485-4daf-b983-3f3ec758083f" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="32" Unicode="true" ed:ValidateMaxLength="32" ed:ValidateRequired="true" ed:Guid="288d3251-32c3-4b31-b47f-e69a83486c82" />
+    <Property Name="DisplayName" Type="String" Nullable="false" MaxLength="64" Unicode="true" ed:ValidateMaxLength="64" ed:ValidateRequired="true" ed:Guid="6457f609-392b-4b46-8542-8596d29fd589" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" ed:ValidateRequired="true" ed:Guid="1573c5f1-caa2-4213-8b94-06d44f511a6a" />
+    <Property Name="DeleterUserId" Type="Int64" ed:ValidateRequired="false" ed:Guid="5aa6829e-6bcb-4612-bbc9-1d6508c3f644" />
+    <Property Name="LastModifierUserId" Type="Int64" ed:ValidateRequired="false" ed:Guid="60101a44-5f6e-4413-a539-4a4711b8af20" />
+    <Property Name="CreationTime" Type="DateTime" Nullable="false" ed:ValidateRequired="true" ed:Guid="1eb67308-1c84-44cc-94c8-3c42464639de" />
+    <Property Name="CreatorUserId" Type="Int64" ed:ValidateRequired="false" ed:Guid="d8fb6a15-6554-45d3-9fde-3885cc83c61a" />
+    <Property Name="DateCreation" Type="DateTime" Nullable="false" ed:ValidateRequired="true" ed:Guid="0dc107db-9cbe-45bc-8576-bb32b4bdb0ea" />
+    <Property Name="DateMaj" Type="DateTime" Nullable="false" ed:ValidateRequired="true" ed:Guid="7ab223f7-c22a-4655-90ea-a4ece6410551" />
+    <Property Name="CreatedBy" Type="Int64" Nullable="false" ed:ValidateRequired="true" ed:Guid="0141b19b-1f3d-40bd-9bc9-f1bbf5f8a4dc" />
+    <Property Name="ModifiedBy" Type="Int64" Nullable="false" ed:ValidateRequired="true" ed:Guid="1dbe685e-c524-4587-9ab7-4cf60a85ed2f" />
+    <Property Name="DataKey" Type="String" MaxLength="50" ed:ValidateMaxLength="50" ed:ValidateRequired="false" ed:Guid="3b5bbd0e-ec59-40c1-a098-5a8ded945a78" />
+    <Property Name="IdTenant" Type="Int64" ed:ValidateRequired="false" ed:Guid="9a1345c0-20f9-4054-b2cb-4049d06b9fac" />
+    <NavigationProperty Name="AbpFeatures" Relationship="EVALUATION.DATA.FK_dboAbpFeatures_dboAbpEditions_EditionId" FromRole="AbpEditions" ToRole="AbpFeatures" ed:Guid="1b471844-ebf5-447b-913c-101df9ac8963" />
+  </EntityType>
+  <EntityType Name="AbpFeatures" ed:Guid="b698a97f-4b8a-4135-904c-66108818cab6">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" ed:ValidateRequired="true" ed:Guid="5d62578a-5ad9-48eb-a3bd-3e38d75542ba" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="128" Unicode="true" ed:ValidateMaxLength="128" ed:ValidateRequired="true" ed:Guid="5cd934a9-75b6-44cf-9f5e-0aede7d25cfc" />
+    <Property Name="Value" Type="String" Nullable="false" MaxLength="2000" Unicode="true" ed:ValidateMaxLength="2000" ed:ValidateRequired="true" ed:Guid="2c568cfa-ea68-4d42-86ad-6ba4e4047efb" />
+    <Property Name="CreationTime" Type="DateTime" Nullable="false" ed:ValidateRequired="true" ed:Guid="930d3cef-112b-40a0-a8a3-0c330b14aff9" />
+    <Property Name="CreatorUserId" Type="Int64" ed:ValidateRequired="false" ed:Guid="d0bf34e5-1420-4993-9f13-115788d8cb10" />
+    <Property Name="EditionId" Type="Int32" ed:ValidateRequired="false" ed:Guid="3860cdec-a604-4125-9abc-a266fdb8e0dc" />
+    <Property Name="Discriminator" Type="String" Nullable="false" MaxLength="128" Unicode="true" ed:ValidateMaxLength="128" ed:ValidateRequired="true" ed:Guid="1a32b431-24eb-415c-ba01-f8f2a62ebad7" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" ed:ValidateRequired="true" ed:Guid="ff6f5d9a-1924-468f-bb20-b05a35e9ab5d" />
+    <Property Name="DateCreation" Type="DateTime" Nullable="false" ed:ValidateRequired="true" ed:Guid="117077e0-ad14-4ae9-825b-18342c18d1f5" />
+    <Property Name="DateMaj" Type="DateTime" Nullable="false" ed:ValidateRequired="true" ed:Guid="7a4da495-73b5-4a2c-b325-866c9af4cff7" />
+    <Property Name="CreatedBy" Type="Int64" Nullable="false" ed:ValidateRequired="true" ed:Guid="07cc4718-e2bb-4f49-b429-f9896eb0cf85" />
+    <Property Name="ModifiedBy" Type="Int64" Nullable="false" ed:ValidateRequired="true" ed:Guid="7b29704d-a30c-43f0-8867-728333938f0d" />
+    <Property Name="DataKey" Type="String" MaxLength="50" ed:ValidateMaxLength="50" ed:ValidateRequired="false" ed:Guid="9492dd3f-347e-4696-b21d-bdf1915881e0" />
+    <Property Name="IdTenant" Type="Int64" ed:ValidateRequired="false" ed:Guid="c4c87945-44f9-4864-a61f-06f5f7ebfb21" />
+    <NavigationProperty Name="AbpEditions" Relationship="EVALUATION.DATA.FK_dboAbpFeatures_dboAbpEditions_EditionId" FromRole="AbpFeatures" ToRole="AbpEditions" ed:Guid="ad874762-6126-4105-842e-5a9b4de6be8c" />
+  </EntityType>
+  <EntityType Name="AbpNotifications" ed:Guid="6c1bd302-cf86-4f50-9c7e-dc3319374a5e">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" ed:ValidateRequired="true" ed:Guid="a2102300-75ff-42a8-bd04-44440001d64a" />
+    <Property Name="NotificationName" Type="String" Nullable="false" MaxLength="96" Unicode="true" ed:ValidateMaxLength="96" ed:ValidateRequired="true" ed:Guid="ecb99c82-0903-4857-bce7-8a145f6f12f4" />
+    <Property Name="Data" Type="String" Unicode="true" ed:ValidateRequired="false" ed:Guid="302238ab-9830-4fd4-8733-96c6f86fa87c" />
+    <Property Name="DataTypeName" Type="String" MaxLength="512" Unicode="true" ed:ValidateMaxLength="512" ed:ValidateRequired="false" ed:Guid="35162e00-5cd9-492a-8905-465b65e8ef60" />
+    <Property Name="EntityTypeName" Type="String" MaxLength="250" Unicode="true" ed:ValidateMaxLength="250" ed:ValidateRequired="false" ed:Guid="82451df2-0e02-42aa-bee5-c615b88a8871" />
+    <Property Name="EntityTypeAssemblyQualifiedName" Type="String" MaxLength="512" Unicode="true" ed:ValidateMaxLength="512" ed:ValidateRequired="false" ed:Guid="82491c2c-7a33-42e7-ac42-4f2c142ef8eb" />
+    <Property Name="EntityId" Type="String" MaxLength="96" Unicode="true" ed:ValidateMaxLength="96" ed:ValidateRequired="false" ed:Guid="b536ec63-051b-4634-ae82-78064c7f0c38" />
+    <Property Name="Severity" Type="Byte" Nullable="false" ed:ValidateRequired="true" ed:Guid="ec5bec75-9032-486e-85a6-cb0c495aa837" />
+    <Property Name="UserIds" Type="String" Unicode="true" ed:ValidateRequired="false" ed:Guid="3f2eebab-9dab-4232-9830-e84321d0d712" />
+    <Property Name="ExcludedUserIds" Type="String" Unicode="true" ed:ValidateRequired="false" ed:Guid="ddda35ce-f71e-49a0-bef7-7581486176a8" />
+    <Property Name="TenantIds" Type="String" Unicode="true" ed:ValidateRequired="false" ed:Guid="3b5d5511-b6bb-46bc-9caa-7b8e7be9423c" />
+    <Property Name="CreationTime" Type="DateTime" Nullable="false" ed:ValidateRequired="true" ed:Guid="7dd5ba09-2f01-420c-8f93-b17e4fab3fd6" />
+    <Property Name="CreatorUserId" Type="Int64" ed:ValidateRequired="false" ed:Guid="09d6045c-fe5e-46fe-83fe-1ca3037e0bef" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" ed:ValidateRequired="true" ed:Guid="1431a898-33ac-4880-9d9e-35cb93ef5e2c" />
+    <Property Name="DateCreation" Type="DateTime" Nullable="false" ed:ValidateRequired="true" ed:Guid="e93431e0-be50-4ffd-bf76-ebc9ba0b3cb5" />
+    <Property Name="DateMaj" Type="DateTime" Nullable="false" ed:ValidateRequired="true" ed:Guid="62a6b8e1-520f-434c-939d-d463f5e4a7cb" />
+    <Property Name="CreatedBy" Type="Int64" Nullable="false" ed:ValidateRequired="true" ed:Guid="c1fe7cfa-6594-4313-a35b-df4e4302d543" />
+    <Property Name="ModifiedBy" Type="Int64" Nullable="false" ed:ValidateRequired="true" ed:Guid="83577e66-23ef-42e5-8c93-301a02a8b6c7" />
+    <Property Name="DataKey" Type="String" MaxLength="50" ed:ValidateMaxLength="50" ed:ValidateRequired="false" ed:Guid="d048cda7-d0e3-44fd-a55e-df847f896da6" />
+    <Property Name="IdTenant" Type="Int64" ed:ValidateRequired="false" ed:Guid="c4dd7853-1200-4b1a-ba30-15a7e8ee873d" />
+  </EntityType>
+  <EntityType Name="AbpNotificationSubscriptions" ed:Guid="2e28f611-5cbe-4336-b002-44e38b479a76">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" ed:ValidateRequired="true" ed:Guid="24cbe4b6-a533-4be0-90a3-d4923d276fdd" />
+    <Property Name="UserId" Type="Int64" Nullable="false" ed:ValidateRequired="true" ed:Guid="59de028b-8620-471c-8499-993d5891902f" />
+    <Property Name="NotificationName" Type="String" MaxLength="96" Unicode="true" ed:ValidateMaxLength="96" ed:ValidateRequired="false" ed:Guid="e30782be-9798-4163-9f4e-8f72d1bbb920" />
+    <Property Name="EntityTypeName" Type="String" MaxLength="250" Unicode="true" ed:ValidateMaxLength="250" ed:ValidateRequired="false" ed:Guid="05081a13-6465-43dd-b3b4-4a2ced732e52" />
+    <Property Name="EntityTypeAssemblyQualifiedName" Type="String" MaxLength="512" Unicode="true" ed:ValidateMaxLength="512" ed:ValidateRequired="false" ed:Guid="a78d0362-20a0-48f5-893d-8daf52f14a01" />
+    <Property Name="EntityId" Type="String" MaxLength="96" Unicode="true" ed:ValidateMaxLength="96" ed:ValidateRequired="false" ed:Guid="469fc2ce-e09a-406a-baf7-2c24ba1e6f73" />
+    <Property Name="CreationTime" Type="DateTime" Nullable="false" ed:ValidateRequired="true" ed:Guid="db33cbcf-3875-4f4b-83fd-a3f0a0f3c1e4" />
+    <Property Name="CreatorUserId" Type="Int64" ed:ValidateRequired="false" ed:Guid="408fdf6b-276b-473c-9b4e-82e415554908" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" ed:ValidateRequired="true" ed:Guid="48b2eff5-9922-496b-8251-5158b24e6317" />
+    <Property Name="DateCreation" Type="DateTime" Nullable="false" ed:ValidateRequired="true" ed:Guid="84217f97-6095-4ace-a2d1-4e4b30e51f38" />
+    <Property Name="DateMaj" Type="DateTime" Nullable="false" ed:ValidateRequired="true" ed:Guid="17527f1e-57f7-4799-864f-17b3faedb7d8" />
+    <Property Name="CreatedBy" Type="Int64" Nullable="false" ed:ValidateRequired="true" ed:Guid="f0f5a753-f230-4f38-8035-c4a76be68d22" />
+    <Property Name="ModifiedBy" Type="Int64" Nullable="false" ed:ValidateRequired="true" ed:Guid="6e63b3e1-67a2-41f8-b24c-db76ee10579c" />
+    <Property Name="DataKey" Type="String" MaxLength="50" ed:ValidateMaxLength="50" ed:ValidateRequired="false" ed:Guid="a839a7f1-e3d9-4094-b155-4e25f1f40db9" />
+    <Property Name="IdTenant" Type="Int64" ed:ValidateRequired="false" ed:Guid="4d8585d5-28f3-4d83-91e5-48b37606822f" />
+  </EntityType>
+  <EntityType Name="AbpOrganizationUnits" ed:Guid="b7e89ce3-9171-4b5a-a5fc-f59c6a25fc2c">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" ed:ValidateRequired="true" ed:Guid="d961dd3d-dd5a-4647-a0e0-b080954dbeed" />
+    <Property Name="ParentId" Type="Int64" ed:ValidateRequired="false" ed:Guid="6c49d111-1f0d-43c1-9f38-a39c5eb273f4" />
+    <Property Name="Code" Type="String" Nullable="false" MaxLength="95" Unicode="true" ed:ValidateMaxLength="95" ed:ValidateRequired="true" ed:Guid="c552cbbb-5339-446e-b84c-200596496b93" />
+    <Property Name="DisplayName" Type="String" Nullable="false" MaxLength="128" Unicode="true" ed:ValidateMaxLength="128" ed:ValidateRequired="true" ed:Guid="940d161a-c229-4e83-901d-85333d6b272b" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" ed:ValidateRequired="true" ed:Guid="6f83453b-d362-4103-972c-0ed48ded8663" />
+    <Property Name="LastModifierUserId" Type="Int64" ed:ValidateRequired="false" ed:Guid="0a58b967-c341-4956-ac3d-bc4bbf0954e7" />
+    <Property Name="CreationTime" Type="DateTime" Nullable="false" ed:ValidateRequired="true" ed:Guid="1d4839cc-d172-48ca-897f-3ac102e4e76e" />
+    <Property Name="CreatorUserId" Type="Int64" ed:ValidateRequired="false" ed:Guid="07c566ae-58aa-4f40-9d0d-1aa877c6a31c" />
+    <Property Name="DateCreation" Type="DateTime" Nullable="false" ed:ValidateRequired="true" ed:Guid="ce0b6dd2-3349-48d2-bd4c-26ae892fd1cd" />
+    <Property Name="DateMaj" Type="DateTime" Nullable="false" ed:ValidateRequired="true" ed:Guid="1e9e7d2d-b826-4e22-b185-de0806b8b907" />
+    <Property Name="CreatedBy" Type="Int64" Nullable="false" ed:ValidateRequired="true" ed:Guid="3df0013c-0ce1-4738-8844-bcd7ed43d459" />
+    <Property Name="ModifiedBy" Type="Int64" Nullable="false" ed:ValidateRequired="true" ed:Guid="a60502ad-6259-4470-977c-7e35af8a4794" />
+    <Property Name="DataKey" Type="String" MaxLength="50" ed:ValidateMaxLength="50" ed:ValidateRequired="false" ed:Guid="cb5db00d-5fb9-4ff2-94d3-bc4fc80be975" />
+    <Property Name="IdTenant" Type="Int64" ed:ValidateRequired="false" ed:Guid="05452e7d-9958-4238-a454-619d520dd8d5" />
+    <NavigationProperty Name="AbpOrganizationUnits_ParentId1" Relationship="EVALUATION.DATA.FK_dboAbpOrganizationUnits_dboAbpOrganizationUnits_ParentId" FromRole="AbpOrganizationUnits_ParentId" ToRole="AbpOrganizationUnits_ParentId1" ed:Guid="04227899-a5df-4123-a338-781b62718a21" />
+    <NavigationProperty Name="AbpOrganizationUnits_ParentId" Relationship="EVALUATION.DATA.FK_dboAbpOrganizationUnits_dboAbpOrganizationUnits_ParentId" FromRole="AbpOrganizationUnits_ParentId1" ToRole="AbpOrganizationUnits_ParentId" ed:Guid="97658c95-b357-4afa-98e7-59ba9aa2d692" />
+  </EntityType>
+  <EntityType Name="AbpPermissions" ed:Guid="f78cbb8e-fc3d-44f7-b9ba-ad87b013a0e9">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" ed:ValidateRequired="true" ed:Guid="60ddf633-40a7-407b-b3a1-351b5f2f0e17" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="128" Unicode="true" ed:ValidateMaxLength="128" ed:ValidateRequired="true" ed:Guid="ce759017-6cf1-4179-b593-3f825243f55f" />
+    <Property Name="IsGranted" Type="Boolean" Nullable="false" ed:ValidateRequired="true" ed:Guid="506a9ef4-3841-442f-ad9f-e755fced6bfc" />
+    <Property Name="CreationTime" Type="DateTime" Nullable="false" ed:ValidateRequired="true" ed:Guid="3cb84b13-5e0f-400b-b6a2-4164eee164fd" />
+    <Property Name="CreatorUserId" Type="Int64" ed:ValidateRequired="false" ed:Guid="4e6af53a-a16e-4b7d-94d9-f0cff113a977" />
+    <Property Name="RoleId" Type="Int32" ed:ValidateRequired="false" ed:Guid="408e7f7b-3802-4284-9f68-c8e605b745f6" />
+    <Property Name="UserId" Type="Int64" ed:ValidateRequired="false" ed:Guid="ec677647-3429-48ec-9867-8ccc5dc16c96" />
+    <Property Name="IdHabilitation" Type="Int64" ed:ValidateRequired="false" ed:Guid="23798977-8344-4f2a-bc67-264dfd4d9e82" />
+    <Property Name="Discriminator" Type="String" Nullable="false" MaxLength="128" Unicode="true" ed:ValidateMaxLength="128" ed:ValidateRequired="true" ed:Guid="d184e53e-6b2d-43e1-b20a-d1fd088dc34b" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" ed:ValidateRequired="true" ed:Guid="cae70269-33a5-4cd5-8703-948290ec60d4" />
+    <Property Name="DateCreation" Type="DateTime" Nullable="false" ed:ValidateRequired="true" ed:Guid="1a4887e3-7278-49a3-a6c4-3da7faf7074d" />
+    <Property Name="DateMaj" Type="DateTime" Nullable="false" ed:ValidateRequired="true" ed:Guid="a542cbca-6dc3-4a40-beed-1e2ce1f643e0" />
+    <Property Name="CreatedBy" Type="Int64" Nullable="false" ed:ValidateRequired="true" ed:Guid="9df6ffda-e72c-46e5-85ba-e5ce04d74bef" />
+    <Property Name="ModifiedBy" Type="Int64" Nullable="false" ed:ValidateRequired="true" ed:Guid="7582bbfa-ea8d-49b3-909b-f923cb722571" />
+    <Property Name="DataKey" Type="String" MaxLength="50" ed:ValidateMaxLength="50" ed:ValidateRequired="false" ed:Guid="b8466244-5d69-4b4c-b3a3-6b89220b61ac" />
+    <Property Name="IdTenant" Type="Int64" ed:ValidateRequired="false" ed:Guid="448a0f63-ef92-423d-b0ff-4f4a47157db3" />
+    <NavigationProperty Name="AbpRoles" Relationship="EVALUATION.DATA.FK_dboAbpPermissions_dboAbpRoles_RoleId" FromRole="AbpPermissions" ToRole="AbpRoles" ed:Guid="dada4788-67a6-4b6c-9a77-a0eb2b0ba521" />
+    <NavigationProperty Name="AbpUsers" Relationship="EVALUATION.DATA.FK_dboAbpPermissions_dboAbpUsers_UserId" FromRole="AbpPermissions" ToRole="AbpUsers" ed:Guid="a2360f60-2c20-4ef6-9956-85a1d9c4a03a" />
+  </EntityType>
+  <EntityType Name="AbpRoleClaims" ed:Guid="2136417d-3567-4821-87b2-1ee99478c274">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" ed:ValidateRequired="true" ed:Guid="596c8e23-8541-4bb5-89ad-296e11951785" />
+    <Property Name="RoleId" Type="Int32" Nullable="false" ed:ValidateRequired="true" ed:Guid="02654676-636a-44d6-b49d-db90e46ec7e0" />
+    <Property Name="ClaimType" Type="String" Unicode="true" ed:ValidateRequired="false" ed:Guid="f3a9ec60-39af-47c7-9760-737d87349623" />
+    <Property Name="ClaimValue" Type="String" Unicode="true" ed:ValidateRequired="false" ed:Guid="d614be69-3525-453f-9126-633a22a6de60" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" ed:ValidateRequired="true" ed:Guid="92f33c9c-eb98-4024-9808-42675a1474e0" />
+    <Property Name="DateCreation" Type="DateTime" Nullable="false" ed:ValidateRequired="true" ed:Guid="59f17de3-6ac5-449c-a027-31e7dfc0afdc" />
+    <Property Name="DateMaj" Type="DateTime" Nullable="false" ed:ValidateRequired="true" ed:Guid="301c846e-b721-47bf-8eab-a4f807ccf27a" />
+    <Property Name="CreatedBy" Type="Int64" Nullable="false" ed:ValidateRequired="true" ed:Guid="ead3e793-0def-4cca-aabd-3b50f425a8b4" />
+    <Property Name="ModifiedBy" Type="Int64" Nullable="false" ed:ValidateRequired="true" ed:Guid="9eda3629-c2da-4ba2-be60-ca3b9b95193f" />
+    <Property Name="DataKey" Type="String" MaxLength="50" ed:ValidateMaxLength="50" ed:ValidateRequired="false" ed:Guid="37600f20-1b19-4d7c-aaf9-f5526428d12a" />
+    <Property Name="IdTenant" Type="Int64" ed:ValidateRequired="false" ed:Guid="0cf7950b-6f4e-42d6-bc5f-3a5e968189e2" />
+    <NavigationProperty Name="AbpRoles" Relationship="EVALUATION.DATA.FK_AbpRoleClaims_AbpRoleClaims" FromRole="AbpRoleClaims" ToRole="AbpRoles" ed:Guid="5023886f-579f-4205-ab4b-f706f4d801dc" />
+  </EntityType>
+  <EntityType Name="AbpRoles" ed:Guid="9d32ad71-a6d6-4416-b5da-42be063c940b">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="RoleId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" ed:ValidateRequired="true" ed:Guid="072f276e-bb23-43ad-aa24-930c82a6bff1" />
+    <Property Name="DisplayName" Type="String" Nullable="false" MaxLength="64" Unicode="true" ed:ValidateMaxLength="64" ed:ValidateRequired="true" ed:Guid="d3b47f58-24e5-4d52-93dc-25df123730fb" />
+    <Property Name="IsStatic" Type="Boolean" Nullable="false" ed:ValidateRequired="true" ed:Guid="4ab46b4e-290b-4867-9f3a-bc86a5a2ded7" />
+    <Property Name="IsDefault" Type="Boolean" Nullable="false" ed:ValidateRequired="true" ed:Guid="92b031c9-7150-47a4-8888-cd8b6c56c2ea" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="32" Unicode="true" ed:ValidateMaxLength="32" ed:ValidateRequired="true" ed:Guid="02ab4456-237b-4a2e-b316-8db924b10c8c" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" ed:ValidateRequired="true" ed:Guid="4769c1a0-c541-470a-a264-07f4074e903b" />
+    <Property Name="ModifiedBy" Type="Int64" ed:ValidateRequired="false" ed:Guid="749c3fff-97c7-44d4-a744-4ef2a4459f5b" />
+    <Property Name="CreatedBy" Type="Int64" ed:ValidateRequired="false" ed:Guid="ef8e90d4-484b-419e-98fc-21fa0573bae5" />
+    <Property Name="DateCreation" Type="DateTime" Nullable="false" ed:ValidateRequired="true" ed:Guid="86f4e137-311c-4880-9970-8b6ed37fab33" />
+    <Property Name="DateMaj" Type="DateTime" Nullable="false" ed:ValidateRequired="true" ed:Guid="704e38cf-1b15-4b76-b211-f6a8302ff14c" />
+    <Property Name="DataKey" Type="String" MaxLength="50" ed:ValidateMaxLength="50" ed:ValidateRequired="false" ed:Guid="9168b5a1-37eb-4edd-9ab9-166ba7714485" />
+    <Property Name="IdTenant" Type="Int64" ed:ValidateRequired="false" ed:Guid="8291fd38-fc48-49df-91d2-f561aa6eda04" />
+    <Property Name="TypeDeRole" Type="String" MaxLength="50" ed:ValidateMaxLength="50" ed:ValidateRequired="false" ed:Guid="8ed86faa-cf22-47d4-a905-2f961f8f78d7" />
+    <NavigationProperty Name="AbpPermissions" Relationship="EVALUATION.DATA.FK_dboAbpPermissions_dboAbpRoles_RoleId" FromRole="AbpRoles" ToRole="AbpPermissions" ed:Guid="14873c31-a348-4856-917e-aedc22dc5f40" />
+    <NavigationProperty Name="AbpRoleClaims" Relationship="EVALUATION.DATA.FK_AbpRoleClaims_AbpRoleClaims" FromRole="AbpRoles" ToRole="AbpRoleClaims" ed:Guid="de9f0674-7ed3-4ca0-b864-697d77cb673e" />
+    <NavigationProperty Name="AbpUsers_CreatedBy" Relationship="EVALUATION.DATA.FK_dboAbpRoles_dboAbpUsers_CreatorUserId" FromRole="AbpRoles_CreatedBy" ToRole="AbpUsers_CreatedBy" ed:Guid="afbfffb7-cc3e-4843-a0a5-f2700380dc3a" />
+    <NavigationProperty Name="AbpUsers_ModifiedBy" Relationship="EVALUATION.DATA.FK_dboAbpRoles_dboAbpUsers_LastModifierUserId" FromRole="AbpRoles_ModifiedBy" ToRole="AbpUsers_ModifiedBy" ed:Guid="df456040-abf8-4b51-ab04-159589f550c0" />
+    <NavigationProperty Name="AbpUserRoles" Relationship="EVALUATION.DATA.FK_AbpUserRoles_AbpRoles" FromRole="AbpRoles" ToRole="AbpUserRoles" ed:Guid="8b690b6a-4bc0-4af6-bf27-5e322fbba536" />
+  </EntityType>
+  <EntityType Name="AbpTenantNotifications" ed:Guid="01c73f46-c5ac-44d9-a1db-d8837d1aed2d">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" ed:ValidateRequired="true" ed:Guid="03dbed44-596d-4d3c-a749-77cc74587faf" />
+    <Property Name="NotificationName" Type="String" Nullable="false" MaxLength="96" Unicode="true" ed:ValidateMaxLength="96" ed:ValidateRequired="true" ed:Guid="4496489a-16bf-4b90-8fe4-f088436677e2" />
+    <Property Name="Data" Type="String" Unicode="true" ed:ValidateRequired="false" ed:Guid="d3891dda-785c-4506-bcea-0108b4e164c8" />
+    <Property Name="DataTypeName" Type="String" MaxLength="512" Unicode="true" ed:ValidateMaxLength="512" ed:ValidateRequired="false" ed:Guid="473b396d-4dbd-4643-89db-00afe3b04d50" />
+    <Property Name="EntityTypeName" Type="String" MaxLength="250" Unicode="true" ed:ValidateMaxLength="250" ed:ValidateRequired="false" ed:Guid="43f3fe01-5e23-4c92-838e-e4e9e9f55f60" />
+    <Property Name="EntityTypeAssemblyQualifiedName" Type="String" MaxLength="512" Unicode="true" ed:ValidateMaxLength="512" ed:ValidateRequired="false" ed:Guid="8621a1a8-547f-454e-8e9d-88e78aece147" />
+    <Property Name="EntityId" Type="String" MaxLength="96" Unicode="true" ed:ValidateMaxLength="96" ed:ValidateRequired="false" ed:Guid="de6ecef3-5c75-4b78-af8d-313d66f7ffec" />
+    <Property Name="Severity" Type="Byte" Nullable="false" ed:ValidateRequired="true" ed:Guid="b4ec95c8-ffd2-4a1a-8e7c-7fe39fa34aab" />
+    <Property Name="CreationTime" Type="DateTime" Nullable="false" ed:ValidateRequired="true" ed:Guid="a14d1c14-c067-498d-933e-07d3fb243ea1" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" ed:ValidateRequired="true" ed:Guid="8303da14-d8b6-4cf9-b5f1-ed57ec4ab97c" />
+    <Property Name="DateCreation" Type="DateTime" Nullable="false" ed:ValidateRequired="true" ed:Guid="5e501fc9-d4d3-4737-a13f-a603b9be5932" />
+    <Property Name="DateMaj" Type="DateTime" Nullable="false" ed:ValidateRequired="true" ed:Guid="f4d50bd1-8c4e-4c82-9f5c-f787b40876f8" />
+    <Property Name="CreatedBy" Type="Int64" Nullable="false" ed:ValidateRequired="true" ed:Guid="541a25ff-f044-4e33-aa2a-13ca899b859d" />
+    <Property Name="ModifiedBy" Type="Int64" Nullable="false" ed:ValidateRequired="true" ed:Guid="b7e330c1-0e12-4315-80c6-d2e3f2e7a06c" />
+    <Property Name="DataKey" Type="String" MaxLength="50" ed:ValidateMaxLength="50" ed:ValidateRequired="false" ed:Guid="e2c78845-264d-4589-b245-63555c0a890f" />
+    <Property Name="IdTenant" Type="Int64" ed:ValidateRequired="false" ed:Guid="1428cbdf-04f0-4311-b698-c280ff8593eb" />
+  </EntityType>
+  <EntityType Name="AbpTenants" ed:Guid="0463b8ec-6866-4c3d-870f-6e3d91a39a1d">
+    <Key>
+      <PropertyRef Name="IdTenant" />
+    </Key>
+    <Property Name="IdTenant" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" ed:ValidateRequired="true" ed:Guid="7f906a3f-e46e-4b3e-8f51-cf336a3e8a2e" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="128" Unicode="true" ed:ValidateMaxLength="128" ed:ValidateRequired="true" ed:Guid="cbef1952-3afa-4f9e-99c7-e3e238a4da62" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" ed:ValidateRequired="true" ed:Guid="40b2354a-2c9b-4476-b185-398c2325d1f0" />
+    <Property Name="TenancyName" Type="String" Nullable="false" MaxLength="64" Unicode="true" ed:ValidateMaxLength="64" ed:ValidateRequired="true" ed:Guid="cd9b477d-ef82-4c1e-8f07-bdbe55774dd6" />
+    <Property Name="DomainName" Type="String" MaxLength="250" Unicode="true" ed:ValidateMaxLength="250" ed:ValidateRequired="false" ed:Guid="48dcd05f-8837-4fc1-8dff-eb7c2cfb7fc8" />
+    <Property Name="ConnectionString" Type="String" MaxLength="1024" Unicode="true" ed:ValidateMaxLength="1024" ed:ValidateRequired="false" ed:Guid="758a97da-59b7-41cf-8817-074bbd31405d" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" ed:ValidateRequired="true" ed:Guid="1e9e017f-ed70-490e-979e-98627a693d8c" />
+    <Property Name="DateCreation" Type="DateTime" Nullable="false" ed:ValidateRequired="true" ed:Guid="9cdaa58a-6efc-42cf-8e19-66620d041786" />
+    <Property Name="DateMaj" Type="DateTime" Nullable="false" ed:ValidateRequired="true" ed:Guid="b0b8359f-a43e-42d6-a5cb-8bd03bd99066" />
+    <Property Name="CreatedBy" Type="Int64" Nullable="false" ed:ValidateRequired="true" ed:Guid="30f916a9-723a-4821-b647-1c10c4bdecfe" />
+    <Property Name="ModifiedBy" Type="Int64" Nullable="false" ed:ValidateRequired="true" ed:Guid="42f0828f-fea1-43a9-b499-d6cec2cf00ca" />
+    <Property Name="DataKey" Type="String" MaxLength="50" ed:ValidateMaxLength="50" ed:ValidateRequired="false" ed:Guid="39a9512b-6ef9-4ebd-b6b7-40b023d722a3" />
+  </EntityType>
+  <EntityType Name="AbpUserAccounts" ed:Guid="7587d22e-1d46-4299-ab2c-0bfae947e86c">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" ed:ValidateRequired="true" ed:Guid="06ff180b-ccfc-4d52-b1de-93eadbb52eb3" />
+    <Property Name="UserId" Type="Int64" Nullable="false" ed:ValidateRequired="true" ed:Guid="e1bbf5a3-2d44-4d87-b3c0-5680b6e518ef" />
+    <Property Name="UserLinkId" Type="Int64" ed:ValidateRequired="false" ed:Guid="89394dda-cc96-4625-8bef-9b28d5b3ead5" />
+    <Property Name="UserName" Type="String" Unicode="true" ed:ValidateRequired="false" ed:Guid="6d560946-565e-4434-8ae4-75401aa433b8" />
+    <Property Name="EmailAddress" Type="String" Unicode="true" ed:ValidateRequired="false" ed:Guid="fd18883b-82ed-48e9-a18d-39e711a9af2f" />
+    <Property Name="LastLoginTime" Type="DateTime" ed:ValidateRequired="false" ed:Guid="e558f349-8a63-4e61-8c1f-f7272cd37ede" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" ed:ValidateRequired="true" ed:Guid="2e2905a0-129c-4766-b1f1-06ae6a58bfda" />
+    <Property Name="DeleterUserId" Type="Int64" ed:ValidateRequired="false" ed:Guid="43bde111-ef9c-4d2a-b3e3-82a7eebe89fc" />
+    <Property Name="LastModifierUserId" Type="Int64" ed:ValidateRequired="false" ed:Guid="afedc7c6-f957-4065-9f77-ab45959d0afa" />
+    <Property Name="CreationTime" Type="DateTime" Nullable="false" ed:ValidateRequired="true" ed:Guid="d3336af8-78d0-4201-b843-974dfcd622d2" />
+    <Property Name="CreatorUserId" Type="Int64" ed:ValidateRequired="false" ed:Guid="38358d3e-5102-4264-a292-3d5e4e0b9b21" />
+    <Property Name="DateCreation" Type="DateTime" Nullable="false" ed:ValidateRequired="true" ed:Guid="26d5a18b-954b-498e-b4dc-e766a60c950f" />
+    <Property Name="DateMaj" Type="DateTime" Nullable="false" ed:ValidateRequired="true" ed:Guid="3188ec09-12c4-44cc-a688-6c0fa1cd7910" />
+    <Property Name="CreatedBy" Type="Int64" Nullable="false" ed:ValidateRequired="true" ed:Guid="6ac3f863-e760-4cd8-858a-ca830797c7ab" />
+    <Property Name="ModifiedBy" Type="Int64" Nullable="false" ed:ValidateRequired="true" ed:Guid="e5570b15-b6d6-49b4-aeaa-9d74b92f8576" />
+    <Property Name="DataKey" Type="String" MaxLength="50" ed:ValidateMaxLength="50" ed:ValidateRequired="false" ed:Guid="0f404d65-fedf-4339-a0f4-8c9174cb262f" />
+    <Property Name="Entite" Type="String" MaxLength="50" ed:ValidateMaxLength="50" ed:ValidateRequired="false" ed:Guid="0097b8c5-3a36-4ba6-b0b4-06abffa4b6b6" />
+    <Property Name="IdEntite" Type="Int64" ed:ValidateRequired="false" ed:Guid="d23bc77a-257a-43d4-bcc7-71c954869a13" />
+    <Property Name="IdTenant" Type="Int64" ed:ValidateRequired="false" ed:Guid="58e60cdf-406a-46db-a95e-f9b90499fc57" />
+  </EntityType>
+  <EntityType Name="AbpUserClaims" ed:Guid="4d582d2b-f50f-4668-a1fd-c3ec1f2e30d7">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" ed:ValidateRequired="true" ed:Guid="ea1e43d4-1e8f-4382-834a-77aec956ef2f" />
+    <Property Name="UserId" Type="Int64" ed:ValidateRequired="false" ed:Guid="81b7aef9-f28b-47ee-9613-6887a5ab4f11" />
+    <Property Name="ClaimType" Type="String" Unicode="true" ed:ValidateRequired="false" ed:Guid="3a0b6f23-44b0-406a-8fcd-eb928a2057de" />
+    <Property Name="ClaimValue" Type="String" Unicode="true" ed:ValidateRequired="false" ed:Guid="1c5b2409-72ca-42c8-9348-2bb3254ace04" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" ed:ValidateRequired="true" ed:Guid="d5358d2e-faed-4a4e-8b93-4406bcda7125" />
+    <Property Name="DateCreation" Type="DateTime" Nullable="false" ed:ValidateRequired="true" ed:Guid="356bde36-dccb-4cbf-86d5-8beab9726872" />
+    <Property Name="DateMaj" Type="DateTime" Nullable="false" ed:ValidateRequired="true" ed:Guid="6ecabe70-bd8e-402f-bfb9-f0b5c5ae6b79" />
+    <Property Name="CreatedBy" Type="Int64" Nullable="false" ed:ValidateRequired="true" ed:Guid="30bb57af-3a04-489e-9967-1c2134c05d0d" />
+    <Property Name="ModifiedBy" Type="Int64" Nullable="false" ed:ValidateRequired="true" ed:Guid="f32d3c87-f0ee-4ca0-8d11-0633b2f6e25b" />
+    <Property Name="DataKey" Type="String" MaxLength="50" ed:ValidateMaxLength="50" ed:ValidateRequired="false" ed:Guid="84894a16-99c8-45f4-ae12-feb82ccd0254" />
+    <Property Name="IdTenant" Type="Int64" ed:ValidateRequired="false" ed:Guid="6197b7c5-2c15-4a71-9241-aa0ac4ccd05a" />
+    <NavigationProperty Name="AbpUserClaims_Id1" Relationship="EVALUATION.DATA.FK_AbpUserClaims_AbpUserClaims" FromRole="AbpUserClaims_Id" ToRole="AbpUserClaims_Id1" ed:Guid="402197e1-6471-4e98-800d-66b379c2fa56" />
+    <NavigationProperty Name="AbpUserClaims_Id" Relationship="EVALUATION.DATA.FK_AbpUserClaims_AbpUserClaims" FromRole="AbpUserClaims_Id1" ToRole="AbpUserClaims_Id" ed:Guid="c111a1cd-d1e1-4d7a-bb9e-9c3b5a98c01d" />
+    <NavigationProperty Name="AbpUsers" Relationship="EVALUATION.DATA.FK_AbpUserClaims_User" FromRole="AbpUserClaims" ToRole="AbpUsers" ed:Guid="2286aabe-0759-43cb-b074-363d240f4d84" />
+  </EntityType>
+  <EntityType Name="AbpUserLoginAttempts" ed:Guid="7972ae20-d2c7-4dbb-9e3b-e47f68b4f6bb">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" ed:ValidateRequired="true" ed:Guid="8f9a721a-08eb-48a1-ad11-14f7fff66af5" />
+    <Property Name="TenancyName" Type="String" MaxLength="64" Unicode="true" ed:ValidateMaxLength="64" ed:ValidateRequired="false" ed:Guid="dd4e112d-e3ac-4290-8f2a-d8b4953ea40c" />
+    <Property Name="UserId" Type="Int64" ed:ValidateRequired="false" ed:Guid="424a1b52-d0ef-46d7-833f-31c0aa56d52d" />
+    <Property Name="UserNameOrEmailAddress" Type="String" MaxLength="255" Unicode="true" ed:ValidateMaxLength="255" ed:ValidateRequired="false" ed:Guid="4a3f835b-8c34-434b-b4b7-dc0ea4f7819c" />
+    <Property Name="ClientIpAddress" Type="String" MaxLength="64" Unicode="true" ed:ValidateMaxLength="64" ed:ValidateRequired="false" ed:Guid="d9009b1a-708c-4c1a-b420-2d2d98790def" />
+    <Property Name="ClientName" Type="String" MaxLength="128" Unicode="true" ed:ValidateMaxLength="128" ed:ValidateRequired="false" ed:Guid="8ed3b54f-d1af-41db-b36c-3f2a5b6d2b01" />
+    <Property Name="BrowserInfo" Type="String" MaxLength="256" Unicode="true" ed:ValidateMaxLength="256" ed:ValidateRequired="false" ed:Guid="d146bf60-ffc4-42c8-84e8-34a0d68f5e71" />
+    <Property Name="Result" Type="Byte" Nullable="false" ed:ValidateRequired="true" ed:Guid="d6e1f7ab-5ebe-477a-8d03-5db7ccd4e215" />
+    <Property Name="CreationTime" Type="DateTime" Nullable="false" ed:ValidateRequired="true" ed:Guid="c4972d64-846f-4bb6-9b24-59c789d228fa" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" ed:ValidateRequired="true" ed:Guid="d30e6cb2-7288-482d-ba05-a453c8855975" />
+    <Property Name="DateCreation" Type="DateTime" Nullable="false" ed:ValidateRequired="true" ed:Guid="cf2c9a31-ff84-42a6-b4d9-f3d87b474858" />
+    <Property Name="DateMaj" Type="DateTime" Nullable="false" ed:ValidateRequired="true" ed:Guid="39aa36e7-c5be-4ea3-a2bc-6ee728302732" />
+    <Property Name="CreatedBy" Type="Int64" Nullable="false" ed:ValidateRequired="true" ed:Guid="36a125db-391d-4fe2-ac3f-879263b8ac5d" />
+    <Property Name="ModifiedBy" Type="Int64" Nullable="false" ed:ValidateRequired="true" ed:Guid="64ef6486-36c0-4d01-9c1f-7b2457de9831" />
+    <Property Name="DataKey" Type="String" MaxLength="50" ed:ValidateMaxLength="50" ed:ValidateRequired="false" ed:Guid="14d88b54-abec-46d1-9780-260d1d107bab" />
+    <Property Name="IdTenant" Type="Int64" ed:ValidateRequired="false" ed:Guid="ab49cbaf-2db0-499d-bc2b-66f2a1151af0" />
+  </EntityType>
+  <EntityType Name="AbpUserLogins" ed:Guid="0d83951d-d623-41e8-8589-233fd128a670">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" ed:ValidateRequired="true" ed:Guid="5fd85ed6-4250-4b99-a975-f1ef517b5413" />
+    <Property Name="IdUtilisateur" Type="Int64" ed:ValidateRequired="false" ed:Guid="5eb5db70-bfef-40c0-82d1-7b193128cc58" />
+    <Property Name="LoginProvider" Type="String" Nullable="false" MaxLength="128" Unicode="true" ed:ValidateMaxLength="128" ed:ValidateRequired="true" ed:Guid="4970af32-45ef-429c-aabb-b2e56c0d3f53" />
+    <Property Name="ProviderKey" Type="String" Nullable="false" MaxLength="256" Unicode="true" ed:ValidateMaxLength="256" ed:ValidateRequired="true" ed:Guid="0dc7826d-3221-4dd6-bf40-8868d8a4ec46" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" ed:ValidateRequired="true" ed:Guid="3190af15-5510-4dde-ad37-0cee6e3e5b67" />
+    <Property Name="DateCreation" Type="DateTime" Nullable="false" ed:ValidateRequired="true" ed:Guid="68dfec69-57cb-42f4-a3bb-9bd0540e2685" />
+    <Property Name="DateMaj" Type="DateTime" Nullable="false" ed:ValidateRequired="true" ed:Guid="d266a5a8-d550-421a-b0ab-98797060b7ab" />
+    <Property Name="CreatedBy" Type="Int64" Nullable="false" ed:ValidateRequired="true" ed:Guid="376ac5a7-c4bd-4955-a6f2-931db9e0aacd" />
+    <Property Name="ModifiedBy" Type="Int64" Nullable="false" ed:ValidateRequired="true" ed:Guid="19dd5264-8fb3-44b0-abc5-6fed0d93f0bb" />
+    <Property Name="DataKey" Type="String" MaxLength="50" ed:ValidateMaxLength="50" ed:ValidateRequired="false" ed:Guid="d7409d19-65d5-4217-9ca0-c32dd0043ae8" />
+    <Property Name="IdTenant" Type="Int64" ed:ValidateRequired="false" ed:Guid="39ef8461-6cec-41b6-8dbc-d18a727697ab" />
+  </EntityType>
+  <EntityType Name="AbpUserNotifications" ed:Guid="83875fb1-e375-4cd0-9816-cf1324b3d4ef">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" ed:ValidateRequired="true" ed:Guid="462598d5-cd8a-45d0-ad6f-8c0f8922ba6a" />
+    <Property Name="UserId" Type="Int64" Nullable="false" ed:ValidateRequired="true" ed:Guid="9c022539-4c8a-4985-9fd4-d449df17c7e0" />
+    <Property Name="TenantNotificationId" Type="Guid" Nullable="false" ed:ValidateRequired="true" ed:Guid="6fa44674-d171-4fd5-bcef-eabacff1cd53" />
+    <Property Name="State" Type="Int32" Nullable="false" ed:ValidateRequired="true" ed:Guid="1a535602-612e-4d80-a602-69ac2e687bde" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" ed:ValidateRequired="true" ed:Guid="723ee087-d050-45f3-a476-813276f875b7" />
+    <Property Name="DateCreation" Type="DateTime" Nullable="false" ed:ValidateRequired="true" ed:Guid="a79e480c-8a04-496e-8870-68ec9a76e0d3" />
+    <Property Name="DateMaj" Type="DateTime" Nullable="false" ed:ValidateRequired="true" ed:Guid="82805555-f91c-405e-b2d0-2c7d38f5e532" />
+    <Property Name="CreatedBy" Type="Int64" Nullable="false" ed:ValidateRequired="true" ed:Guid="bb90125a-d967-4ac9-9eff-e954b78bba16" />
+    <Property Name="ModifiedBy" Type="Int64" Nullable="false" ed:ValidateRequired="true" ed:Guid="35b5a2ed-a84f-4b13-a207-ee2fabd4ecc7" />
+    <Property Name="DataKey" Type="String" MaxLength="50" ed:ValidateMaxLength="50" ed:ValidateRequired="false" ed:Guid="d1f8887f-9030-49ad-bed7-2d21ef5d83ff" />
+    <Property Name="IdTenant" Type="Int64" ed:ValidateRequired="false" ed:Guid="e4e59a61-3df4-4d72-b2d0-5ccd1b6e4ad9" />
+  </EntityType>
+  <EntityType Name="AbpUserRoles" ed:Guid="a49c3fc7-2780-40f2-b10f-a4733585b668">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" ed:ValidateRequired="true" ed:Guid="ad5cee63-47bc-45d3-b6f5-2a0fd953cb57" />
+    <Property Name="UserId" Type="Int64" Nullable="false" ed:ValidateRequired="true" ed:Guid="88756d34-192a-4c99-8ac0-ca958c5e737f" />
+    <Property Name="RoleId" Type="Int32" Nullable="false" ed:ValidateRequired="true" ed:Guid="cf6f9c9a-05b0-4b48-8e7a-89d0f3bff769" />
+    <Property Name="CreationTime" Type="DateTime" Nullable="false" ed:ValidateRequired="true" ed:Guid="b4ecfa0f-ee67-4b6d-b6ad-48c129c87bdd" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" ed:ValidateRequired="true" ed:Guid="b1314299-2787-470f-9d0b-c058fca46459" />
+    <Property Name="DateCreation" Type="DateTime" Nullable="false" ed:ValidateRequired="true" ed:Guid="b709ede8-ec5e-4f97-9198-c8bdd6849b75" />
+    <Property Name="DateMaj" Type="DateTime" Nullable="false" ed:ValidateRequired="true" ed:Guid="d29b62fd-6310-439a-a129-58aab8a33ce9" />
+    <Property Name="CreatedBy" Type="Int64" Nullable="false" ed:ValidateRequired="true" ed:Guid="43a3cc10-30f2-43e7-aebf-4579b54e7dd7" />
+    <Property Name="ModifiedBy" Type="Int64" Nullable="false" ed:ValidateRequired="true" ed:Guid="e4a2700d-f22f-4bfc-bab2-94407c21f145" />
+    <Property Name="DataKey" Type="String" MaxLength="50" ed:ValidateMaxLength="50" ed:ValidateRequired="false" ed:Guid="3aad700b-33df-4b6a-96d1-33f14fafdfa5" />
+    <Property Name="IdTenant" Type="Int64" ed:ValidateRequired="false" ed:Guid="37919258-ce0a-41ec-a72e-b687fbf41b5c" />
+    <NavigationProperty Name="AbpRoles" Relationship="EVALUATION.DATA.FK_AbpUserRoles_AbpRoles" FromRole="AbpUserRoles" ToRole="AbpRoles" ed:Guid="ae86b9b9-bc5a-4875-96fe-99fffc2fc019" />
+    <NavigationProperty Name="AbpUserRoles_Id1" Relationship="EVALUATION.DATA.FK_AbpUserRoles_AbpUserRoles" FromRole="AbpUserRoles_Id" ToRole="AbpUserRoles_Id1" ed:Guid="31bf04a0-f272-4742-adf0-e1d2c089beba" />
+    <NavigationProperty Name="AbpUserRoles_Id" Relationship="EVALUATION.DATA.FK_AbpUserRoles_AbpUserRoles" FromRole="AbpUserRoles_Id1" ToRole="AbpUserRoles_Id" ed:Guid="f874d4d4-82d0-4871-821a-7b7a3303dfd2" />
+    <NavigationProperty Name="AbpUsers" Relationship="EVALUATION.DATA.FK_AbpUserRoles_AbpUsers" FromRole="AbpUserRoles" ToRole="AbpUsers" ed:Guid="63bbcb30-f197-4dc9-ade6-d647e6f233e4" />
+  </EntityType>
+  <EntityType Name="AbpUsers" ed:Guid="bcff4824-f611-4f95-9a9b-b731a8c94cfb">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" ed:ValidateRequired="true" ed:Guid="c4b6e636-5e8c-4e89-934f-7b2f08534223" />
+    <Property Name="AuthenticationSource" Type="String" MaxLength="64" Unicode="true" ed:ValidateMaxLength="64" ed:ValidateRequired="false" ed:Guid="56d3f980-d621-4a61-8815-4dd6c944579c" />
+    <Property Name="Nom" Type="String" Nullable="false" MaxLength="32" Unicode="true" ed:ValidateMaxLength="32" ed:ValidateRequired="true" ed:Guid="71a0c535-bd12-4fe1-b95e-660a4560d24f" />
+    <Property Name="Prenoms" Type="String" MaxLength="32" Unicode="true" ed:ValidateMaxLength="32" ed:ValidateRequired="false" ed:Guid="175b3fd3-38fb-4d95-abc9-17dbd74ed7fb" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="128" Unicode="true" ed:ValidateMaxLength="128" ed:ValidateRequired="true" ed:Guid="367d69f6-603f-485b-9ea3-3d967af25192" />
+    <Property Name="IsEmailConfirmed" Type="Boolean" ed:ValidateRequired="false" ed:Guid="88e27fd5-d287-4c63-9d4e-ee89f87ca513" />
+    <Property Name="EmailConfirmationCode" Type="String" MaxLength="328" Unicode="true" ed:ValidateMaxLength="328" ed:ValidateRequired="false" ed:Guid="121f358b-8c9e-48b4-b92a-bcd59c7fc387" />
+    <Property Name="PasswordResetCode" Type="String" MaxLength="328" Unicode="true" ed:ValidateMaxLength="328" ed:ValidateRequired="false" ed:Guid="b91f5009-e6ad-4f98-9289-6a2703a9c588" />
+    <Property Name="DateDebutValidite" Type="DateTime" ed:ValidateRequired="false" ed:Guid="bd1040ca-482a-4b4f-9ab0-c8bb76915fe1" />
+    <Property Name="DateFinValidite" Type="DateTime" ed:ValidateRequired="false" ed:Guid="17a51687-55b7-4998-9923-11606fe6c9ff" />
+    <Property Name="LockoutEndDateUtc" Type="DateTime" ed:ValidateRequired="false" ed:Guid="17fa0e9b-7ee3-4be3-b8c0-ad59b2a691a2" />
+    <Property Name="AccessFailedCount" Type="Int32" ed:ValidateRequired="false" ed:Guid="a3fec9c1-7401-454e-ab14-7e9e39487137" />
+    <Property Name="IsLockoutEnabled" Type="Boolean" ed:ValidateRequired="false" ed:Guid="62535f5f-af21-4849-9643-f97c2f628743" />
+    <Property Name="PhoneNumber" Type="String" Unicode="true" ed:ValidateRequired="false" ed:Guid="944d3919-6d69-4d37-b203-6a7f6b2d2be2" />
+    <Property Name="IsPhoneNumberConfirmed" Type="Boolean" ed:ValidateRequired="false" ed:Guid="b9fc9249-20e2-4e2f-aa85-33fb960ac3ee" />
+    <Property Name="SecurityStamp" Type="String" Unicode="true" ed:ValidateRequired="false" ed:Guid="d31bb059-fec0-405e-88ae-8eccec052f92" />
+    <Property Name="IsTwoFactorEnabled" Type="Boolean" ed:ValidateRequired="false" ed:Guid="c16b2cc2-54ac-415b-8e99-281ec9d8ec9b" />
+    <Property Name="IsActive" Type="Boolean" ed:ValidateRequired="false" ed:Guid="7a987a14-e804-4685-8cb4-12410c6961fb" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="32" Unicode="true" ed:ValidateMaxLength="32" ed:ValidateRequired="true" ed:Guid="50911207-9534-43d5-94e9-44b1555d67d9" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="256" Unicode="true" ed:ValidateMaxLength="256" ed:ValidateRequired="true" ed:Guid="49018ad5-60fc-4f9a-9e50-dd7c49aef9ef" />
+    <Property Name="LastLoginTime" Type="DateTime" ed:ValidateRequired="false" ed:Guid="267a6117-b7d0-4dc7-9925-60ac842968ee" />
+    <Property Name="IdPersonne" Type="Int64" ed:ValidateRequired="false" ed:Guid="c17f6ec1-0233-4d50-9f97-001a76a7c8f6" />
+    <Property Name="IdGarant" Type="Int64" ed:ValidateRequired="false" ed:Guid="cc72daa0-10f7-4a97-880f-b301fa698745" />
+    <Property Name="IsDeleted" Type="Boolean" ed:ValidateRequired="false" ed:Guid="b55da35f-f38b-46d1-b726-f3f3a39ced68" />
+    <Property Name="DeleterUserId" Type="Int64" ed:ValidateRequired="false" ed:Guid="f6e7d8cb-2c2c-4b9e-995b-7f9daa3218f9" />
+    <Property Name="LastModifierUserId" Type="Int64" ed:ValidateRequired="false" ed:Guid="ec87d97b-7b30-49d9-afca-8040482e840b" />
+    <Property Name="CreationTime" Type="DateTime" ed:ValidateRequired="false" ed:Guid="09baead4-23d7-4917-bf30-31953d909c14" />
+    <Property Name="CreatorUserId" Type="Int64" ed:ValidateRequired="false" ed:Guid="5a01e9e2-42cf-4949-955c-5cb1053852ed" />
+    <Property Name="DateCreation" Type="DateTime" ed:ValidateRequired="false" ed:Guid="b26407de-77a7-4119-a092-4c827659c25f" />
+    <Property Name="DateMaj" Type="DateTime" ed:ValidateRequired="false" ed:Guid="181f14da-353f-4796-bfe4-b75abeba9441" />
+    <Property Name="CreatedBy" Type="Int64" ed:ValidateRequired="false" ed:Guid="189e5873-28cb-4e5b-b0bf-e848c109abf7" />
+    <Property Name="ModifiedBy" Type="Int64" ed:ValidateRequired="false" ed:Guid="6c7466a4-ab85-4fd7-a5a5-d30ae87d537b" />
+    <Property Name="DataKey" Type="String" MaxLength="50" ed:ValidateMaxLength="50" ed:ValidateRequired="false" ed:Guid="5e8be101-66c3-4fba-bbce-ef4878c4f707" />
+    <Property Name="IdTenant" Type="Int64" ed:ValidateRequired="false" ed:Guid="0ec51fcd-773d-4b20-ba20-9c27821923ea" />
+    <NavigationProperty Name="AbpPermissions" Relationship="EVALUATION.DATA.FK_dboAbpPermissions_dboAbpUsers_UserId" FromRole="AbpUsers" ToRole="AbpPermissions" ed:Guid="ab706a06-95b3-4d94-be24-c3a09d8eaff3" />
+    <NavigationProperty Name="AbpRoles_CreatedBy" Relationship="EVALUATION.DATA.FK_dboAbpRoles_dboAbpUsers_CreatorUserId" FromRole="AbpUsers_CreatedBy" ToRole="AbpRoles_CreatedBy" ed:Guid="b19f267c-2716-48b0-a2c4-608f95367f92" />
+    <NavigationProperty Name="AbpRoles_ModifiedBy" Relationship="EVALUATION.DATA.FK_dboAbpRoles_dboAbpUsers_LastModifierUserId" FromRole="AbpUsers_ModifiedBy" ToRole="AbpRoles_ModifiedBy" ed:Guid="cde4c14f-e057-4663-8f7d-ce02f6eb7eec" />
+    <NavigationProperty Name="AbpUserClaims" Relationship="EVALUATION.DATA.FK_AbpUserClaims_User" FromRole="AbpUsers" ToRole="AbpUserClaims" ed:Guid="fc9f6933-546e-4a9c-b649-92055bf25a7f" />
+    <NavigationProperty Name="AbpUserRoles" Relationship="EVALUATION.DATA.FK_AbpUserRoles_AbpUsers" FromRole="AbpUsers" ToRole="AbpUserRoles" ed:Guid="c7525f2a-2599-4257-908e-c1ff52d27c23" />
+    <NavigationProperty Name="AbpUsers_CreatorUserId1" Relationship="EVALUATION.DATA.FK_dboAbpUsers_dboAbpUsers_CreatorUserId" FromRole="AbpUsers_CreatorUserId" ToRole="AbpUsers_CreatorUserId1" ed:Guid="623c918f-d5ce-454b-be0e-26fd3dbccb7d" />
+    <NavigationProperty Name="AbpUsers_CreatorUserId" Relationship="EVALUATION.DATA.FK_dboAbpUsers_dboAbpUsers_CreatorUserId" FromRole="AbpUsers_CreatorUserId1" ToRole="AbpUsers_CreatorUserId" ed:Guid="624fbabb-bd47-4282-86ce-ecde9f240bf3" />
+    <NavigationProperty Name="AbpUsers_DeleterUserId1" Relationship="EVALUATION.DATA.FK_dboAbpUsers_dboAbpUsers_DeleterUserId" FromRole="AbpUsers_DeleterUserId" ToRole="AbpUsers_DeleterUserId1" ed:Guid="f3581693-358e-4d39-95d0-595f7691e7a0" />
+    <NavigationProperty Name="AbpUsers_DeleterUserId" Relationship="EVALUATION.DATA.FK_dboAbpUsers_dboAbpUsers_DeleterUserId" FromRole="AbpUsers_DeleterUserId1" ToRole="AbpUsers_DeleterUserId" ed:Guid="34328f0f-9474-440f-a6d9-6fda5e40e339" />
+    <NavigationProperty Name="AbpUsers_LastModifierUserId1" Relationship="EVALUATION.DATA.FK_dboAbpUsers_dboAbpUsers_LastModifierUserId" FromRole="AbpUsers_LastModifierUserId" ToRole="AbpUsers_LastModifierUserId1" ed:Guid="fd80df87-eafd-4c1c-a1a4-e78516ebbd81" />
+    <NavigationProperty Name="AbpUsers_LastModifierUserId" Relationship="EVALUATION.DATA.FK_dboAbpUsers_dboAbpUsers_LastModifierUserId" FromRole="AbpUsers_LastModifierUserId1" ToRole="AbpUsers_LastModifierUserId" ed:Guid="6e6f4ae9-05fd-492d-a5c8-33a344689650" />
+    <NavigationProperty Name="Projects" Relationship="EVALUATION.DATA.FK_AbpUser_Project_responsible" FromRole="AbpUsers" ToRole="Projects" ed:Guid="da71175f-0373-44e0-8532-effc788cdcda" />
+    <NavigationProperty Name="ProjectTasks" Relationship="EVALUATION.DATA.FK_AbpUser_ProjectTasks_Collaborator" FromRole="AbpUsers" ToRole="ProjectTasks" ed:Guid="eb51fdfa-2451-46bf-adb1-7e75f6ef48e5" />
+    <NavigationProperty Name="UserRoles" Relationship="EVALUATION.DATA.FK_UserRoles_User" FromRole="AbpUsers" ToRole="UserRoles" ed:Guid="935a8dbb-9272-46f3-84c4-a0b677129815" />
+  </EntityType>
+  <EntityType Name="Permissions" ed:Guid="51a59a07-2d55-4e65-9f14-3d5c1f09abd0">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" ed:ValidateRequired="true" ed:Guid="6b75b3da-3dfb-4cf1-a0d1-c264a65fc4a0" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="30" ed:ValidateMaxLength="30" ed:ValidateRequired="true" ed:Guid="337c0402-9aed-478e-a8f9-0096878c4f90" />
+    <Property Name="DisplayName" Type="String" Nullable="false" MaxLength="200" ed:ValidateMaxLength="200" ed:ValidateRequired="true" ed:Guid="41c115ea-8f97-4854-aad2-7a314827536d" />
+    <Property Name="IsDeleted" Type="Boolean" ed:ValidateRequired="false" ed:Guid="43e85d34-9b7c-4baa-af00-3609e59f21e5" />
+    <Property Name="DateCreation" Type="DateTime" ed:ValidateRequired="false" ed:Guid="b41e85c0-ca11-49d4-9e42-62d8dfcd9535" />
+    <Property Name="DateMaj" Type="DateTime" ed:ValidateRequired="false" ed:Guid="5b050ade-dd5a-4f22-b8f8-5cd71df15f63" />
+    <Property Name="CreatedBy" Type="Int64" ed:ValidateRequired="false" ed:Guid="f9f38198-147e-4190-98ea-8fd73f805c7d" />
+    <Property Name="ModifiedBy" Type="Int64" ed:ValidateRequired="false" ed:Guid="60cc15af-75d7-4356-93b5-7a568a306310" />
+    <Property Name="DataKey" Type="String" MaxLength="50" ed:ValidateMaxLength="50" ed:ValidateRequired="false" ed:Guid="07d8d039-3940-4dc4-bef6-0c10fae66548" />
+    <Property Name="IdTenant" Type="Int64" ed:ValidateRequired="false" ed:Guid="ca9f5c93-d19d-4214-ba9a-28ac4d3f8145" />
+    <NavigationProperty Name="RolePermissions" Relationship="EVALUATION.DATA.FK_RolePermissions_Permission" FromRole="Permissions" ToRole="RolePermissions" ed:Guid="f4d3b33b-9686-4459-99e1-44b9af8a962e" />
+  </EntityType>
+  <EntityType Name="Projects" ed:Guid="bb592435-0117-4fa7-b055-ce51546e7ceb">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" ed:ValidateRequired="true" ed:Guid="31e31683-8115-4f5e-b4e2-b7991c363170" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="250" ed:ValidateMaxLength="250" ed:ValidateRequired="true" ed:Guid="46e87ea8-f682-41b5-8be7-2d84e8fba4b6" />
+    <Property Name="Description" Type="String" ed:ValidateRequired="false" ed:Guid="4e293f16-162a-4efe-95c0-c15dc2ace215" />
+    <Property Name="IdResponsible" Type="Int64" ed:ValidateRequired="false" ed:Guid="06bf0738-05dc-486e-9612-16d342648cb4" />
+    <Property Name="IsDeleted" Type="Boolean" ed:ValidateRequired="false" ed:Guid="34227742-a007-4ca0-a846-cd289780f249" />
+    <Property Name="DateCreation" Type="DateTime" ed:ValidateRequired="false" ed:Guid="67998cef-54dd-4669-806f-b6a57af8f5f3" />
+    <Property Name="DateMaj" Type="DateTime" ed:ValidateRequired="false" ed:Guid="50e36b33-dd8e-4232-badb-87956a1c09e7" />
+    <Property Name="CreatedBy" Type="Int64" ed:ValidateRequired="false" ed:Guid="836bfe6d-b31b-4f4b-91a3-3afb6739e1c4" />
+    <Property Name="ModifiedBy" Type="Int64" ed:ValidateRequired="false" ed:Guid="58af03b4-f630-4764-b2ce-586be70cb6eb" />
+    <Property Name="DataKey" Type="String" MaxLength="50" ed:ValidateMaxLength="50" ed:ValidateRequired="false" ed:Guid="b308341d-9b0f-46b0-a868-b9242ba47130" />
+    <Property Name="IdTenant" Type="Int32" ed:ValidateRequired="false" ed:Guid="93a2f187-9aab-4c0f-8ad0-89ddb5b0544b" />
+    <NavigationProperty Name="AbpUsers" Relationship="EVALUATION.DATA.FK_AbpUser_Project_responsible" FromRole="Projects" ToRole="AbpUsers" ed:Guid="88bddadc-6104-400c-8138-6cf5bf639305" />
+    <NavigationProperty Name="ProjectTasks" Relationship="EVALUATION.DATA.FK_ProjectTasks_Projects" FromRole="Projects" ToRole="ProjectTasks" ed:Guid="be868900-33b5-4c41-b9f1-afe670e811a3" />
+  </EntityType>
+  <EntityType Name="ProjectTaskActions" ed:Guid="260d7611-2f33-44fd-8a29-00641f83fa19">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" ed:ValidateRequired="true" ed:Guid="d36526f7-71b7-4089-abef-c225e7877627" />
+    <Property Name="IdProjectTask" Type="Int64" Nullable="false" ed:ValidateRequired="true" ed:Guid="f4e8472b-4822-44fb-a557-5767cca169a0" />
+    <Property Name="Description" Type="String" Nullable="false" ed:ValidateRequired="true" ed:Guid="52164edd-645d-4272-bfb4-2cd727b59150" />
+    <Property Name="Overtime" Type="Double" ed:ValidateRequired="false" ed:Guid="929ca3db-ee01-4b2a-9394-4bc995c5849f" />
+    <Property Name="OvertimeTime" Type="Time" ed:ValidateRequired="false" ed:Guid="8afb34cc-cde3-42eb-9127-582d0fd72508" />
+    <Property Name="NewDeadline" Type="DateTime" ed:ValidateRequired="false" ed:Guid="20e82710-145a-447f-ad51-50e2b2c3f0c0" />
+    <Property Name="ActionType" Type="String" Nullable="false" MaxLength="15" ed:ValidateMaxLength="15" ed:ValidateRequired="true" ed:Guid="2b997889-ce7d-43dc-9d3d-994f45b4f523" />
+    <Property Name="Duration" Type="Double" ed:ValidateRequired="false" ed:Guid="a27450cc-d964-41ab-a4bb-129d6a6bcaab" />
+    <Property Name="DurationTime" Type="Time" ed:ValidateRequired="false" ed:Guid="a6c853d1-1639-46ae-9cd6-ae56ee3f6757" />
+    <Property Name="ActionDate" Type="DateTime" ed:ValidateRequired="false" ed:Guid="bc3ed352-a2a2-4049-b4b4-c9be596b2ea3" />
+    <Property Name="DateOfDay" Type="DateTime" ed:ValidateRequired="false" ed:Guid="e9d6cc72-2c2b-4ea4-8b5e-11fbda548fc6" />
+    <Property Name="IsDeleted" Type="Boolean" ed:ValidateRequired="false" ed:Guid="c4fe878a-91f4-411e-a5a6-4e04fcfbb2a0" />
+    <Property Name="DateCreation" Type="DateTime" ed:ValidateRequired="false" ed:Guid="788b19bc-e94c-4bcf-b23a-c4ed9321e518" />
+    <Property Name="DateMaj" Type="DateTime" ed:ValidateRequired="false" ed:Guid="54e54284-4031-423a-a7f3-dac00b5ff7b0" />
+    <Property Name="CreatedBy" Type="Int64" ed:ValidateRequired="false" ed:Guid="8971ef7e-b65a-4bc8-8701-4a05f39a7598" />
+    <Property Name="ModifiedBy" Type="Int64" ed:ValidateRequired="false" ed:Guid="c3aa37a3-1b7d-45d9-8cbe-e50756531c4f" />
+    <Property Name="DataKey" Type="String" MaxLength="50" ed:ValidateMaxLength="50" ed:ValidateRequired="false" ed:Guid="d2118571-165e-4c65-9ad5-7ab76ed04322" />
+    <Property Name="IdTenant" Type="Int32" ed:ValidateRequired="false" ed:Guid="2fa4339c-ab9b-4fd8-af7f-ddd2f21fd889" />
+    <NavigationProperty Name="ProjectTasks" Relationship="EVALUATION.DATA.FK_ProjectTaskActions_ProjectTasks" FromRole="ProjectTaskActions" ToRole="ProjectTasks" ed:Guid="5ba802bd-58ca-4850-beef-e1427c9f6fd2" />
+  </EntityType>
+  <EntityType Name="ProjectTasks" ed:Guid="4a4b549c-92df-4d4a-8855-47f6f9ad08c5">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" ed:ValidateRequired="true" ed:Guid="90059986-9d16-4311-b8fd-b8ac1fa75947" />
+    <Property Name="IdProject" Type="Int64" Nullable="false" ed:ValidateRequired="true" ed:Guid="0e4a1e77-f8d7-4b21-9bb0-3ec1b9e05c21" />
+    <Property Name="IdCurrentCollaborator" Type="Int64" Nullable="false" DefaultValue="3" ed:ValidateRequired="true" ed:Guid="a0c3f3e4-e5a2-4ec4-89f5-f5a37be6691b" />
+    <Property Name="Sequence" Type="String" Nullable="false" MaxLength="50" ed:ValidateMaxLength="50" ed:ValidateRequired="true" ed:Guid="2f642111-39b3-4e0a-9944-0bfcbb43df2f" />
+    <Property Name="Label" Type="String" Nullable="false" MaxLength="200" ed:ValidateMaxLength="200" ed:ValidateRequired="true" ed:Guid="d2975738-cf93-4d0b-9747-4a394af78e62" />
+    <Property Name="Priority" Type="String" MaxLength="10" ed:ValidateMaxLength="10" ed:ValidateRequired="false" ed:Guid="e84af6b8-2610-475d-b4f0-4a799337c861" />
+    <Property Name="TimePlanned" Type="Double" ed:ValidateRequired="false" ed:Guid="7335ad3d-647e-4483-bb2e-a524bcd6b728" />
+    <Property Name="TimePlannedTime" Type="Time" Nullable="false" ed:ValidateRequired="true" ed:Guid="211ab10c-9d2a-4f11-9569-64f75f993109" />
+    <Property Name="TimeElapsed" Type="Double" ed:ValidateRequired="false" ed:Guid="adcac47f-6aa9-4a59-8c06-fc2ea2f23984" />
+    <Property Name="TimeElapsedVarchar" Type="String" MaxLength="5" ed:ValidateMaxLength="5" ed:ValidateRequired="false" ed:Guid="67ed7e8c-78a4-4897-9a91-834e9600a366" />
+    <Property Name="TimeRemaining" Type="Double" ed:ValidateRequired="false" ed:Guid="63d82f85-7e4e-4da0-96af-d3b65fcb7412" />
+    <Property Name="TimeRemainingVarchar" Type="String" MaxLength="5" ed:ValidateMaxLength="5" ed:ValidateRequired="false" ed:Guid="eedeb123-f4c0-41f7-86e6-08ccd9921127" />
+    <Property Name="DateStarted" Type="DateTime" ed:ValidateRequired="false" ed:Guid="48e00bc6-4e4b-40cd-a099-c23705876273" />
+    <Property Name="Deadline" Type="DateTime" ed:ValidateRequired="false" ed:Guid="36982dec-1910-49ed-8baa-a95640fa7b0c" />
+    <Property Name="Status" Type="String" Nullable="false" MaxLength="15" ed:ValidateMaxLength="15" ed:ValidateRequired="true" ed:Guid="eca97a68-6d46-4a75-bbe4-ad4c61ad6e75" />
+    <Property Name="IsDeleted" Type="Boolean" ed:ValidateRequired="false" ed:Guid="2683cd7d-43e9-4fc9-9a89-16e9f27c7fc9" />
+    <Property Name="DateCreation" Type="DateTime" Nullable="false" ed:ValidateRequired="true" ed:Guid="bc5e4ca5-f707-4174-8ae7-a704235f1e0e" />
+    <Property Name="DateMaj" Type="DateTime" ed:ValidateRequired="false" ed:Guid="653c2d4e-2991-4553-a298-ce6f388837a8" />
+    <Property Name="CreatedBy" Type="Int64" ed:ValidateRequired="false" ed:Guid="6cf5764c-6ffe-46d0-9645-a74acd231b33" />
+    <Property Name="ModifiedBy" Type="Int64" ed:ValidateRequired="false" ed:Guid="de030974-0800-4431-9dfe-492c73f1cc21" />
+    <Property Name="DataKey" Type="String" MaxLength="50" ed:ValidateMaxLength="50" ed:ValidateRequired="false" ed:Guid="2b4cab80-ad73-48f7-b0e1-5990b5538e6d" />
+    <Property Name="IdTenant" Type="Int32" ed:ValidateRequired="false" ed:Guid="c148cad1-c22b-40ca-8b82-dcf27cf680a3" />
+    <NavigationProperty Name="ProjectTaskActions" Relationship="EVALUATION.DATA.FK_ProjectTaskActions_ProjectTasks" FromRole="ProjectTasks" ToRole="ProjectTaskActions" ed:Guid="a6c94c00-b120-4fcb-89bb-5dba217e120e" />
+    <NavigationProperty Name="AbpUsers" Relationship="EVALUATION.DATA.FK_AbpUser_ProjectTasks_Collaborator" FromRole="ProjectTasks" ToRole="AbpUsers" ed:Guid="ec049b41-192d-473a-9cfc-fdfb5c75332e" />
+    <NavigationProperty Name="Projects" Relationship="EVALUATION.DATA.FK_ProjectTasks_Projects" FromRole="ProjectTasks" ToRole="Projects" ed:Guid="408bc55e-4826-4240-9a2c-439955498fe4" />
+  </EntityType>
+  <EntityType Name="RolePermissions" ed:Guid="cbd798f8-1730-4051-9eb9-41b354105bfd">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" ed:ValidateRequired="true" ed:Guid="0bfa8918-ecbc-456a-a1bc-784d8725d80c" />
+    <Property Name="RoleId" Type="Int32" Nullable="false" ed:ValidateRequired="true" ed:Guid="c5f397aa-f5fd-4cd7-83e8-827966956824" />
+    <Property Name="PermissionId" Type="Int32" Nullable="false" ed:ValidateRequired="true" ed:Guid="7be9ec58-c73a-48f6-88c0-34932490376c" />
+    <Property Name="IsDeleted" Type="Boolean" ed:ValidateRequired="false" ed:Guid="b588a2bf-695b-43ff-a80f-7f2671cf2d20" />
+    <Property Name="DateCreation" Type="DateTime" ed:ValidateRequired="false" ed:Guid="b5706d88-d1eb-4ac5-b07c-f66b1cf64b94" />
+    <Property Name="DateMaj" Type="DateTime" ed:ValidateRequired="false" ed:Guid="193008fe-efff-4848-81dc-b03759c14425" />
+    <Property Name="CreatedBy" Type="Int64" ed:ValidateRequired="false" ed:Guid="36944dc0-0b4e-47c0-b28c-9260bf960c13" />
+    <Property Name="ModifiedBy" Type="Int64" ed:ValidateRequired="false" ed:Guid="b999218f-9b55-4309-b90c-2783ffbf1a2c" />
+    <Property Name="DataKey" Type="String" MaxLength="50" ed:ValidateMaxLength="50" ed:ValidateRequired="false" ed:Guid="27474c7e-8ee6-4114-9f61-017eecf18d7a" />
+    <Property Name="IdTenant" Type="Int64" ed:ValidateRequired="false" ed:Guid="f38475e2-fbb0-4cda-a040-7e047340ddf7" />
+    <NavigationProperty Name="Roles" Relationship="EVALUATION.DATA.FK_RolePermissions_Role" FromRole="RolePermissions" ToRole="Roles" ed:Guid="28df558d-8238-46f6-ab74-02212e140ac7" />
+    <NavigationProperty Name="Permissions" Relationship="EVALUATION.DATA.FK_RolePermissions_Permission" FromRole="RolePermissions" ToRole="Permissions" ed:Guid="a130ae73-b8c0-4aaa-9c1c-27d71f5cc8d0" />
+  </EntityType>
+  <EntityType Name="Roles" ed:Guid="fa9ae728-3dea-40dd-8f04-7a9606680341">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" ed:ValidateRequired="true" ed:Guid="a2f95319-85cc-42cd-809a-84eae617d447" />
+    <Property Name="Name" Type="String" MaxLength="32" ed:ValidateMaxLength="32" ed:ValidateRequired="false" ed:Guid="4aaa07a8-f83a-436f-9f1a-75f1823545ec" />
+    <Property Name="DisplayName" Type="String" MaxLength="64" ed:ValidateMaxLength="64" ed:ValidateRequired="false" ed:Guid="7ef3118c-b757-445a-8cd4-bf892b2dbca6" />
+    <Property Name="IsDeleted" Type="Boolean" ed:ValidateRequired="false" ed:Guid="a2ad0c30-9728-4e90-a7c2-9f457e263ba1" />
+    <Property Name="DateCreation" Type="DateTime" ed:ValidateRequired="false" ed:Guid="e261da4c-ed8b-4706-8c4b-0f2d721fc2b1" />
+    <Property Name="DateMaj" Type="DateTime" ed:ValidateRequired="false" ed:Guid="feb0e282-ad25-486b-a9c2-b5ffcb40ba5a" />
+    <Property Name="CreatedBy" Type="Int64" ed:ValidateRequired="false" ed:Guid="555bafb8-47d3-42a4-bc05-6c8e624e7ca0" />
+    <Property Name="ModifiedBy" Type="Int64" ed:ValidateRequired="false" ed:Guid="47234fa7-809b-44b8-8fec-7a2f0b757e99" />
+    <Property Name="DataKey" Type="String" MaxLength="50" ed:ValidateMaxLength="50" ed:ValidateRequired="false" ed:Guid="fd3a7e3f-e350-4aeb-920e-52ca6c500bf0" />
+    <Property Name="IdTenant" Type="Int64" ed:ValidateRequired="false" ed:Guid="9e4a29d8-ba6d-4405-9e33-afbcec411a55" />
+    <NavigationProperty Name="RolePermissions" Relationship="EVALUATION.DATA.FK_RolePermissions_Role" FromRole="Roles" ToRole="RolePermissions" ed:Guid="f80c5954-1bd0-4f66-8e38-dc5ca59c552c" />
+    <NavigationProperty Name="UserRoles" Relationship="EVALUATION.DATA.FK_UserRoles_Role" FromRole="Roles" ToRole="UserRoles" ed:Guid="c4b31d33-36e1-4208-8219-9c7a38abd007" />
+  </EntityType>
+  <EntityType Name="UserRoles" ed:Guid="81c725cf-aadb-435d-97ec-e741a4e7c1f5">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" ed:ValidateRequired="true" ed:Guid="b50ea20b-6bd6-4c10-9c74-3a483f1a622c" />
+    <Property Name="UserId" Type="Int64" Nullable="false" ed:ValidateRequired="true" ed:Guid="d22822c0-8093-468c-b644-850f3cad345e" />
+    <Property Name="RoleId" Type="Int32" Nullable="false" ed:ValidateRequired="true" ed:Guid="301f4786-c2d1-4a7c-8e20-864d5a7228a6" />
+    <Property Name="IsDeleted" Type="Boolean" ed:ValidateRequired="false" ed:Guid="c828a410-6dba-4a24-8168-94b69fe5e0e0" />
+    <Property Name="DateCreation" Type="DateTime" ed:ValidateRequired="false" ed:Guid="3cfcdd4e-b8f0-4eb4-bd04-a99d5fede792" />
+    <Property Name="DateMaj" Type="DateTime" ed:ValidateRequired="false" ed:Guid="8914b4cf-e932-4e37-9793-a8979189ac7d" />
+    <Property Name="CreatedBy" Type="Int64" ed:ValidateRequired="false" ed:Guid="3d6dae34-f5af-41e1-8349-e89fc4878b79" />
+    <Property Name="ModifiedBy" Type="Int64" ed:ValidateRequired="false" ed:Guid="323079ff-b4af-4acc-843a-b4d2753ab213" />
+    <Property Name="DataKey" Type="String" MaxLength="50" ed:ValidateMaxLength="50" ed:ValidateRequired="false" ed:Guid="025d2c58-f2c5-438f-ad9a-7c3e4cf3e0d3" />
+    <Property Name="IdTenant" Type="Int64" ed:ValidateRequired="false" ed:Guid="699016b6-6c09-4eb1-9dad-496fb6a85d4b" />
+    <NavigationProperty Name="Roles" Relationship="EVALUATION.DATA.FK_UserRoles_Role" FromRole="UserRoles" ToRole="Roles" ed:Guid="e48f4327-5066-40be-addc-b8b6c02f1969" />
+    <NavigationProperty Name="AbpUsers" Relationship="EVALUATION.DATA.FK_UserRoles_User" FromRole="UserRoles" ToRole="AbpUsers" ed:Guid="dc67077f-f45f-4bb3-ba72-282798c31f4f" />
+  </EntityType>
+  <EntityType Name="vCollaboratorTasks" ed:Guid="c42a2965-a15c-4442-af71-653874430e0d">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="IdProject" />
+      <PropertyRef Name="IdCurrentCollaborator" />
+      <PropertyRef Name="Sequence" />
+      <PropertyRef Name="ProjectName" />
+      <PropertyRef Name="Label" />
+      <PropertyRef Name="Status" />
+      <PropertyRef Name="TimePlannedTime" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" ed:ValidateRequired="true" ed:Guid="2c7935f7-56dc-440f-8626-b4d7353eedc6" />
+    <Property Name="IdProject" Type="Int64" Nullable="false" ed:ValidateRequired="true" ed:Guid="1cc66384-5947-45e1-a684-cec90cae38c4" />
+    <Property Name="IdCurrentCollaborator" Type="Int64" Nullable="false" ed:ValidateRequired="true" ed:Guid="ee2c08ab-8106-4509-8c1c-944167cd87c1" />
+    <Property Name="UserFullname" Type="String" MaxLength="32" Unicode="true" ed:ValidateMaxLength="32" ed:ValidateRequired="false" ed:Guid="302e2358-06fe-499a-8352-3a33dd97108c" />
+    <Property Name="Sequence" Type="String" Nullable="false" MaxLength="50" ed:ValidateMaxLength="50" ed:ValidateRequired="true" ed:Guid="39abae72-8ffe-44d2-9503-865e3d68a49c" />
+    <Property Name="ProjectName" Type="String" Nullable="false" MaxLength="250" ed:ValidateMaxLength="250" ed:ValidateRequired="true" ed:Guid="73bd47f3-dc6a-4fed-a25e-abdd0892bd08" />
+    <Property Name="Label" Type="String" Nullable="false" MaxLength="200" ed:ValidateMaxLength="200" ed:ValidateRequired="true" ed:Guid="94d81626-cb8e-46b6-863b-ed4809d931dc" />
+    <Property Name="Priority" Type="String" MaxLength="10" ed:ValidateMaxLength="10" ed:ValidateRequired="false" ed:Guid="b413273c-0703-4a0c-a03b-b6cd4776827c" />
+    <Property Name="Status" Type="String" Nullable="false" MaxLength="15" ed:ValidateMaxLength="15" ed:ValidateRequired="true" ed:Guid="3ca054ab-037e-4a66-a0d0-1bef16ccaaf4" />
+    <Property Name="TimePlannedTime" Type="Time" Nullable="false" ed:ValidateRequired="true" ed:Guid="2e6792d4-e9f5-407a-8bb2-2b8cca373c92" />
+    <Property Name="TimeElapsedVarchar" Type="String" MaxLength="5" ed:ValidateMaxLength="5" ed:ValidateRequired="false" ed:Guid="44675abe-5686-42e6-a356-d23b2bc7c087" />
+    <Property Name="TimeRemainingVarchar" Type="String" MaxLength="5" ed:ValidateMaxLength="5" ed:ValidateRequired="false" ed:Guid="9b3895f4-bfda-44e0-9c49-0d54f1505103" />
+    <Property Name="DateStarted" Type="DateTime" ed:ValidateRequired="false" ed:Guid="63f6dc3e-227a-4672-a202-4393d196893d" />
+    <Property Name="Deadline" Type="DateTime" ed:ValidateRequired="false" ed:Guid="cdf321cc-f2d7-4258-9dfb-43e40a21d8e9" />
+    <Property Name="Prolongation" Type="String" MaxLength="5" ed:ValidateMaxLength="5" ed:ValidateRequired="false" ed:Guid="0d162b42-ec42-4115-8727-e4e0aec38fef" />
+    <Property Name="Bruit" Type="String" MaxLength="5" ed:ValidateMaxLength="5" ed:ValidateRequired="false" ed:Guid="0edb31dd-06e6-44eb-8cc5-b7da15a71e95" />
+    <Property Name="Note" Type="Double" ed:ValidateRequired="false" ed:Guid="63bcdc77-b2d3-4e8a-9c06-6f832fc257bb" />
+    <Property Name="IsDeleted" Type="Boolean" ed:ValidateRequired="false" ed:Guid="c5c19516-84dd-47fd-8759-b01c537f2520" />
+  </EntityType>
+  <EntityType Name="vProjectTasksWithCollaborator" ed:Guid="b1daed25-f0bc-463f-a416-0024a73242a2">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="IdProject" />
+      <PropertyRef Name="IdCurrentCollaborator" />
+      <PropertyRef Name="Sequence" />
+      <PropertyRef Name="ProjectName" />
+      <PropertyRef Name="Label" />
+      <PropertyRef Name="Status" />
+      <PropertyRef Name="TimePlannedTime" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" ed:ValidateRequired="true" ed:Guid="bbb0397d-8b43-4562-a3d0-d3de521a828e" />
+    <Property Name="IdProject" Type="Int64" Nullable="false" ed:ValidateRequired="true" ed:Guid="0e8e8d6b-d288-4699-81c1-27b1e5c6c703" />
+    <Property Name="IdCurrentCollaborator" Type="Int64" Nullable="false" ed:ValidateRequired="true" ed:Guid="aa41a620-174a-430a-8362-d3a8dcd6f3b9" />
+    <Property Name="UserFullname" Type="String" MaxLength="65" Unicode="true" ed:ValidateMaxLength="65" ed:ValidateRequired="false" ed:Guid="d126928e-77a2-43f9-a1ad-921bc60ccfad" />
+    <Property Name="Sequence" Type="String" Nullable="false" MaxLength="50" ed:ValidateMaxLength="50" ed:ValidateRequired="true" ed:Guid="4089a09e-32d5-4279-8ec6-b59a86916ec8" />
+    <Property Name="ProjectName" Type="String" Nullable="false" MaxLength="250" ed:ValidateMaxLength="250" ed:ValidateRequired="true" ed:Guid="29a7e7ba-13b4-47ab-89fd-6c010406317d" />
+    <Property Name="Label" Type="String" Nullable="false" MaxLength="200" ed:ValidateMaxLength="200" ed:ValidateRequired="true" ed:Guid="e8719849-f745-4239-a39f-79b3f195312e" />
+    <Property Name="Priority" Type="String" MaxLength="10" ed:ValidateMaxLength="10" ed:ValidateRequired="false" ed:Guid="884409f4-c2bd-45a5-8712-a7d30a2ceb9f" />
+    <Property Name="Status" Type="String" Nullable="false" MaxLength="15" ed:ValidateMaxLength="15" ed:ValidateRequired="true" ed:Guid="45971c06-735c-4a11-82ea-4b1500d493d6" />
+    <Property Name="TimePlannedTime" Type="Time" Nullable="false" ed:ValidateRequired="true" ed:Guid="cdd915d8-caf9-4119-84b1-1ee8d1b6ba88" />
+    <Property Name="TimeElapsedVarchar" Type="String" MaxLength="5" ed:ValidateMaxLength="5" ed:ValidateRequired="false" ed:Guid="fe100057-0dfe-4d58-9185-22c103dad2d9" />
+    <Property Name="TimeRemainingVarchar" Type="String" MaxLength="5" ed:ValidateMaxLength="5" ed:ValidateRequired="false" ed:Guid="d86e0edf-b90c-42ad-b3c3-2062c5cb7baf" />
+    <Property Name="Deadline" Type="DateTime" ed:ValidateRequired="false" ed:Guid="28b5826d-0334-47da-9b51-fe468d5f8f5c" />
+    <Property Name="Prolongation" Type="String" MaxLength="5" ed:ValidateMaxLength="5" ed:ValidateRequired="false" ed:Guid="5fe46240-3b92-4b52-b6c7-5aca7b52d328" />
+    <Property Name="Bruit" Type="String" MaxLength="5" ed:ValidateMaxLength="5" ed:ValidateRequired="false" ed:Guid="c407dbee-44b6-4047-bd4d-2710d133647f" />
+    <Property Name="Note" Type="Double" ed:ValidateRequired="false" ed:Guid="8fe8f34e-4048-41a9-b965-8eb117bd283e" />
+    <Property Name="IsDeleted" Type="Boolean" ed:ValidateRequired="false" ed:Guid="49cbc6da-8808-46b2-8fe6-a94155f34896" />
+  </EntityType>
+  <Association Name="FK_dboAbpFeatures_dboAbpEditions_EditionId" ed:Guid="41de8cef-0936-4e3b-8139-f00e80e2ba0f">
+    <End Role="AbpEditions" Type="EVALUATION.DATA.AbpEditions" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AbpFeatures" Type="EVALUATION.DATA.AbpFeatures" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AbpEditions">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AbpFeatures">
+        <PropertyRef Name="EditionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dboAbpOrganizationUnits_dboAbpOrganizationUnits_ParentId" ed:Guid="f1b5c4c0-0c43-46c9-bc59-d24e3d5e509c">
+    <End Role="AbpOrganizationUnits_ParentId" Type="EVALUATION.DATA.AbpOrganizationUnits" Multiplicity="0..1" />
+    <End Role="AbpOrganizationUnits_ParentId1" Type="EVALUATION.DATA.AbpOrganizationUnits" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AbpOrganizationUnits_ParentId">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AbpOrganizationUnits_ParentId1">
+        <PropertyRef Name="ParentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dboAbpPermissions_dboAbpRoles_RoleId" ed:Guid="e1820622-9f8e-4017-9408-11f86d768202">
+    <End Role="AbpRoles" Type="EVALUATION.DATA.AbpRoles" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AbpPermissions" Type="EVALUATION.DATA.AbpPermissions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AbpRoles">
+        <PropertyRef Name="RoleId" />
+      </Principal>
+      <Dependent Role="AbpPermissions">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dboAbpPermissions_dboAbpUsers_UserId" ed:Guid="f4cde588-fd32-40de-a4bd-8364c2fef4eb">
+    <End Role="AbpUsers" Type="EVALUATION.DATA.AbpUsers" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AbpPermissions" Type="EVALUATION.DATA.AbpPermissions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AbpUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AbpPermissions">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AbpRoleClaims_AbpRoleClaims" ed:Guid="2a603a5e-f2eb-4983-8fd3-38f851818fbc">
+    <End Role="AbpRoles" Type="EVALUATION.DATA.AbpRoles" Multiplicity="1" />
+    <End Role="AbpRoleClaims" Type="EVALUATION.DATA.AbpRoleClaims" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AbpRoles">
+        <PropertyRef Name="RoleId" />
+      </Principal>
+      <Dependent Role="AbpRoleClaims">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dboAbpRoles_dboAbpUsers_CreatorUserId" ed:Guid="b474f072-345e-4de0-992f-b8596ddf0143">
+    <End Role="AbpUsers_CreatedBy" Type="EVALUATION.DATA.AbpUsers" Multiplicity="0..1" />
+    <End Role="AbpRoles_CreatedBy" Type="EVALUATION.DATA.AbpRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AbpUsers_CreatedBy">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AbpRoles_CreatedBy">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dboAbpRoles_dboAbpUsers_LastModifierUserId" ed:Guid="fd45a7a5-a701-43b2-b519-fbc8ac7dbacf">
+    <End Role="AbpUsers_ModifiedBy" Type="EVALUATION.DATA.AbpUsers" Multiplicity="0..1" />
+    <End Role="AbpRoles_ModifiedBy" Type="EVALUATION.DATA.AbpRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AbpUsers_ModifiedBy">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AbpRoles_ModifiedBy">
+        <PropertyRef Name="ModifiedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AbpUserClaims_AbpUserClaims" ed:Guid="8fa3d4e2-fd5e-4ea2-a56c-0cf7e6dcf890">
+    <End Role="AbpUserClaims_Id" Type="EVALUATION.DATA.AbpUserClaims" Multiplicity="1" />
+    <End Role="AbpUserClaims_Id1" Type="EVALUATION.DATA.AbpUserClaims" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="AbpUserClaims_Id">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AbpUserClaims_Id1">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AbpUserClaims_User" ed:Guid="003da305-7ab1-4ca1-8cc9-bb21ca0ba86c">
+    <End Role="AbpUsers" Type="EVALUATION.DATA.AbpUsers" Multiplicity="0..1" />
+    <End Role="AbpUserClaims" Type="EVALUATION.DATA.AbpUserClaims" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AbpUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AbpUserClaims">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AbpUserRoles_AbpRoles" ed:Guid="0867ecfc-8ae3-423b-9f99-d3bf3fbe3f34">
+    <End Role="AbpRoles" Type="EVALUATION.DATA.AbpRoles" Multiplicity="1" />
+    <End Role="AbpUserRoles" Type="EVALUATION.DATA.AbpUserRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AbpRoles">
+        <PropertyRef Name="RoleId" />
+      </Principal>
+      <Dependent Role="AbpUserRoles">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AbpUserRoles_AbpUserRoles" ed:Guid="cb890948-1680-49f5-a9b6-674075d0f783">
+    <End Role="AbpUserRoles_Id" Type="EVALUATION.DATA.AbpUserRoles" Multiplicity="1" />
+    <End Role="AbpUserRoles_Id1" Type="EVALUATION.DATA.AbpUserRoles" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="AbpUserRoles_Id">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AbpUserRoles_Id1">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AbpUserRoles_AbpUsers" ed:Guid="4a869af7-6da0-49fe-9807-7c286769515a">
+    <End Role="AbpUsers" Type="EVALUATION.DATA.AbpUsers" Multiplicity="1" />
+    <End Role="AbpUserRoles" Type="EVALUATION.DATA.AbpUserRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AbpUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AbpUserRoles">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dboAbpUsers_dboAbpUsers_CreatorUserId" ed:Guid="10c2043b-759a-43d1-85ab-abf581fc3b1e">
+    <End Role="AbpUsers_CreatorUserId" Type="EVALUATION.DATA.AbpUsers" Multiplicity="0..1" />
+    <End Role="AbpUsers_CreatorUserId1" Type="EVALUATION.DATA.AbpUsers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AbpUsers_CreatorUserId">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AbpUsers_CreatorUserId1">
+        <PropertyRef Name="CreatorUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dboAbpUsers_dboAbpUsers_DeleterUserId" ed:Guid="2e166dc4-5318-406d-aaa3-94d6b40ad071">
+    <End Role="AbpUsers_DeleterUserId" Type="EVALUATION.DATA.AbpUsers" Multiplicity="0..1" />
+    <End Role="AbpUsers_DeleterUserId1" Type="EVALUATION.DATA.AbpUsers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AbpUsers_DeleterUserId">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AbpUsers_DeleterUserId1">
+        <PropertyRef Name="DeleterUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dboAbpUsers_dboAbpUsers_LastModifierUserId" ed:Guid="39b8e66d-326b-4ab3-b52b-99b9f520226a">
+    <End Role="AbpUsers_LastModifierUserId" Type="EVALUATION.DATA.AbpUsers" Multiplicity="0..1" />
+    <End Role="AbpUsers_LastModifierUserId1" Type="EVALUATION.DATA.AbpUsers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AbpUsers_LastModifierUserId">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AbpUsers_LastModifierUserId1">
+        <PropertyRef Name="LastModifierUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AbpUser_Project_responsible" ed:Guid="cde27df2-3f31-491f-9e17-69cd9dbade7d">
+    <End Role="AbpUsers" Type="EVALUATION.DATA.AbpUsers" Multiplicity="0..1" />
+    <End Role="Projects" Type="EVALUATION.DATA.Projects" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AbpUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Projects">
+        <PropertyRef Name="IdResponsible" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProjectTaskActions_ProjectTasks" ed:Guid="54bc9679-dec9-4a21-8a22-28e2ce963ac2">
+    <End Role="ProjectTasks" Type="EVALUATION.DATA.ProjectTasks" Multiplicity="1" />
+    <End Role="ProjectTaskActions" Type="EVALUATION.DATA.ProjectTaskActions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProjectTasks">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProjectTaskActions">
+        <PropertyRef Name="IdProjectTask" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AbpUser_ProjectTasks_Collaborator" ed:Guid="a43b7dfc-19f2-4308-a7ac-14d888214341">
+    <End Role="AbpUsers" Type="EVALUATION.DATA.AbpUsers" Multiplicity="1" />
+    <End Role="ProjectTasks" Type="EVALUATION.DATA.ProjectTasks" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AbpUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProjectTasks">
+        <PropertyRef Name="IdCurrentCollaborator" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProjectTasks_Projects" ed:Guid="b53caa66-45cc-430b-9008-2047586aa6b4">
+    <End Role="Projects" Type="EVALUATION.DATA.Projects" Multiplicity="1" />
+    <End Role="ProjectTasks" Type="EVALUATION.DATA.ProjectTasks" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Projects">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProjectTasks">
+        <PropertyRef Name="IdProject" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RolePermissions_Role" ed:Guid="bdccb7b5-8905-4bd5-9a07-af7402b53aca">
+    <End Role="Roles" Type="EVALUATION.DATA.Roles" Multiplicity="1" />
+    <End Role="RolePermissions" Type="EVALUATION.DATA.RolePermissions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RolePermissions">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RolePermissions_Permission" ed:Guid="8c451797-ad87-4aac-8b21-119a8dc4bdf5">
+    <End Role="Permissions" Type="EVALUATION.DATA.Permissions" Multiplicity="1" />
+    <End Role="RolePermissions" Type="EVALUATION.DATA.RolePermissions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Permissions">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RolePermissions">
+        <PropertyRef Name="PermissionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserRoles_Role" ed:Guid="dbd86fc8-84f5-4b40-8dd9-5593ca8a74ba">
+    <End Role="Roles" Type="EVALUATION.DATA.Roles" Multiplicity="1" />
+    <End Role="UserRoles" Type="EVALUATION.DATA.UserRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserRoles">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserRoles_User" ed:Guid="67c09656-12cd-423e-b8a6-28583d3afb73">
+    <End Role="AbpUsers" Type="EVALUATION.DATA.AbpUsers" Multiplicity="1" />
+    <End Role="UserRoles" Type="EVALUATION.DATA.UserRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AbpUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserRoles">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

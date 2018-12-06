@@ -1,0 +1,1030 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>C1.Web.Api.Report</name>
+    </assembly>
+    <members>
+        <member name="T:C1.Web.Api.Report.BaseReportRequestContext">
+            <summary>
+            Defines base report request.
+            </summary>
+        </member>
+        <member name="M:C1.Web.Api.Report.BaseReportRequestContext.GetParameters">
+            <summary>
+            Gets all parameters in the report.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:C1.Web.Api.Report.BaseReportRequestContext.GetParameterByName(System.String)">
+            <summary>
+            Gets the parameter with specified name in the report.
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="P:C1.Web.Api.Report.BaseReportRequestContext.Path">
+            <summary>
+            Gets or sets the full path of the report.
+            </summary>
+        </member>
+        <member name="P:C1.Web.Api.Report.BaseReportRequestContext.Parameters">
+            <summary>
+            Gets or sets the parameters of the report.
+            </summary>
+        </member>
+        <member name="P:C1.Web.Api.Report.BaseReportRequestContext.PageSettings">
+            <summary>
+            Gets or sets the page settings of the report.
+            </summary>
+        </member>
+        <member name="T:C1.Web.Api.Report.ReportController">
+            <summary>
+            The report controller.
+            </summary>
+        </member>
+        <member name="M:C1.Web.Api.Report.ReportController.GetCatalogInfo(System.String,System.Boolean)">
+            <summary>
+            Gets the catalog info of the specified path.
+            </summary>
+            <param name="path">The folder path or report path.</param>
+            <param name="recursive">Whether to return the entire tree of child items below the specified item.</param>
+            <returns>An <see cref="T:System.Web.Http.IHttpActionResult"/> type object with content of <see cref="T:C1.Web.Api.Report.Models.CatalogItem"/> type object.</returns>
+        </member>
+        <member name="M:C1.Web.Api.Report.ReportController.GetReport(System.String)">
+            <summary>
+            Gets the info of the specified report.
+            </summary>
+            <param name="reportPath">The full path of the report.</param>
+            <returns>An <see cref="T:System.Web.Http.IHttpActionResult"/> type object with content of <see cref="T:C1.Web.Api.Report.Models.ReportInfo"/> type object.</returns>
+        </member>
+        <member name="M:C1.Web.Api.Report.ReportController.GetReportPageSettings(System.String)">
+            <summary>
+            Gets the default page settings defined in the specified report.
+            </summary>
+            <param name="reportPath">The full path of the report.</param>
+            <returns>An <see cref="T:System.Web.Http.IHttpActionResult"/> type object with content of <see cref="T:C1.Web.Api.Document.Models.PageSettings"/> type object.</returns>
+        </member>
+        <member name="M:C1.Web.Api.Report.ReportController.GetReportParameters(System.String)">
+            <summary>
+            Gets the parameters defined in the specified report.
+            </summary>
+            <param name="reportPath">The full path of the report.</param>
+            <returns>An <see cref="T:System.Web.Http.IHttpActionResult"/> type object with content of collection of <see cref="T:C1.Web.Api.Report.Models.Parameter"/> type object.</returns>
+        </member>
+        <member name="M:C1.Web.Api.Report.ReportController.GetReportParameterByName(System.String,System.String)">
+            <summary>
+            Gets the parameter with specifed name in the specified report.
+            </summary>
+            <param name="reportPath">The full path of the report.</param>
+            <param name="parameterName">The name of the parameter.</param>
+            <returns>An <see cref="T:System.Web.Http.IHttpActionResult"/> type object with content of <see cref="T:C1.Web.Api.Report.Models.Parameter"/> type object.</returns>
+        </member>
+        <member name="M:C1.Web.Api.Report.ReportController.GetReportSupportedFormats(System.String)">
+            <summary>
+            Gets the export formats supported by the specified report.
+            </summary>
+            <param name="reportPath">The full path of the report.</param>
+            <returns>An <see cref="T:System.Web.Http.IHttpActionResult"/> type object with content of collection of <see cref="T:C1.Web.Api.Document.Models.ExportDescription"/> type object.</returns>
+        </member>
+        <member name="M:C1.Web.Api.Report.ReportController.GetReportSupportedFormatByName(System.String,System.String)">
+            <summary>
+            Gets the export format with specified name which is supported by the specified report.
+            </summary>
+            <param name="reportPath">The full path of the report.</param>
+            <param name="formatName">The name of the export format.</param>
+            <returns>An <see cref="T:System.Web.Http.IHttpActionResult"/> type object with content of <see cref="T:C1.Web.Api.Document.Models.ExportDescription"/> type object.</returns>
+        </member>
+        <member name="M:C1.Web.Api.Report.ReportController.ExportReport_Get(System.String,System.Collections.Generic.IDictionary{System.String,System.String},System.String,System.Collections.Generic.IDictionary{System.String,System.String[]},C1.Web.Api.Document.Models.PageSettings)">
+            <summary>
+            Exports the specified report to the specified export filter with options and the specified page settings or/and parameters.
+            </summary>
+            <param name="reportPath">The full path of the report.</param>
+            <param name="exportOptions">The export options.</param>
+            <param name="exportFileName">The optional exported file name.</param>
+            <param name="parameters">The optional parameters for rendering.</param>
+            <param name="pageSettings">The optional page settings for rendering.</param>
+            <returns>An <see cref="T:System.Web.Http.IHttpActionResult"/> type object with content of exported file stream.</returns>
+        </member>
+        <member name="M:C1.Web.Api.Report.ReportController.ExportReport_Post(System.String,System.Collections.Generic.IDictionary{System.String,System.String},System.String,System.Collections.Generic.IDictionary{System.String,System.String[]},C1.Web.Api.Document.Models.PageSettings)">
+            <summary>
+            Exports the specified report to the specified export filter with options and the specified page settings or/and parameters.
+            </summary>
+            <param name="reportPath">The full path of the report.</param>
+            <param name="exportOptions">The export options.</param>
+            <param name="exportFileName">The optional exported file name.</param>
+            <param name="parameters">The optional parameters for rendering.</param>
+            <param name="pageSettings">The optional page settings for rendering.</param>
+            <returns>An <see cref="T:System.Web.Http.IHttpActionResult"/> type object with content of exported file stream.</returns>
+        </member>
+        <member name="M:C1.Web.Api.Report.ReportController.ExportReport(System.String,System.Collections.Generic.IDictionary{System.String,System.String},System.String,System.Collections.Generic.IDictionary{System.String,System.String[]},C1.Web.Api.Document.Models.PageSettings)">
+            <summary>
+            Exports the specified report to the specified export filter with options and the specified page settings or/and parameters.
+            </summary>
+            <param name="reportPath">The full path of the report.</param>
+            <param name="exportOptions">The export options.</param>
+            <param name="exportFileName">The optional exported file name.</param>
+            <param name="parameters">The optional parameters for rendering.</param>
+            <param name="pageSettings">The optional page settings for rendering.</param>
+            <returns>An <see cref="T:System.Web.Http.IHttpActionResult"/> type object with content of exported file stream.</returns>
+        </member>
+        <member name="M:C1.Web.Api.Report.ReportController.GetInstances(System.String)">
+            <summary>
+            Gets all report instances created by the specified report.
+            </summary>
+            <param name="reportPath">The full path of the report.</param>
+            <returns>An <see cref="T:System.Web.Http.IHttpActionResult"/> type object with content of collection of <see cref="T:C1.Web.Api.Report.Models.ReportExecutionInfo"/> type object.</returns>
+        </member>
+        <member name="M:C1.Web.Api.Report.ReportController.CreateInstance(System.String,System.Collections.Generic.IDictionary{System.String,System.String[]},C1.Web.Api.Document.Models.PageSettings)">
+            <summary>
+            Creates new report instance from the specified report.
+            </summary>
+            <param name="reportPath">The full path of the report.</param>
+            <param name="parameters">The optional parameters.</param>
+            <param name="pageSettings">The optional page settings.</param>
+            <returns>An <see cref="T:System.Web.Http.IHttpActionResult"/> type object with content of <see cref="T:C1.Web.Api.Report.Models.ReportExecutionInfo"/> type object, for the new created report instance.</returns>
+        </member>
+        <member name="M:C1.Web.Api.Report.ReportController.GetInstanceById(System.String,System.String)">
+            <summary>
+            Gets the info of the report instance with the specified instance id.
+            </summary>
+            <param name="reportPath">The full path of the report.</param>
+            <param name="instanceId">The id of the instance.</param>
+            <returns>An <see cref="T:System.Web.Http.IHttpActionResult"/> type object with content of <see cref="T:C1.Web.Api.Report.Models.ReportExecutionInfo"/> type object.</returns>
+        </member>
+        <member name="M:C1.Web.Api.Report.ReportController.DeleteInstanceById(System.String,System.String)">
+            <summary>
+            Deletes the report instance with the specifed instance id.
+            </summary>
+            <param name="reportPath">The full path of the report.</param>
+            <param name="instanceId">The report instance id.</param>
+            <returns>No content.</returns>
+        </member>
+        <member name="M:C1.Web.Api.Report.ReportController.RenderInstance(System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.String[]},C1.Web.Api.Document.Models.PageSettings,System.String)">
+            <summary>
+            Renders the report instance with the specified instance id.
+            </summary>
+            <param name="reportPath">The full path of the report.</param>
+            <param name="instanceId">The report instance id.</param>
+            <param name="parameters">The optional parameters.</param>
+            <param name="pageSettings">The optional page settings.</param>
+            <param name="actionString">The optional action string.</param>
+            <returns>An <see cref="T:System.Web.Http.IHttpActionResult"/> type object with content of <see cref="T:C1.Web.Api.Report.Models.ReportStatus"/> type object.</returns>
+        </member>
+        <member name="M:C1.Web.Api.Report.ReportController.GetInstanceStatus(System.String,System.String)">
+            <summary>
+            Gets the status of the report instance with specified instance id.
+            </summary>
+            <param name="reportPath">The full path of the report.</param>
+            <param name="instanceId">The report instance id.</param>
+            <returns>An <see cref="T:System.Web.Http.IHttpActionResult"/> type object with content of <see cref="T:C1.Web.Api.Report.Models.ReportStatus"/> type object.</returns>
+        </member>
+        <member name="M:C1.Web.Api.Report.ReportController.StopInstanceRendering(System.String,System.String)">
+            <summary>
+            Stops the rendering of the report instance.
+            </summary>
+            <param name="reportPath">The full path of the report.</param>
+            <param name="instanceId">The report instance id.</param>
+            <returns>An <see cref="T:System.Web.Http.IHttpActionResult"/> type object with content of <see cref="T:C1.Web.Api.Report.Models.ReportStatus"/> type object.</returns>
+        </member>
+        <member name="M:C1.Web.Api.Report.ReportController.GetInstanceParameters(System.String,System.String)">
+            <summary>
+            Gets the parameters in the report instance with specified instance id.
+            </summary>
+            <param name="reportPath">The full path of the report.</param>
+            <param name="instanceId">The report instance id.</param>
+            <returns>An <see cref="T:System.Web.Http.IHttpActionResult"/> type object with content of collection of <see cref="T:C1.Web.Api.Report.Models.Parameter"/> type object.</returns>
+        </member>
+        <member name="M:C1.Web.Api.Report.ReportController.SetInstanceParameters(System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.String[]})">
+            <summary>
+            Updates all parameter values in the report instance with specified instance id.
+            </summary>
+            <remarks>
+            Use the default value if the parameter value is not specified.
+            </remarks>
+            <param name="reportPath">The full path of the report.</param>
+            <param name="instanceId">The report instance id.</param>
+            <param name="parameters">The report parameters.</param>
+            <returns>An <see cref="T:System.Web.Http.IHttpActionResult"/> type object with content of collection of <see cref="T:C1.Web.Api.Report.Models.Parameter"/> type object, for the new parameters with validation.</returns>
+        </member>
+        <member name="M:C1.Web.Api.Report.ReportController.UpdateInstanceParameters(System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.String[]})">
+            <summary>
+            Updates specified parameter values in the report instance with specified instance id.
+            </summary>
+            <remarks>
+            Keep the current value if the parameter value is not specified.
+            </remarks>
+            <param name="reportPath">The full path of the report.</param>
+            <param name="instanceId">The report instance id.</param>
+            <param name="parameters">The report parameters.</param>
+            <returns>An <see cref="T:System.Web.Http.IHttpActionResult"/> type object with content of collection of <see cref="T:C1.Web.Api.Report.Models.Parameter"/> type object, for the new parameters with validation.</returns>
+        </member>
+        <member name="M:C1.Web.Api.Report.ReportController.GetInstanceParameterByName(System.String,System.String,System.String)">
+            <summary>
+            Gets the parameter with specified name in the report instance with specified instance id.
+            </summary>
+            <param name="reportPath">The full path of the report.</param>
+            <param name="instanceId">The report instance id.</param>
+            <param name="parameterName">The name of the parameter.</param>
+            <returns>An <see cref="T:System.Web.Http.IHttpActionResult"/> type object with content of <see cref="T:C1.Web.Api.Report.Models.Parameter"/> type object.</returns>
+        </member>
+        <member name="M:C1.Web.Api.Report.ReportController.SetInstanceParameterByName(System.String,System.String,System.String,System.String[])">
+            <summary>
+            Updates the value of parameter with specified name in the report instance with specified instance if.
+            </summary>
+            <param name="reportPath">The full path of the report.</param>
+            <param name="instanceId">The report instance id.</param>
+            <param name="parameterName">The name of the parameter.</param>
+            <param name="value">The value of the parameter.</param>
+            <returns>An <see cref="T:System.Web.Http.IHttpActionResult"/> type object with content of <see cref="T:C1.Web.Api.Report.Models.Parameter"/> type object, for the new parameter with validation.</returns>
+        </member>
+        <member name="M:C1.Web.Api.Report.ReportController.GetInstancePageSettings(System.String,System.String)">
+            <summary>
+            Gets the current page settings in the report instance with specified instance id.
+            </summary>
+            <param name="reportPath">The full path of the report.</param>
+            <param name="instanceId">The report instance id.</param>
+            <returns>An <see cref="T:System.Web.Http.IHttpActionResult"/> type object with content of <see cref="T:C1.Web.Api.Document.Models.PageSettings"/> type object.</returns>
+        </member>
+        <member name="M:C1.Web.Api.Report.ReportController.SetInstancePageSettings(System.String,System.String,C1.Web.Api.Document.Models.PageSettings)">
+            <summary>
+            Updates all page settings properties in the report instance with specified instance id.
+            </summary>
+            <remarks>
+            Use the default value if one property is not specified.
+            </remarks>
+            <param name="reportPath">The full path of the report.</param>
+            <param name="instanceId">The report instance id.</param>
+            <param name="pageSettings">The page settings.</param>
+            <returns>An <see cref="T:System.Web.Http.IHttpActionResult"/> type object with content of <see cref="T:C1.Web.Api.Document.Models.PageSettings"/> type object, for the new updated page settings.</returns>
+        </member>
+        <member name="M:C1.Web.Api.Report.ReportController.UpdateInstancePageSettings(System.String,System.String,C1.Web.Api.Document.Models.PageSettings)">
+            <summary>
+            Updates the specified page settings properties in the report instancce with specified instance id.
+            </summary>
+            <remarks>
+            Keep the current value if one property is not specified.
+            </remarks>
+            <param name="reportPath">The full path of the report.</param>
+            <param name="instanceId">The report instance id.</param>
+            <param name="pageSettings">The page settings.</param>
+            <returns>An <see cref="T:System.Web.Http.IHttpActionResult"/> type object with content of <see cref="T:C1.Web.Api.Document.Models.PageSettings"/> type object, for the new updated page settings.</returns>
+        </member>
+        <member name="M:C1.Web.Api.Report.ReportController.GetInstanceOutlines(System.String,System.String)">
+            <summary>
+            Gets all outlines in the report instance with specified instance id.
+            </summary>
+            <remarks>
+            Please ensure the report instance is rendered.
+            </remarks>
+            <param name="reportPath">The full path of the report.</param>
+            <param name="instanceId">The report instance id.</param>
+            <returns>An <see cref="T:System.Web.Http.IHttpActionResult"/> type object with content of collection of <see cref="T:C1.Web.Api.Document.Models.OutlineNode"/> type object.</returns>
+        </member>
+        <member name="M:C1.Web.Api.Report.ReportController.GetInstanceBookmarks(System.String,System.String)">
+            <summary>
+            Not supported. Gets all bookmarks in the report instance with specified instance id.
+            </summary>
+            <remarks>
+            It's not supported by this api.
+            </remarks>
+            <param name="reportPath">The full path of the report.</param>
+            <param name="instanceId">The report instance id.</param>
+            <returns>An <see cref="T:System.Web.Http.IHttpActionResult"/> type object with content of collection of <see cref="T:C1.Web.Api.Document.Models.DocumentPosition"/> type object.</returns>
+        </member>
+        <member name="M:C1.Web.Api.Report.ReportController.GetInstanceBookmarkByName(System.String,System.String,System.String)">
+            <summary>
+            Gets the bookmark with specified name in the report instance with specified instance id.
+            </summary>
+            <remarks>
+            Please ensure the report instance is rendered.
+            </remarks>
+            <param name="reportPath">The full path of the report.</param>
+            <param name="instanceId">The report instance id.</param>
+            <param name="bookmarkName">The name of the bookmark.</param>
+            <returns>An <see cref="T:System.Web.Http.IHttpActionResult"/> type object with content of <see cref="T:C1.Web.Api.Document.Models.DocumentPosition"/> type object.</returns>
+        </member>
+        <member name="M:C1.Web.Api.Report.ReportController.GetInstanceSearchResults(System.String,System.String,System.String,System.Boolean,System.Boolean,System.Int32,C1.Web.Api.Document.Models.SearchScope)">
+            <summary>
+            Gets the search result in the report instance with specified instance id.
+            </summary>
+            <remarks>
+            Please ensure the report instance is rendered.
+            </remarks>
+            <param name="reportPath">The full path of the report.</param>
+            <param name="instanceId">The report instance id.</param>
+            <param name="text">The text used to be searched.</param>
+            <param name="matchCase">A boolean value indicates if search the value with case sensitive.</param>
+            <param name="wholeWord">A boolean value indicates if search the value with matching a whole word.</param>
+            <param name="startPageIndex">0-based index of the first page to search.</param>
+            <param name="scope">The search scope.</param>
+            <returns>An <see cref="T:System.Web.Http.IHttpActionResult"/> type object with content of collection of <see cref="T:C1.Web.Api.Document.Models.SearchResult"/> type object.</returns>
+        </member>
+        <member name="M:C1.Web.Api.Report.ReportController.ExportInstance_Get(System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            Exports the report instance with specified instance id into report filter with options.
+            </summary>
+            <remarks>
+            Please ensure the report instance is rendered.
+            </remarks>
+            <param name="reportPath">The full path of the report.</param>
+            <param name="instanceId">The report instance id.</param>
+            <param name="options">The export options.</param>
+            <returns>An <see cref="T:System.Web.Http.IHttpActionResult"/> type object with content of exported file stream.</returns>
+        </member>
+        <member name="M:C1.Web.Api.Report.ReportController.ExportInstance_Post(System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            Exports the report instance with specified instance id into report filter with options.
+            </summary>
+            <remarks>
+            Please ensure the report instance is rendered.
+            </remarks>
+            <param name="reportPath">The full path of the report.</param>
+            <param name="instanceId">The report instance id.</param>
+            <param name="options">The export options.</param>
+            <returns>An <see cref="T:System.Web.Http.IHttpActionResult"/> type object with content of exported file stream.</returns>
+        </member>
+        <member name="M:C1.Web.Api.Report.ReportController.ExportInstance(System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            Exports the report instance with specified instance id into report filter with options.
+            </summary>
+            <remarks>
+            Please ensure the report instance is rendered.
+            </remarks>
+            <param name="reportPath">The full path of the report.</param>
+            <param name="instanceId">The report instance id.</param>
+            <param name="exportOptions">The export options.</param>
+            <returns>An <see cref="T:System.Web.Http.IHttpActionResult"/> type object with content of exported file stream.</returns>
+        </member>
+        <member name="M:C1.Web.Api.Report.ReportController.GetInstanceSupportedFormats(System.String,System.String)">
+            <summary>
+            Gets the export formats supported by the report instance with specified instance id.
+            </summary>
+            <param name="reportPath">The full path of the report.</param>
+            <param name="instanceId">The report instance id.</param>
+            <returns>An <see cref="T:System.Web.Http.IHttpActionResult"/> type object with content of collection of <see cref="T:C1.Web.Api.Document.Models.ExportDescription"/> type object.</returns>
+        </member>
+        <member name="M:C1.Web.Api.Report.ReportController.GetInstanceSupportedFormatByName(System.String,System.String,System.String)">
+            <summary>
+            Gets the export format with specified name supported by the report instance with specified instance id.
+            </summary>
+            <param name="reportPath">The full path of the report.</param>
+            <param name="instanceId">The report instance id.</param>
+            <param name="formatName">The name of the export format.</param>
+            <returns>An <see cref="T:System.Web.Http.IHttpActionResult"/> type object with content of <see cref="T:C1.Web.Api.Document.Models.ExportDescription"/> type object.</returns>
+        </member>
+        <member name="M:C1.Web.Api.Report.ReportController.GetInstanceFeatures(System.String,System.String)">
+            <summary>
+            Gets the features supported by the report instance with specified instance id.
+            </summary>
+            <param name="reportPath">The full path of the report.</param>
+            <param name="instanceId">The report instance id.</param>
+            <returns>An <see cref="T:System.Web.Http.IHttpActionResult"/> type object with content of collection of <see cref="T:C1.Web.Api.Document.Models.IDocumentFeatures"/> type object.</returns>
+        </member>
+        <member name="P:C1.Web.Api.Report.ReportInstanceRequestContext.Id">
+            <summary>
+            Gets the id of the report instance.
+            </summary>
+        </member>
+        <member name="P:C1.Web.Api.Report.ReportInstanceRequestContext.ActionString">
+            <summary>
+            Gets or sets the action string.
+            </summary>
+        </member>
+        <member name="T:C1.Web.Api.Report.ReportRequestContext">
+            <summary>
+            The report request.
+            </summary>
+        </member>
+        <member name="P:C1.Web.Api.Report.ReportRequestContext.Language">
+            <summary>
+            Gets or sets the accept language.
+            </summary>
+        </member>
+        <member name="M:C1.Web.Api.Report.ReportsCatalogRequestContext.GetCatalogInfo(System.String,System.Boolean)">
+            <summary>
+            Gets the catalog info for the specified path.
+            </summary>
+            <param name="path">The folder path or report path.</param>
+            <param name="recursive">Whether gets all items.</param>
+            <returns>The catalog info for the specified path.</returns>
+        </member>
+        <member name="T:C1.Web.Api.Report.LicenseDetector">
+            <summary>
+            Define a class for detecting C1.Web.Api.Report license.
+            </summary>
+        </member>
+        <member name="M:C1.Web.Api.Report.LicenseDetector.#ctor">
+            <summary>
+            The constructor.
+            </summary>
+        </member>
+        <member name="T:C1.Web.Api.Report.Localization.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:C1.Web.Api.Report.Localization.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:C1.Web.Api.Report.Localization.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:C1.Web.Api.Report.Localization.Resources.CommandNotSupported">
+            <summary>
+              Looks up a localized string similar to The command &quot;{0}&quot; is not supported..
+            </summary>
+        </member>
+        <member name="P:C1.Web.Api.Report.Localization.Resources.InvalidParameters">
+            <summary>
+              Looks up a localized string similar to Invalid parameter value.
+            </summary>
+        </member>
+        <member name="P:C1.Web.Api.Report.Localization.Resources.LicenseExpired">
+            <summary>
+              Looks up a localized string similar to License has expired..
+            </summary>
+        </member>
+        <member name="P:C1.Web.Api.Report.Localization.Resources.SecurityError">
+            <summary>
+              Looks up a localized string similar to SecurityError, Path:{0}, FailedAttemptCount:{1}, Retry:{2}.
+            </summary>
+        </member>
+        <member name="P:C1.Web.Api.Report.Localization.Resources.SsrsHostNotFound">
+            <summary>
+               Looks up a localized string similar to Cannot find the SSRS host with alias name &apos;{0}&apos;..
+            </summary>
+        </member>
+        <member name="P:C1.Web.Api.Report.Localization.Resources.ConvertNotSupport">
+            <summary>
+              Looks up a localized string similar to Not support convert to other type..
+            </summary>
+        </member>
+        <member name="P:C1.Web.Api.Report.Localization.Resources.CacheIdNotFound">
+            <summary>
+              Looks up a localized string similar to The cache with id &apos;{0}&apos; does not exist..
+            </summary>
+        </member>
+        <member name="P:C1.Web.Api.Report.Localization.Resources.InvalidInstannceId">
+            <summary>
+              Looks up a localized string similar to Cannot get the report instance with id '{0}'..
+            </summary>
+        </member>
+        <member name="P:C1.Web.Api.Report.Localization.Resources.InstanceIdNotMatchReportPath">
+            <summary>
+              Looks up a localized string similar to The report instance with id '{0}' is not created from the path '{1}'..
+            </summary>
+        </member>
+        <member name="P:C1.Web.Api.Report.Localization.Resources.InvalidReportPath">
+            <summary>
+              Looks up a localized string similar to Cannot load report from path '{0}'..
+            </summary>
+        </member>
+        <member name="T:C1.Web.Api.Report.Models.CatalogItem">
+            <summary>
+            Represents the report catalog item.
+            </summary>
+        </member>
+        <member name="P:C1.Web.Api.Report.Models.CatalogItem.Name">
+            <summary>
+            Gets or sets the short name of the item.
+            </summary>
+        </member>
+        <member name="P:C1.Web.Api.Report.Models.CatalogItem.Path">
+            <summary>
+            Gets or sets the full path of the item.
+            </summary>
+            <remarks>
+            The path is does not starts with "/". It's a full path which beginning with the registered report provider key.
+            </remarks>
+        </member>
+        <member name="P:C1.Web.Api.Report.Models.CatalogItem.Type">
+            <summary>
+            Gets or sets the type of the item.
+            </summary>
+        </member>
+        <member name="P:C1.Web.Api.Report.Models.CatalogItem.Items">
+            <summary>
+            Gets the collection of child items.
+            </summary>
+        </member>
+        <member name="T:C1.Web.Api.Report.Models.CatalogItemType">
+            <summary>
+            Indicates the type of the report catalog item.
+            </summary>
+        </member>
+        <member name="F:C1.Web.Api.Report.Models.CatalogItemType.Folder">
+            <summary>
+            It's a folder.
+            </summary>
+        </member>
+        <member name="F:C1.Web.Api.Report.Models.CatalogItemType.File">
+            <summary>
+            It's a report definition file.
+            </summary>
+        </member>
+        <member name="F:C1.Web.Api.Report.Models.CatalogItemType.Report">
+            <summary>
+            It's an SSRS report or the name of the FlexReport defined in the report definition file.
+            </summary>
+        </member>
+        <member name="F:C1.Web.Api.Report.Models.CatalogItemType.Unknown">
+            <summary>
+            Unknown type.
+            </summary>
+        </member>
+        <member name="T:C1.Web.Api.Report.Models.ExecutingStatus">
+            <summary>
+            The status of the executing report.
+            </summary>
+        </member>
+        <member name="F:C1.Web.Api.Report.Models.ExecutingStatus.Loaded">
+            <summary>
+            The report is Loaded.
+            </summary>
+        </member>
+        <member name="F:C1.Web.Api.Report.Models.ExecutingStatus.Rendering">
+            <summary>
+            The report is rendering.
+            </summary>
+        </member>
+        <member name="F:C1.Web.Api.Report.Models.ExecutingStatus.Completed">
+            <summary>
+            The report is rendered.
+            </summary>
+        </member>
+        <member name="F:C1.Web.Api.Report.Models.ExecutingStatus.Stopped">
+            <summary>
+            The report rendering is stopped.
+            </summary>
+        </member>
+        <member name="F:C1.Web.Api.Report.Models.ExecutingStatus.NotFound">
+            <summary>
+            The execution is not found.
+            </summary>
+        </member>
+        <member name="T:C1.Web.Api.Report.Models.Parameter">
+            <summary>
+            Represents the user-defined parameter.
+            </summary>
+        </member>
+        <member name="P:C1.Web.Api.Report.Models.Parameter.Name">
+            <summary>
+            Gets the name of the parameter.
+            </summary>
+        </member>
+        <member name="P:C1.Web.Api.Report.Models.Parameter.DataType">
+            <summary>
+            Gets the type of the parameter.
+            </summary>
+        </member>
+        <member name="P:C1.Web.Api.Report.Models.Parameter.Nullable">
+            <summary>
+            Gets a boolean value indicating whether the value of the parameter can be null.
+            </summary>
+            <remarks>
+            Cannot be true if this is a multi-value parameter.
+            </remarks>
+        </member>
+        <member name="P:C1.Web.Api.Report.Models.Parameter.AllowedValues">
+            <summary>
+            Gets a list of supported values for the parameter.
+            </summary>
+        </member>
+        <member name="P:C1.Web.Api.Report.Models.Parameter.Value">
+            <summary>
+            Gets the value of the parameter.
+            </summary>
+            <remarks>
+            Value can be specified as array if it's a multi-value parameter.
+            In this case, all items should have same type.
+            </remarks>
+        </member>
+        <member name="P:C1.Web.Api.Report.Models.Parameter.Hidden">
+            <summary>
+            Gets a boolean value indicating whether the parameter should not be displayed to the user.
+            </summary>
+        </member>
+        <member name="P:C1.Web.Api.Report.Models.Parameter.MultiValue">
+            <summary>
+            Gets a boolean value indicating whether this is a multi-value parameter.
+            </summary>
+        </member>
+        <member name="P:C1.Web.Api.Report.Models.Parameter.Prompt">
+            <summary>
+            Gets the prompt to display when asking for parameter value.
+            </summary>
+        </member>
+        <member name="P:C1.Web.Api.Report.Models.Parameter.Error">
+            <summary>
+            Gets the error which occurs after the parameter is set.
+            </summary>
+        </member>
+        <member name="T:C1.Web.Api.Report.Models.ReportInfo">
+            <summary>
+            Represents the information of the report.
+            </summary>
+        </member>
+        <member name="P:C1.Web.Api.Report.Models.ReportInfo.Path">
+            <summary>
+            Gets the path of the report.
+            </summary>
+        </member>
+        <member name="P:C1.Web.Api.Report.Models.ReportInfo.HasParameters">
+            <summary>
+            Gets a boolean value indicating whhether the report has parameters.
+            </summary>
+        </member>
+        <member name="P:C1.Web.Api.Report.Models.ReportInfo.PageSettings">
+            <summary>
+            Gets the default page settings of the report.
+            </summary>
+        </member>
+        <member name="P:C1.Web.Api.Report.Models.ReportInfo.ParametersLocation">
+            <summary>
+            Gets the location to getting parameters.
+            </summary>
+        </member>
+        <member name="P:C1.Web.Api.Report.Models.ReportInfo.PageSettingsLocation">
+            <summary>
+            Gets the location to getting page settings.
+            </summary>
+        </member>
+        <member name="P:C1.Web.Api.Report.Models.ReportInfo.SupportedFormatsLocation">
+            <summary>
+            Gets the location to getting supported formats.
+            </summary>
+        </member>
+        <member name="P:C1.Web.Api.Report.Models.ReportInfo.CreationLocation">
+            <summary>
+            Gets the location to create new report instance.
+            </summary>
+        </member>
+        <member name="T:C1.Web.Api.Report.Models.ReportExecutionInfo">
+            <summary>
+            Represents the information of the report instance.
+            </summary>
+        </member>
+        <member name="P:C1.Web.Api.Report.Models.ReportExecutionInfo.Id">
+            <summary>
+            Gets the cache id for the report instance.
+            </summary>
+        </member>
+        <member name="P:C1.Web.Api.Report.Models.ReportExecutionInfo.HasParameters">
+            <summary>
+            Gets a boolean value indicating whether the report has parameters.
+            </summary>
+        </member>
+        <member name="P:C1.Web.Api.Report.Models.ReportExecutionInfo.ParametersLocation">
+            <summary>
+            Gets the location to get parameters.
+            </summary>
+        </member>
+        <member name="P:C1.Web.Api.Report.Models.ReportExecutionInfo.Status">
+            <summary>
+            Gets the status of document.
+            </summary>
+        </member>
+        <member name="T:C1.Web.Api.Report.Models.ReportStatus">
+            <summary>
+            Represents the status of the report instance.
+            </summary>
+        </member>
+        <member name="P:C1.Web.Api.Report.Models.ReportStatus.InitialPosition">
+            <summary>
+            Gets the initialized position should be navigated to after the report is rendered.
+            </summary>
+        </member>
+        <member name="T:C1.Web.Api.Report.Models.SsrsReportFeatures">
+            <summary>
+            The document for SSRS report.
+            </summary>
+            <remarks>
+            It manages the paginated in different ways.
+            non-paginated mode: Use C1SsrsDocumentSource as the document source.
+            paginated mode: Use the exported pdf file as the docuemnt source. 
+            (The paginated C1SsrsDocumentSource does not support svg exporting.)
+            </remarks>
+        </member>
+        <member name="T:C1.Web.Api.Report.Models.PaginatedSsrsReport">
+            <summary>
+            The document used to manage the PDF content for paginated SSRS report.
+            </summary>
+        </member>
+        <member name="T:C1.Web.Api.Report.Models.CompletedAction">
+            <summary>
+            Represents an action which is completed.
+            </summary>
+        </member>
+        <member name="T:Owin.AppBuilderUseExtensions">
+            <summary>
+            Extension methods for <see cref="T:Owin.IAppBuilder"/>.
+            </summary>
+        </member>
+        <member name="M:Owin.AppBuilderUseExtensions.SetReportCacheDuration(Owin.IAppBuilder,System.Int32)">
+            <summary>
+            Set a duration for the report cache.
+            </summary>
+            <param name="app">The app builder.</param>
+            <param name="seconds">The duration.</param>
+            <returns>The app builder.</returns>
+        </member>
+        <member name="M:Owin.AppBuilderUseExtensions.SetReportCacheDuration(Owin.IAppBuilder,System.TimeSpan)">
+            <summary>
+            Set a duration for the report cache.
+            </summary>
+            <param name="app">The app builder.</param>
+            <param name="duration">The duration.</param>
+            <returns>The app builder.</returns>
+        </member>
+        <member name="M:Owin.AppBuilderUseExtensions.UseReportProviders(Owin.IAppBuilder)">
+            <summary>
+            Gets the current <see cref="T:C1.Web.Api.Report.ReportProviderManager"/> instance.
+            </summary>
+            <param name="app">The app builder.</param>
+            <returns>The current <see cref="T:C1.Web.Api.Report.ReportProviderManager"/>.</returns>
+        </member>
+        <member name="T:C1.Web.Api.Report.CustomReportProvider">
+            <summary>
+            Represents the custom provider which allows to customize the creation of document.
+            </summary>
+            <remarks>
+            Use this provider to create the document by yourself.
+            </remarks>
+        </member>
+        <member name="T:C1.Web.Api.Report.ReportProvider">
+            <summary>
+            Represents the provider for report.
+            </summary>
+        </member>
+        <member name="M:C1.Web.Api.Report.ReportProvider.GetCatalogItem(System.String,System.String,System.Boolean,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Gets catalog info of the specified path.
+            </summary>
+            <param name="providerName">The key used to register the provider.</param>
+            <param name="path">The relative path of the folder or report.</param>
+            <param name="recursive">Whether to return the entire tree of child items below the specified item.</param>
+            <param name="args">The collection of HTTP query string variables.</param>
+            <returns>A <see cref="T:C1.Web.Api.Report.Models.CatalogItem"/> object.</returns>
+        </member>
+        <member name="M:C1.Web.Api.Report.ReportProvider.CreateDocument(System.String,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Creates the document for the specified report path.
+            </summary>
+            <param name="path">The relative path of the report.</param>
+            <param name="args">The collection of HTTP query string variables.</param>
+            <returns>A <see cref="T:C1.Win.C1Document.C1DocumentSource"/> created for the specified path.</returns>
+            <remarks>
+            If overiding this method, you can create the document by yourself, or modify the document created by base.
+            </remarks>
+        </member>
+        <member name="M:C1.Web.Api.Report.ReportProvider.CreateReport(System.String,System.String,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Creates the report for the specified report path.
+            </summary>
+            <param name="providerName">The key used to register the provider.</param>
+            <param name="path">The relative path of the report.</param>
+            <param name="args">The collection of HTTP query string variables.</param>
+            <returns>A <see cref="T:C1.Web.Api.Report.Models.Report"/> created for the specified path.</returns>
+        </member>
+        <member name="M:C1.Web.Api.Report.CustomReportProvider.#ctor(System.Func{System.String,System.Collections.Specialized.NameValueCollection,C1.Win.C1Document.C1DocumentSource},System.Func{System.String,System.String,System.Boolean,System.Collections.Specialized.NameValueCollection,C1.Web.Api.Report.Models.CatalogItem})">
+            <summary>
+            Initializes a new instance of <see cref="T:C1.Web.Api.Report.CustomReportProvider"/> object.
+            </summary>
+            <param name="documentCreater">
+            The function to create the document for the specified path.
+            The first parameter of the function represents the relative path of the document.
+            The second parameter of the function represents the collection of HTTP query string variables.
+            </param>
+            <param name="getCatalogInfoFunc">
+            The function to get the catalog info of the specified folder or report.
+            The first parameter of the function reprents the key used to register the provider.
+            The second parameter of the function represents the relative path of the folder or report.
+            The third parameter of the function represents whether to return the entire tree of child items below the specified item.
+            The fourth parameter of the function represents the collection of HTTP query string variables.
+            </param>
+        </member>
+        <member name="M:C1.Web.Api.Report.CustomReportProvider.CreateDocument(System.String,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Creates the document for the specified report path.
+            </summary>
+            <param name="path">The relative path of the report.</param>
+            <param name="args">The collection of HTTP query string variables.</param>
+            <returns>A <see cref="T:C1.Win.C1Document.C1DocumentSource"/> created for the specified path.</returns>
+        </member>
+        <member name="M:C1.Web.Api.Report.CustomReportProvider.GetCatalogItem(System.String,System.String,System.Boolean,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Gets catalog info of the specified path.
+            </summary>
+            <param name="providerName">The key used to register the provider.</param>
+            <param name="path">The relative path of the folder or report.</param>
+            <param name="recursive">Whether to return the entire tree of child items below the specified item.</param>
+            <param name="args">The collection of HTTP query string variables.</param>
+            <returns>A <see cref="T:C1.Web.Api.Report.Models.CatalogItem"/> object.</returns>
+        </member>
+        <member name="T:C1.Web.Api.Report.FlexReportProvider">
+            <summary>
+            Represents the provider for FlexReport.
+            </summary>
+        </member>
+        <member name="M:C1.Web.Api.Report.FlexReportProvider.#ctor(C1.Web.Api.Storage.IStorageProvider)">
+            <summary>
+            Initializes a new instance of <see cref="T:C1.Web.Api.Report.FlexReportProvider"/> instance.
+            </summary>
+            <param name="storage">The <see cref="T:C1.Web.Api.Storage.IStorageProvider"/> used to access the FlexReport file.</param>
+        </member>
+        <member name="M:C1.Web.Api.Report.FlexReportProvider.CreateDocument(System.String,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Creates the document for the specified report path.
+            </summary>
+            <param name="path">The relative path of the report.</param>
+            <param name="args">The collection of HTTP query string variables.</param>
+            <returns>A <see cref="T:C1.Win.FlexReport.C1FlexReport"/> created for the specified path.</returns>
+        </member>
+        <member name="M:C1.Web.Api.Report.FlexReportProvider.GetCatalogItem(System.String,System.String,System.Boolean,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Gets catalog info of the specified path.
+            </summary>
+            <param name="providerName">The key used to register the provider.</param>
+            <param name="path">The relative path of the folder or report.</param>
+            <param name="recursive">Whether to return the entire tree of child items below the specified item.</param>
+            <param name="args">The collection of HTTP query string variables.</param>
+            <returns>A <see cref="T:C1.Web.Api.Report.Models.CatalogItem"/> object.</returns>
+        </member>
+        <member name="P:C1.Web.Api.Report.FlexReportProvider.Storage">
+            <summary>
+            Gets the <see cref="T:C1.Web.Api.Storage.IStorageProvider"/> used to access the FlexReport file.
+            </summary>
+        </member>
+        <member name="T:C1.Web.Api.Report.ReportProviderManager">
+            <summary>
+            The manager for report providers.
+            </summary>
+        </member>
+        <member name="M:C1.Web.Api.Report.ReportProviderManager.AddSsrsReportHost(System.String,C1.Web.Api.Report.SsrsHost)">
+            <summary>
+            Add <see cref="T:C1.Web.Api.Report.SsrsHost"/> for SSRS report to current <see cref="T:C1.Web.Api.Report.ReportProviderManager"/>.
+            </summary>
+            <param name="key">The provider key act as the alias name of the SSRS host.</param>
+            <param name="host">The <see cref="T:C1.Web.Api.Report.SsrsHost"/>.</param>
+            <returns>The <see cref="T:C1.Web.Api.Report.ReportProviderManager"/>.</returns>
+        </member>
+        <member name="M:C1.Web.Api.Report.ReportProviderManager.AddSsrsReportHost(System.String,System.String,System.Net.NetworkCredential,C1.Web.Api.Report.AuthenticationType,System.Int32)">
+            <summary>
+            Add an SSRS host for SSRS report to current <see cref="T:C1.Web.Api.Report.ReportProviderManager"/>.
+            </summary>
+            <param name="key">The provider key act as the alias name of the SSRS host.</param>
+            <param name="serviceUrl">The url of the SSRS web service.</param>
+            <param name="credential">The credential used in SSRS connection.</param>
+            <param name="authenticationType">The type of authentication used in SSRS connection.</param>
+            <param name="timeout">The number of milliseconds to wait for server communications.</param>
+            <returns>The <see cref="T:C1.Web.Api.Report.ReportProviderManager"/>.</returns>
+        </member>
+        <member name="M:C1.Web.Api.Report.ReportProviderManager.AddFlexReportStorage(System.String,C1.Web.Api.Storage.IStorageProvider)">
+            <summary>
+            Add an <see cref="T:C1.Web.Api.Storage.IStorageProvider"/> for FlexReport to current <see cref="T:C1.Web.Api.Report.ReportProviderManager"/>.
+            </summary>
+            <param name="key">The provider key.</param>
+            <param name="storage">The <see cref="T:C1.Web.Api.Storage.IStorageProvider"/>.</param>
+            <returns>The <see cref="T:C1.Web.Api.Report.ReportProviderManager"/>.</returns>
+        </member>
+        <member name="M:C1.Web.Api.Report.ReportProviderManager.AddFlexReportDiskStorage(System.String,System.String)">
+            <summary>
+            Add a disk storage for FlexReport to current <see cref="T:C1.Web.Api.Report.ReportProviderManager"/>.
+            </summary>
+            <param name="key">The provider key.</param>
+            <param name="rootPath">The full path of the root.</param>
+            <returns>The <see cref="T:C1.Web.Api.Report.ReportProviderManager"/>.</returns>
+        </member>
+        <member name="M:C1.Web.Api.Report.ReportProviderManager.CreateReport(System.String,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Creates a <see cref="T:C1.Web.Api.Report.Models.Report"/> for the specified path.
+            </summary>
+            <param name="fullPath">The full path of the report.</param>
+            <param name="args">The collection of HTTP query string variables.</param>
+            <returns>A <see cref="T:C1.Web.Api.Report.Models.Report"/> object created for the specified path.</returns>
+            <remarks>
+            The fullPath argument starts with the provider key.
+            </remarks>
+        </member>
+        <member name="M:C1.Web.Api.Report.ReportProviderManager.GetProvider(System.String,System.String@,System.String@)">
+            <summary>
+            Gets the provider for the specified path.
+            </summary>
+            <param name="fullPath">The full path of the report.</param>
+            <param name="key">The key of the provider.</param>
+            <param name="path">The relative path of the report.</param>
+            <returns>The <see cref="T:C1.Web.Api.Report.ReportProvider"/> for the specified path.</returns>
+            <remarks>
+            The first part of the fullPath is taken as the key. 
+            If there is no provider registed with the key. Will try to find the provider which is registerd with empty string.
+            If there is no provider found in the current <see cref="T:C1.Web.Api.Report.ReportProviderManager"/>, 
+            will try to find the <see cref="T:C1.Web.Api.Storage.IStorageProvider"/> in the current <see cref="T:C1.Web.Api.Storage.StorageProviderManager"/>.
+            </remarks>
+        </member>
+        <member name="P:C1.Web.Api.Report.ReportProviderManager.Current">
+            <summary>
+            Gets the current report provider manager.
+            </summary>
+        </member>
+        <member name="T:C1.Web.Api.Report.AuthenticationType">
+            <summary>
+            Defines SSRS authentication types.
+            </summary>
+            <remarks>
+            These values correspond to <b>Authentication</b> section in <b>rsreportserver.config</b> file.
+            </remarks>
+        </member>
+        <member name="F:C1.Web.Api.Report.AuthenticationType.Negotiate">
+            <summary>
+            Use this setting if SSRS supports following authentication types:
+            <b>RSWindowsNegotiate</b>, <b>RSWindowsKerberos</b>.
+            </summary>
+        </member>
+        <member name="F:C1.Web.Api.Report.AuthenticationType.Ntlm">
+            <summary>
+            Use this setting if SSRS supports: <b>RSWindowsNTLM</b>.
+            </summary>
+        </member>
+        <member name="F:C1.Web.Api.Report.AuthenticationType.Basic">
+            <summary>
+            Use this setting if SSRS supports: <b>RSWindowsBasic</b>.
+            </summary>
+        </member>
+        <member name="T:C1.Web.Api.Report.SsrsHost">
+            <summary>
+            Represents the SSRS host.
+            </summary>
+        </member>
+        <member name="M:C1.Web.Api.Report.SsrsHost.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of <see cref="T:C1.Web.Api.Report.SsrsHost"/>.
+            </summary>
+            <param name="webServiceUrl">The url of the SSRS web service.</param>
+        </member>
+        <member name="P:C1.Web.Api.Report.SsrsHost.WebServiceUrl">
+            <summary>
+            Gets the url of the SSRS web service.
+            </summary>
+        </member>
+        <member name="P:C1.Web.Api.Report.SsrsHost.AuthenticationType">
+            <summary>
+            Gets or sets the type of authentication used in SSRS connection.
+            </summary>
+        </member>
+        <member name="P:C1.Web.Api.Report.SsrsHost.Credential">
+            <summary>
+            Gets or sets credential used in SSRS connection.
+            </summary>
+        </member>
+        <member name="P:C1.Web.Api.Report.SsrsHost.Timeout">
+            <summary>
+            Gets or sets the number of milliseconds to wait for server communications.
+            </summary>
+        </member>
+        <member name="T:C1.Web.Api.Report.SsrsReportProvider">
+            <summary>
+            Represents the provider for SSRS report.
+            </summary>
+        </member>
+        <member name="M:C1.Web.Api.Report.SsrsReportProvider.#ctor(C1.Web.Api.Report.SsrsHost)">
+            <summary>
+            Initializes a new instance of <see cref="T:C1.Web.Api.Report.SsrsReportProvider"/>.
+            </summary>
+            <param name="host">The <see cref="T:C1.Web.Api.Report.SsrsHost"/> used to access the SSRS.</param>
+        </member>
+        <member name="M:C1.Web.Api.Report.SsrsReportProvider.CreateDocument(System.String,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Creates the document for the specified report path.
+            </summary>
+            <param name="path">The relative path of the report.</param>
+            <param name="args">The collection of HTTP query string variables.</param>
+            <returns>A <see cref="T:C1.Win.C1Document.C1DocumentSource"/> created for the specified path.</returns>
+            <remarks>
+            The path argument is not starts with "/". Should add "/" at the beginning of the path, on connecting with the SSRS.
+            </remarks>
+        </member>
+        <member name="M:C1.Web.Api.Report.SsrsReportProvider.GetCatalogItem(System.String,System.String,System.Boolean,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Gets catalog info of the specified path.
+            </summary>
+            <param name="providerName">The key used to register the provider.</param>
+            <param name="path">The relative path of the folder or report.</param>
+            <param name="recursive">Whether to return the entire tree of child items below the specified item.</param>
+            <param name="args">The collection of HTTP query string variables.</param>
+            <returns>A <see cref="T:C1.Web.Api.Report.Models.CatalogItem"/> object.</returns>
+            <remarks>
+            The path argument is not starts with "/". Should add "/" at the beginning of the path, on connecting with the SSRS.
+            </remarks>
+        </member>
+        <member name="P:C1.Web.Api.Report.SsrsReportProvider.Host">
+            <summary>
+            Gets the <see cref="T:C1.Web.Api.Report.SsrsHost"/> used to access the SSRS.
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,26 @@
+﻿#reportViewer {
+    position: fixed;
+    left: 5px;
+    right: 5px;
+    top: 5px;
+    bottom: 5px;
+    font-family: 'segoe ui', 'ms sans serif';
+    overflow: hidden;
+}
+
+/* use double @@ symbol when applying media queries in a razor view */
+@media screen and (min-width: 28.75em) {
+    /* (like mobile phones in landscape or smaller tablets)*/
+
+}
+/* use double @@ symbol when applying media queries in a razor view */
+@media screen and (min-width: 40.5em) {
+    /* (like medium tablets and up) */
+
+    #reportViewer {
+        left: 5px;
+        right: 5px;
+        top: 5px;
+        bottom: 5px;
+    }
+}

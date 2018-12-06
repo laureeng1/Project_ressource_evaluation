@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html>
+<html lang="fr" ng-app="app">
+<head>
+    <meta charset="utf-8" />
+    <title>Demo search input</title>
+
+    <!--<script src="../../../bower_components/platform/platform.js"></script>  
+    <script src="../../../bower_components/angular/angular.js"></script>
+    
+    <link rel="stylesheet" href="../../../bower_components/bootstrap/dist/css/bootstrap.css" type="text/css" />
+    <link rel="import" href="../../../bower_components/polymer/polymer.html"> -->
+    
+    <script src="/lib/bower_components/platform/platform.js"></script>  
+    <script src="/lib/bower_components/angular/angular.js"></script>
+    
+    <link rel="stylesheet" href="/lib/bower_components/bootstrap/dist/css/bootstrap.css" type="text/css" />
+    <link rel="import" href="/lib/bower_components/polymer/polymer.html"> 
+    <link rel="import" href="../search-input.html">  
+
+</head>
+    <body ng-controller="AppCtrl">
+        <div class="col-lg-2 center">
+            <search-input placeholder="Rechercher..."></search-input>
+        </div>    
+        
+        <script type="text/javascript">
+            if (!String.prototype.contains) {
+                String.prototype.contains = function () {
+                    return String.prototype.indexOf.apply(this, arguments) !== -1;
+                };
+            }
+            
+            var app = angular.module("app", []);
+            
+            app.controller("AppCtrl", ["$scope", "$timeout", function ($scope, $timeout) {
+
+                var data = [
+                    {
+                        Identite: "Nom 1",                        
+                    },
+                    {
+                        Identite: "Nom 2",
+                    },
+                    {
+                        Identite: "Nom 3",
+                    },
+                    {
+                        Identite: "Nom 4",
+                    },
+                    {
+                        Identite: "Nom 5",
+                    },
+                    {
+                        Identite: "Nom 6",
+                    },
+                    {
+                        Identite: "Nom 7",
+                    },
+                    {
+                        Identite: "Nom 8",
+                    },
+                    {
+                        Identite: "Nom 9",
+                    },
+                    {
+                        Identite: "Nom 10",
+                    },
+                    {
+                        Identite: "Nom 11",
+                    },
+                    {
+                        Identite: "Nom 12",
+                    },
+                    {
+                        Identite: "Nom 13",
+                    }
+                ];
+
+                $timeout(function() {
+                    // accrocher des events aux web components
+                    var searchInput = document.querySelector('search-input');
+
+                    searchInput.searchOptions = {
+                        sizeItemsToSearchMax: 5,
+                        columns: [
+                        {
+                            fieldResult: 'Identite',
+                            fieldSearch: 'Identite',
+                            label: '',
+                            isValueShown: true,
+                            isCriteria: true,
+                            type: 'text'
+                        }]
+                    };
+                    
+
+                    searchInput.addEventListener('search-is-launched', function (e) {
+
+                        var dataFound = [];
+
+                        for (var i = 0; i < data.length; i++) {
+                            if (data[i].Identite.contains(e.detail.msg.searchWord)) {
+                                dataFound.push(data[i]);
+                            }
+                        }
+
+                        searchInput.results = dataFound;
+                    });
+
+                    searchInput.addEventListener('item-selected', function (e) {
+
+                    });
+                }, 2000);
+                                                     
+            }]);
+        </script>    
+    </body>
+</html>

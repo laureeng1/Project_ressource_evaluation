@@ -1,0 +1,49 @@
+<div class="container w-xxl w-auto-xs">
+    <a class="navbar-brand block m-t">{{app.name}}</a>
+    <div class="m-b-lg">
+        <!--<div class="wrapper text-center">
+          <strong>Sign in to get in touch</strong>
+        </div>-->
+        <form name="signin" ng-submit="submitForm(item)">
+            <div class="list-group list-group-sm">
+              <div class="form-group col-lg-12">
+                  <label for="userName">
+                      <small style="color: red">*</small>
+                      &nbsp;&nbsp;Prestataire
+                  </label>
+                  <select class="form-control" id="prestataire"
+                          ng-model="currentPrestataire"
+                          ng-options="prestataire.raisonSociale for prestataire in listePrestataire"
+                          ng-change="selectionnerPrestataire(currentPrestataire)" required >
+                      <option value="">-- Choisir un prestataire --</option>
+                  </select>
+              </div>
+                
+            </div>
+            <button type="submit" ng-click="signin.$invalid" class="btn btn-lg btn-primary btn-block">
+                Valider
+            </button>
+        </form>
+    </div>
+    
+</div>
+
+<script type="text/javascript">
+    'use script';
+    //document.addEventListener('keydown', (event) => {
+        
+    //    if (event.which == 27)
+    //    {
+    //        alert(this.closed);
+    //        e.preventDefault();
+    //        //return false;
+    //    }
+            
+    //});
+    //$("#modal").on("keyup", function (e) {
+    //    if (e.which === 27) {
+    //        //alert("test");
+    //        e.preventDefault();
+    //    }
+    //});
+</script>

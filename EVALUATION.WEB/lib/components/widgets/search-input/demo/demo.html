@@ -1,0 +1,178 @@
+﻿<!DOCTYPE html>
+<html lang="fr" app="app">
+<head>
+    <meta charset="utf-8" />
+    <title>Demo search input</title>
+    
+    <script src="../../../vendors/bower_components/webcomponentslib/webcomponentsjs/webcomponents.js"></script>
+    <link rel="import" href="../../../vendors/bower_components/webcomponentslib/polymer/polymer.html">
+    <link rel="import" href="../../../../components/vendors/bower_components/webcomponentslib/paper-elements/paper-elements.html">
+    <link rel="import" href="../../../../components/vendors/bower_components/webcomponentslib/core-elements/core-elements.html">
+    <script src="../../../vendors/bower_components/angular/angular.js"></script>
+    <script src="../../../common/utilities.js"></script>  
+    
+    <link rel="stylesheet" href="../../../vendors/bower_components/bootstrap/dist/css/bootstrap.css" type="text/css" />  
+    <link rel="import" href="../search-input.html">        
+</head>
+<body unresolved ng-controller="AppCtrl">
+    <div class="col-lg-6 center">
+        
+        <search-input ng-disabled="disabled" placeholder="Rechercher..."></search-input>
+        <button style="margin-top: 15px;" ng-click="showValue()">Afficher la valeur courante</button>
+        <button style="margin-top: 15px;" ng-click="enabledComponent()">Activer/Désactiver composant</button>
+    </div>
+
+    <script type="text/javascript">
+        if (!String.prototype.contains) {
+            String.prototype.contains = function () {
+                return String.prototype.indexOf.apply(this, arguments) !== -1;
+            };
+        }
+
+        document.addEventListener("polymer-elements-are-initialized", function (e) {
+            var app = angular.module("app", []);
+
+            app.controller("AppCtrl", ["$scope", "$timeout", function ($scope, $timeout) {
+                $scope.disabled = false;
+
+                $scope.enabledComponent = function() {
+                    $scope.disabled = !$scope.disabled;
+                }
+
+                $scope.showValue = function () {
+                    var item = searchInput.getCurrentItem();
+                    console.log(item);
+                };
+
+                var data = [
+                    {
+                        Identite: "Nom 1"
+                    },
+                    {
+                        Identite: "Nom 2"
+                    },
+                    {
+                        Identite: "Nom 3"
+                    },
+                    {
+                        Identite: "Nom 4"
+                    },
+                    {
+                        Identite: "Nom 5"
+                    },
+                    {
+                        Identite: "Nom 6"
+                    },
+                    {
+                        Identite: "Nom 7"
+                    },
+                    {
+                        Identite: "Nom 8"
+                    },
+                    {
+                        Identite: "Nom 9"
+                    },
+                    {
+                        Identite: "Nom 10"
+                    },
+                    {
+                        Identite: "Nom 11"
+                    },
+                    {
+                        Identite: "Nom 12"
+                    },
+                    {
+                        Identite: "Nom 13"
+                    }
+                ];
+
+                var findItems = function (searchWord, callback) {
+                    var dataFound = [];
+
+                    for (var i = 0; i < data.length; i++) {
+                        if (data[i].Identite.contains(searchWord) && (searchWord != '' && searchWord != null)) {
+                            dataFound.push(data[i]);
+                        }
+                    }
+
+                    callback(dataFound, dataFound.length);
+                };
+
+                var searchInput = null;
+                domPolymer.addEventListener('search-input-loaded', function (e) {
+                    // accrocher des events aux web components
+                    searchInput = document.querySelector('search-input');
+
+                    searchInput.searchOptions = {
+                        sizeItemsToSearchMax: 5,
+                        enabledAddNewItem: true,
+                        enabledAdvancedSearch: true,
+                        columns: [
+                        {
+                            fieldResult: 'Identite',
+                            fieldSearch: 'Identite',
+                            label: 'Identité',
+                            isValueShown: true,
+                            isCriteria: true,
+                            type: 'text',
+                            displayLabel: true
+                        }/*,
+                        {
+                            fieldResult: 'Identite',
+                            fieldSearch: 'Identite',
+                            label: 'Identité 1',
+                            isValueShown: true,
+                            isCriteria: true,
+                            type: 'text',
+                            displayLabel: true
+                        }*/]
+                    };
+
+                    searchInput.addEventListener('search-is-launched', function (e) {
+                       
+                        findItems(e.detail.msg.searchWord, function (dataFound) {
+                            searchInput.setItems(dataFound, dataFound.length);
+                        });
+                    });
+
+                    searchInput.addEventListener('search-is-launched-advanced', function (e) {
+                        var msg = e.detail.msg;
+
+                        /*if (e.detail.msg.idInstance != searchInput.idInstance)
+                            return;*/
+
+                        // constituer le request
+                        var params = {
+                            Item: searchInput.factorRequest({ Identite: "" }, msg.criterias)
+                        };
+
+                        // initier la recherche
+                        findItems(params.Item.Identite, function (itemsFound, nbTotalItems) {
+                            searchInput.setItemsAdvanced(itemsFound, nbTotalItems);
+                        });
+                    });
+
+                    searchInput.addEventListener('create-new-item', function (e) {
+                        alert('créer nouveau item');
+                    });
+
+                    searchInput.addEventListener('item-selected', function (e) {
+
+                    });
+                });
+
+            }]);
+
+            angular.bootstrap(wrap(document), ['app']);
+        });
+
+        // préparer le dom des polymers
+        var element = document.createElement('link');
+        element.rel = "import";
+        element.href = '../../dom-polymer/dom-polymer.html';
+        document.head.appendChild(element);
+
+    </script>
+</body>
+
+</html>

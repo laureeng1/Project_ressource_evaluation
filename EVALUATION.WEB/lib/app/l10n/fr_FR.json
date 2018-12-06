@@ -1,0 +1,81 @@
+﻿{
+
+"header" : {
+  "navbar" : {
+    "UPLOAD" : "Upload",
+    "new" : {
+      "NEW" : "New",
+      "PROJECT" : "Projects",
+      "TASK" : "Task",
+      "USER" : "User",
+      "EMAIL" : "Email"
+    },
+    "NOTIFICATIONS" : "Notifications"
+  }
+},
+"aside" : {
+  "nav" : {
+    "HEADER" : "Navigation",
+    "REPORTING" : "Reporting",
+    "DASHBOARD" : "Tableau de bord",
+    "CALENDAR" : "Calendrier",
+    "EMAIL" : "Courrier",
+    "WIDGETS" : "Widgets",
+    "components" : {
+      "COMPONENTS" : "Composants",
+      "ui_kits" : {
+        "UI_KITS" : "UI Kits",
+        "BUTTONS" : "Boutons",
+        "ICONS" : "Icons",
+        "GRID" : "Grille",
+        "BOOTSTRAP" : "Bootstrap",
+        "SORTABLE" : "Sortable",
+        "PORTLET" : "Portlet",
+        "TIMELINE" : "Timeline",
+        "VECTOR_MAP" : "Vector Map",
+		"IMALI_TRESO": "Imali Tréso",
+		"MOYENS_GENERAUX": "Moyens généraux",
+		"SUIVI_BUDGETAIRE": "Suivi budgétaire",
+		"CLINIQUE": "Clinique",
+		"COMPTABILITE": "Comptabilité",
+		"GESTION_DE_STOCK": "Gestion de stock",
+		"AIDE": "Aide",
+		"ADMIN": "Administration"
+      },
+      "table" : {
+        "TABLE" : "Table",
+        "TABLE_STATIC" : "Table static",
+        "DATATABLE" : "Datatable",
+        "FOOTABLE" : "Footable"
+      },
+      "form" : {
+        "FORM" : "Forme",
+        "FORM_ELEMENTS" : "Form elements",
+        "FORM_VALIDATION" : "Form validation",
+        "FORM_WIZARD" : "Form wizard"
+      },
+      "CHART" : "Chart",
+      "pages" : {
+        "PAGES" : "Pages",
+        "PROFILE" : "Profile",
+        "POST" : "Post",
+        "SEARCH" : "Search",
+        "INVOICE" : "Invoice",
+        "LOCK_SCREEN" : "Lock screen",
+        "SIGNIN" : "Signin",
+        "SIGNUP" : "Signup",
+        "FORGOT_PASSWORD" : "Forgot password",
+        "404" : "404"
+      }
+    },
+    "your_stuff" : {
+      "YOUR_STUFF": "Your Stuff",
+      "PROFILE" : "Profil",
+      "DOCUMENTS" : "Documents"
+    }
+  },
+  "MILESTONE" : "Milestone",
+  "RELEASE" : "Release"
+}
+
+}

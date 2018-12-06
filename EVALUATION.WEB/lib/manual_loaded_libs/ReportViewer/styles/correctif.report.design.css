@@ -1,0 +1,17 @@
+ .sheet div{
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+   box-sizing: content-box;
+}
+
+     /*html#html, body#body, form#form1, div#content*/
+   .trv-report-page
+    { 
+        height: 100%;
+    }
+
+
+.trv-report-page{
+height: 510px;
+width: 800px;
+}

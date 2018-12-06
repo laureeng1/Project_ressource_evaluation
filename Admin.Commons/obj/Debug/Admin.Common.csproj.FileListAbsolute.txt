@@ -1,0 +1,59 @@
+F:\PROJET_EVALUATION_2\Admin.Commons\bin\Debug\Admin.Commons.dll.config
+F:\PROJET_EVALUATION_2\Admin.Commons\bin\Debug\Admin.Commons.dll
+F:\PROJET_EVALUATION_2\Admin.Commons\bin\Debug\Admin.Commons.pdb
+F:\PROJET_EVALUATION_2\Admin.Commons\bin\Debug\Microsoft.QualityTools.Testing.Fakes.dll
+F:\PROJET_EVALUATION_2\Admin.Commons\bin\Debug\Newtonsoft.Json.dll
+F:\PROJET_EVALUATION_2\Admin.Commons\bin\Debug\Newtonsoft.Json.xml
+F:\PROJET_EVALUATION_2\Admin.Commons\bin\Debug\fr\Microsoft.QualityTools.Testing.Fakes.resources.dll
+F:\PROJET_EVALUATION_2\Admin.Commons\obj\Debug\Admin.Commons.dll
+F:\PROJET_EVALUATION_2\Admin.Commons\obj\Debug\Admin.Commons.pdb
+F:\PROJET_EVALUATION_2\Admin.Commons\obj\Debug\Admin.Common.csprojFakesResolveAssemblyReference.cache
+C:\Users\Laureen Gala\Downloads\PROJET_EVALUATION_2\Admin.Commons\bin\Debug\Admin.Commons.dll.config
+C:\Users\Laureen Gala\Downloads\PROJET_EVALUATION_2\Admin.Commons\bin\Debug\Admin.Commons.dll
+C:\Users\Laureen Gala\Downloads\PROJET_EVALUATION_2\Admin.Commons\bin\Debug\Admin.Commons.pdb
+C:\Users\Laureen Gala\Downloads\PROJET_EVALUATION_2\Admin.Commons\bin\Debug\Newtonsoft.Json.Fakes.fakesconfig
+C:\Users\Laureen Gala\Downloads\PROJET_EVALUATION_2\Admin.Commons\bin\Debug\Microsoft.QualityTools.Testing.Fakes.dll
+C:\Users\Laureen Gala\Downloads\PROJET_EVALUATION_2\Admin.Commons\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Laureen Gala\Downloads\PROJET_EVALUATION_2\Admin.Commons\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Laureen Gala\Downloads\PROJET_EVALUATION_2\Admin.Commons\bin\Debug\fr\Microsoft.QualityTools.Testing.Fakes.resources.dll
+C:\Users\Laureen Gala\Downloads\PROJET_EVALUATION_2\Admin.Commons\obj\Debug\Admin.Common.csprojFakesResolveAssemblyReference.cache
+C:\Users\Laureen Gala\Downloads\PROJET_EVALUATION_2\Admin.Commons\obj\Debug\Fakes\fakes.args
+C:\Users\Laureen Gala\Downloads\PROJET_EVALUATION_2\Admin.Commons\obj\Debug\Fakes\nj\b\fr\Microsoft.QualityTools.Testing.Fakes.resources.dll
+C:\Users\Laureen Gala\Downloads\PROJET_EVALUATION_2\Admin.Commons\obj\Debug\Fakes\nj\b\log4net.dll
+C:\Users\Laureen Gala\Downloads\PROJET_EVALUATION_2\Admin.Commons\obj\Debug\Fakes\nj\b\Microsoft.QualityTools.Testing.Fakes.dll
+C:\Users\Laureen Gala\Downloads\PROJET_EVALUATION_2\Admin.Commons\obj\Debug\Fakes\nj\b\Newtonsoft.Json.dll
+C:\Users\Laureen Gala\Downloads\PROJET_EVALUATION_2\Admin.Commons\obj\Debug\Fakes\nj\b\Newtonsoft.Json.Fakes.dll
+C:\Users\Laureen Gala\Downloads\PROJET_EVALUATION_2\Admin.Commons\obj\Debug\Fakes\nj\b\Newtonsoft.Json.Fakes.fakesconfig
+C:\Users\Laureen Gala\Downloads\PROJET_EVALUATION_2\Admin.Commons\obj\Debug\Fakes\nj\b\Newtonsoft.Json.Fakes.pdb
+C:\Users\Laureen Gala\Downloads\PROJET_EVALUATION_2\Admin.Commons\obj\Debug\Fakes\nj\b\Newtonsoft.Json.Fakes.xml
+C:\Users\Laureen Gala\Downloads\PROJET_EVALUATION_2\Admin.Commons\obj\Debug\Fakes\nj\b\Newtonsoft.Json.xml
+C:\Users\Laureen Gala\Downloads\PROJET_EVALUATION_2\Admin.Commons\obj\Debug\Fakes\nj\b\YAXLib.dll
+C:\Users\Laureen Gala\Downloads\PROJET_EVALUATION_2\Admin.Commons\obj\Debug\Fakes\nj\f.ah
+C:\Users\Laureen Gala\Downloads\PROJET_EVALUATION_2\Admin.Commons\obj\Debug\Fakes\nj\f.ch
+C:\Users\Laureen Gala\Downloads\PROJET_EVALUATION_2\Admin.Commons\obj\Debug\Fakes\nj\f.cs
+C:\Users\Laureen Gala\Downloads\PROJET_EVALUATION_2\Admin.Commons\obj\Debug\Fakes\nj\f.csproj
+C:\Users\Laureen Gala\Downloads\PROJET_EVALUATION_2\Admin.Commons\obj\Debug\Fakes\nj\f.fakes
+C:\Users\Laureen Gala\Downloads\PROJET_EVALUATION_2\Admin.Commons\obj\Debug\Fakes\nj\f.fakesconfig
+C:\Users\Laureen Gala\Downloads\PROJET_EVALUATION_2\Admin.Commons\obj\Debug\Fakes\nj\f.snk
+C:\Users\Laureen Gala\Downloads\PROJET_EVALUATION_2\Admin.Commons\obj\Debug\Fakes\nj\o\f.csproj.CopyComplete
+C:\Users\Laureen Gala\Downloads\PROJET_EVALUATION_2\Admin.Commons\obj\Debug\Fakes\nj\o\f.csproj.CoreCompileInputs.cache
+C:\Users\Laureen Gala\Downloads\PROJET_EVALUATION_2\Admin.Commons\obj\Debug\Fakes\nj\o\f.csproj.FileListAbsolute.txt
+C:\Users\Laureen Gala\Downloads\PROJET_EVALUATION_2\Admin.Commons\obj\Debug\Fakes\nj\o\f.csprojAssemblyReference.cache
+C:\Users\Laureen Gala\Downloads\PROJET_EVALUATION_2\Admin.Commons\obj\Debug\Fakes\nj\o\Newtonsoft.Json.Fakes.dll
+C:\Users\Laureen Gala\Downloads\PROJET_EVALUATION_2\Admin.Commons\obj\Debug\Fakes\nj\o\Newtonsoft.Json.Fakes.pdb
+C:\Users\Laureen Gala\Downloads\PROJET_EVALUATION_2\Admin.Commons\obj\Debug\Admin.Common.csprojAssemblyReference.cache
+C:\Users\Laureen Gala\Downloads\PROJET_EVALUATION_2\Admin.Commons\obj\Debug\Admin.Common.csproj.CoreCompileInputs.cache
+C:\Users\Laureen Gala\Downloads\PROJET_EVALUATION_2\Admin.Commons\obj\Debug\Admin.Common.csproj.CopyComplete
+C:\Users\Laureen Gala\Downloads\PROJET_EVALUATION_2\Admin.Commons\obj\Debug\Admin.Commons.dll
+C:\Users\Laureen Gala\Downloads\PROJET_EVALUATION_2\Admin.Commons\obj\Debug\Admin.Commons.pdb
+C:\Users\Laureen Gala\Desktop\PROJET_EVALUATION_2\Admin.Commons\bin\Debug\Admin.Commons.dll.config
+C:\Users\Laureen Gala\Desktop\PROJET_EVALUATION_2\Admin.Commons\bin\Debug\Admin.Commons.dll
+C:\Users\Laureen Gala\Desktop\PROJET_EVALUATION_2\Admin.Commons\bin\Debug\Admin.Commons.pdb
+C:\Users\Laureen Gala\Desktop\PROJET_EVALUATION_2\Admin.Commons\bin\Debug\Microsoft.QualityTools.Testing.Fakes.dll
+C:\Users\Laureen Gala\Desktop\PROJET_EVALUATION_2\Admin.Commons\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Laureen Gala\Desktop\PROJET_EVALUATION_2\Admin.Commons\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Laureen Gala\Desktop\PROJET_EVALUATION_2\Admin.Commons\bin\Debug\fr\Microsoft.QualityTools.Testing.Fakes.resources.dll
+C:\Users\Laureen Gala\Desktop\PROJET_EVALUATION_2\Admin.Commons\obj\Debug\Admin.Common.csproj.CoreCompileInputs.cache
+C:\Users\Laureen Gala\Desktop\PROJET_EVALUATION_2\Admin.Commons\obj\Debug\Admin.Common.csproj.CopyComplete
+C:\Users\Laureen Gala\Desktop\PROJET_EVALUATION_2\Admin.Commons\obj\Debug\Admin.Commons.dll
+C:\Users\Laureen Gala\Desktop\PROJET_EVALUATION_2\Admin.Commons\obj\Debug\Admin.Commons.pdb

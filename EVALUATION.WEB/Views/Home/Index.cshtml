@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html lang="fr" app="app">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>EVALUATION</title>
+    <meta name="description" content="Evaluation" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Cache-Control" content="no-cache, must-revalidate" />
+    <meta http-equiv="Expires" content="0" />
+
+    <!-- polyfill pour le support des web components - à charger avant tous les autres Scripts.Render("~/bundles/webcomponents") -->
+
+    
+   
+    <link rel="import" href="~/lib/components/vendors/bower_components/webcomponentslib/polymer/polymer.html">
+    <link rel="import"
+          href="~/lib/components/vendors/bower_components/webcomponentslib/paper-elements/paper-elements.html">
+    <link rel="import" href="~/lib/components/vendors/bower_components/webcomponentslib/Core-elements/Core-elements.html"> 
+    <!--<link rel="import" href="/lib/components/widgets/tree-view/tree-view.html">-->
+    <!--Pour Pivottable -->
+    <link rel="stylesheet" type="text/css" href="~/lib/bower_components/pivottable/pivottable/dist/pivot.css">
+
+
+    @Styles.Render("~/Content/index")
+   
+
+
+    <script type="text/ng-template" id="warning-dialog.html">
+        <div ng-idle-countdown="countdown" ng-init="countdown=15" class="modal-body">
+            <br />
+            <progressbar max="15" value="15" animate="false" class="progress-striped active" style="color : white;">
+                Vous session expirera dans
+                <span style="font-size: 18px; font-weight: bold; color : white;">
+                    {{countdown}}
+                </span>
+                seconde(s).
+                Veuillez bouger votre souris pour la reinitialiser.
+            </progressbar>
+        </div>
+    </script>
+
+    @Scripts.Render("~/bundles/utilities")
+
+
+    <script type="text/javascript">
+    var require = {
+        baseUrl: "/config/",
+        waitSeconds: 0,
+        urlArgs : "bust="+new Date().getTime()
+    };
+    </script>
+
+    <!--<script  src="~/lib/bower_components/requirejs/require.js"></script>-->
+    @Scripts.Render("~/bundles/require")
+
+   
+
+    <script>
+    require.config({
+        baseUrl: "/config/"
+    });
+    require(['/config/install-features.js']);
+</script>
+
+    
+</head>
+<body   ng-controller="AppCtrl">
+    <div class="ui-widget-overlay ui-front"></div>
+    <div id="loaderDiv" style="top: 45%; left: 45%; position: fixed; z-index: 20000" loader>
+        <img id="ajax-loading" src="/images/load.GIF" alt="Loading"/>
+        
+    </div>
+    <div class="app" id="app"
+         ng-class="{'app-header-fixed':app.settings.headerFixed, 'app-aside-fixed':app.settings.asideFixed, 'app-aside-folded':app.settings.asideFolded}"
+         ui-view>
+
+    </div>
+
+    @Scripts.Render("~/bundles/index")
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/jquery.signalR-2.2.2.min.js"></script>
+    <script src="~/signalr/hubs.js"></script>
+
+</body>
+</html>
+

@@ -1,0 +1,48 @@
+﻿{
+  "menuElement": [
+    {
+      "state": "app.dashboard",
+      "span": "Accueil",
+      "isBold": true,
+      "icon": "glyphicon glyphicon-stats icon text-primary-dker",
+      "subMenu": [ ],
+      "hasSubLine": true,
+      "subHeader": {
+        "span": "Modules"
+      }
+    },
+
+    {
+      "state": "app.devEval",
+      "span": "Dev Eval",
+      "isBold": true,
+      "icon": "fa fa-users icon text-primary-dker",
+      "subMenu": [
+
+        {
+          "icon": "fa fa-file icon text-primary-dker m-r-sm m-l-md",
+          "span": "Projets",
+          "state": "app.devEval.projects"
+        },
+        {
+          "icon": "fa fa-file icon text-primary-dker m-r-sm m-l-md",
+          "span": "Collaborateurs",
+          "state": "app.devEval.collaborators"
+        },
+        {
+          "icon": "fa fa-file icon text-primary-dker m-r-sm m-l-md",
+          "span": "Tâches",
+          "state": "app.devEval.tasks"
+        },
+        {
+          "icon": "fa fa-file icon text-primary-dker m-r-sm m-l-md",
+          "span": "Administration",
+          "state": "app.devEval.admin"
+        }
+      ],
+      "hasSubLine": false,
+      "subHeader": null
+    }
+
+  ]
+}

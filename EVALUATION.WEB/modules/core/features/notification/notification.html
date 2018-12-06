@@ -1,0 +1,33 @@
+﻿<!--
+Très important !!!
+
+- remplacer "Titre" par le titre de la fenêtre
+- remplacer "élément" par le nom de l'élément
+- renommer l'id de advanced-table
+-->
+
+<div class="bg-light lter b-b wrapper-md">
+    <h1 class="m-n font-thin h3"><i class="glyphicon glyphicon-cog"></i> <span>Gestion des notifications</span></h1>
+</div>
+
+<div class="wrapper-md">
+    <tabset class="tab-container">
+        <tab ng-controller="notificationCtrl">
+            <tab-heading>
+                <i class="fa fa-cogs"></i>&nbsp;&nbsp; Notification
+            </tab-heading>
+            <ul class="list-group no-borders pull-in m-b-none">
+                
+                <li class="list-group-item" unresolved>
+                    <label class="h4 text-primary m-b-sm m-t-sm block">Liste des notifications</label>
+                    <div class="row m-l-xs m-r-xs">
+                        <advanced-table id="notification-advanced-table" class="m-t-xs">
+                        </advanced-table>
+                    </div>
+                </li>
+            </ul>
+            
+        </tab>
+    </tabset>
+</div>
+

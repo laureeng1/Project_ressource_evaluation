@@ -1,0 +1,58 @@
+<html ng-app="demo">
+	<head>
+		<script src="../bower_components/angular/angular.js"></script>
+		<script src="../angular-idle.min.js"></script>
+		<script type="text/javascript">
+			var app = angular.module('demo', ['ngIdle']);
+			app
+			.controller('EventsCtrl', function($scope, $idle) {
+				$scope.events = [];
+
+				$scope.$on('$idleStart', function() {
+					$scope.events.push({event: '$idleStart', date: new Date()});
+				});
+
+				$scope.$on('$idleEnd', function() {
+					$scope.events.push({event: '$idleEnd', date: new Date()});
+				});
+
+				$scope.$on('$idleWarn', function(e, countdown) {
+					$scope.events.push({event: '$idleWarn', date: new Date(), countdown: countdown});
+				});
+
+				$scope.$on('$idleTimeout', function() {
+					$scope.events.push({event: '$idleTimeout', date: new Date()});
+				});
+
+				$scope.$on('$keepalive', function() {
+					$scope.events.push({event: '$keepalive', date: new Date()});
+				});
+
+				$scope.reset = function() {
+					$idle.watch();
+				}
+			})
+			.config(function($idleProvider, $keepaliveProvider) {
+				$idleProvider.idleDuration(5);
+				$idleProvider.warningDuration(5);
+				$keepaliveProvider.interval(10);
+			})
+			.run(function($rootScope, $idle, $log, $keepalive){
+				$idle.watch();
+
+				$log.debug('app started.');
+			});
+		</script>
+	</head>
+	<body>
+		<div ng-controller="EventsCtrl" ng-idle-countdown="countdown">
+			<h1>$idle and $keepalive events</h1>
+			<button type="button" ng-click="reset()">Reset manually</button>
+			<ul>
+				<li ng-repeat="event in events">{{event}}</li>
+			</ul>
+
+			Timeout in {{countdown}} seconds.
+		</div>
+	</body>
+</html>

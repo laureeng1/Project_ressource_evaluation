@@ -1,0 +1,143 @@
+﻿<link rel="import" href="../advanced-table/advanced-table.html">
+
+<polymer-element name="search-input" attributes="searchOptions placeholder" on-blur="{{ focusLost }}">
+    <template>
+        <link rel="stylesheet" href="css/bootstrap.min.css" />
+        <link rel="stylesheet" href='css/font-awesome.css' />
+        <link rel="stylesheet" href='css/style.css' />
+        <link href="css/style-responsive.css" rel="stylesheet" />
+
+        <style>
+            /*polyfill-next-selector { content: 'a'; }
+            ::content a:hover {
+                color: white;
+            }
+
+            .input-group-btn button[data-toggle]:active + .dropdown-menu {
+                display: block;
+            }
+
+            .input-group-btn button[data-toggle]:focus + .dropdown-menu {
+                display: block;
+            }*/
+
+            input, button, select, textarea {
+                color: black;
+            }
+
+            table {
+                margin-top: 0;
+                border-bottom: 1px solid #DDDDDD;
+                border-left: 1px solid #DDDDDD;
+                border-right: 1px solid #DDDDDD;
+                border-collapse: separate;
+                border-spacing: 0px;
+                border-radius: 0px;
+                z-index: 10000;
+                background-color: white;
+                position: absolute;
+                float: left;
+            }
+
+            img {
+                height: 40px;
+                width: 40px;
+            }
+
+            core-icon {
+                transition: all 0.2s;
+                -webkit-transition: all 0.2s;
+                color: black;
+            }
+
+                core-icon:hover {
+                    fill: #fb8c00;
+                }
+        </style>
+
+        <div class="row">
+            <div class="input-group m-bot0 col-lg-12 col-sm-12 col-md-12 col-xs-12">
+                <div class="input-group col-lg-12 col-sm-12 col-md-12 col-xs-12">
+                      <div class="input-group m-b iconic-input right col-lg-12 col-sm-12 col-md-12 col-xs-12">
+                            <span style="padding-right: 0px; padding-left: 0px; padding-bottom: 0; padding-top: 0;" hidden?="{{ !searchOptions.enabledAddNewItem }}" class="input-group-addon"><core-icon-button icon="{{ iconSave }}" hidden?="{{ !searchOptions.enabledAddNewItem }}"  on-click="{{ createNewItem }}" iconplus></core-icon-button></span>
+                            <input id="searchComponent" type="{{ criteriaNameSelected.type }}" class="form-control input-sm" placeholder="{{ placeholder }}" value="{{ searchInputValue }}" disabled?="{{ disabled }}" _style="border-bottom-left-radius: {{ searchOptions.enabledAddNewItem ? '0' : '4px' }}; border-top-left-radius: {{ searchOptions.enabledAddNewItem ? '0' : '4px' }}; border-bottom-right-radius: {{ isMonoCriteria || disabled ? '4px' : '0' }}; border-top-right-radius: {{ isMonoCriteria || disabled ? '4px' : '0' }}; width: 100%; height: 25px !important;">
+                            <i style="margin: 5px 5px 8px 10px !important;" hidden?="{{ isDeleteTextHidden }}">
+                                <core-icon hidden?="{{ isDeleteTextHidden }}" icon="clear" style="cursor: pointer; height: 16px; width: 16px;" class="center-block" on-click="{{ textDeleteClicked }}"></core-icon>
+                            </i>
+                        </div>
+                        <div class="input-group-btn dropdown" hidden?="{{ disabled || isMonoCriteria }}">
+                            <button type="button" class="btn btn-default dropdown-toggle btn-sm" style="height: 25px !important; padding: 0px 8px !important;" data-toggle="dropdown" on-click="{{ showDropDown }}" on-blur="{{ dropDownFocusLost }}">{{ criteriaNameSelected.label }} &nbsp;&nbsp;<span class="caret"></span></button>
+                            <ul class="dropdown-menu pull-right" _style="display: {{ isDropDownVisible == false ? 'none' : 'block' }}">
+                                <template repeat="{{ criteria in criteriasName }}">
+                                    <li>
+                                        <a style="cursor: pointer;" on-click="{{ selectCurrentCriteria }}">{{ criteria.label }}</a>
+                                    </li>
+                                </template>
+                            </ul>
+                        </div>
+
+
+                </div>
+            </div>
+        </div>
+        <table class="table table-hover" hidden?="{{ isDetailsHidden }}">
+            <thead hidden?="{{ isMonoCriteria }}">
+                <tr>
+                    <th template repeat="{{ prop in propertiesShowed }}" style="background-color: #1199c4;">
+                        <span style="font-size: small; color:white;"> {{ prop.label }}</span>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr template repeat="{{ item in resultsToDisplay }}" on-click="{{ rowSelected }}">
+                    <td template repeat="{{ prop in propertiesShowed }}">
+                        <span>
+                            <template if="{{ prop.type == 'img' }}">
+                                <img _src="{{ item | getPropertyValue(prop.fieldResult) | textToImage }}" />
+                            </template>
+                            
+                            <template if="{{ prop.type != 'img' }}">
+                                <template if="{{ prop.type == 'date' }}">
+                                    <template if="{{ prop.encoding == 'json' }}">
+                                        {{ item | getPropertyValue(prop.fieldResult) | jsonToDate(prop.format)}}
+                                    </template>
+                                    <template if="{{ prop.encoding == 'utc' }}">
+                                        {{ item | getPropertyValue(prop.fieldResult) }}
+                                    </template>
+                                    <template if="{{ prop.encoding == 'tZone' }}">
+                                        {{ item | getPropertyValue(prop.fieldResult) | toDate(prop.format) }}
+                                    </template>
+                                </template>
+                                <template if="{{ prop.type != 'date' }}">
+                                    {{ item | getPropertyValue(prop.fieldResult) }}
+                                </template>
+                            </template>
+                        </span>
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot template if="{{ searchOptions.enabledAdvancedSearch }}">
+                <tr>
+                    <td style="background-color: #1199c4;" colspan="{{ propertiesShowed.length }}">
+                        <span style="font-size: small; color:white;">Trouvés : {{ nbTotalItems }} - Affichés : {{ resultsToDisplay.length }}</span>
+                        <div class="pull-right">
+                            <button on-click="{{ showAllResults }}" class="btn btn-default btn-xs">Recherche avancée</button>
+                        </div>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+
+        <paper-dialog id="dialogDetails" heading="Recherche avancée" transition="paper-dialog-transition-center" layered="false" style="min-width: 600px; top: 20% !important; left: 0% !important;" backdrop="true" autoclosedisabled="false">
+            <div>
+                <advanced-table id="advancedTable" on-load-items="{{ searchAdvanced }}" on-item-selected="{{ doAdvancedItemSelected }}"></advanced-table>
+            </div>
+
+            <paper-button label="Sélectionner" on-click="{{ setAdvancedItemSelected }}" hidden?="{{ advancedItemSelected == false }}" affirmative autofocus></paper-button>
+            <paper-button label="Annuler" affirmative></paper-button>
+        </paper-dialog>
+
+    </template>
+
+    <script src="search-input.js"></script>
+</polymer-element>

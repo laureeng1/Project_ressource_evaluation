@@ -1,0 +1,190 @@
+<!--
+    Très important !!!
+
+    - remplacer "Titre" par le titre de la fenêtre
+    - remplacer "&eacute;l&eacute;ment(s)" par le nom de l'&eacute;l&eacute;ment
+    - renommer l'id de advanced-table
+-->
+
+<div class="bg-light lter b-b wrapper-md">
+    <h1 class="m-n font-thin h3">Vue Collaborateurs</h1>
+</div>
+<div class="wrapper-md">
+    <div class="row">
+        <div class="col-sm-12" ng-controller="collaboratorListCtrl">
+            <p>Liste des collaborateurs </p>
+            <div class="list-group m-t" unresolved>
+                <advanced-table id="collaborator-advanced-table" class="m-t-xs">
+                    <style>
+                        .table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+                            border-top: 0;
+                        }
+                    </style>
+
+                    <br />
+                    <div class="form-group" data-index="{{ index }}" style="padding-left: 5px !important;">
+
+
+                        <div class="row" ng-controller="collaboratorTaskListCtrl">
+                            <div class="col-sm-12">
+                                <accordion close-others="oneAtATime">
+                                    <accordion-group heading="{{ title }}" is-open="status.isOpen">
+                                        <div class="list-group m-t" unresolved>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <form class="form-horizontal">
+                                                        <input type="date" ng-model="period.startDate" />
+                                                        <input type="date" ng-model="period.endDate" />
+                                                        <button class="btn btn-primary" ng-click="disponibility()">Est disponible</button>
+                                                        <br />
+                                                        <button class="btn btn-sm btn-warning" ng-click="hebdoNoter()"> Calculer la moyenne pour la p&eacute;riode</button>
+                                                    </form>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <b>Disponibilit&eacute;:</b> <br />
+                                                    <h4 ng-show="isDispo !== null && isDispo">Oui - disponible pour cette p&eacute;riode</h4>
+                                                    <h4 ng-show="isDispo !== null && !isDispo">Non - Pas disponible pour cette p&eacute;riode</h4>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <b>Moyenne pour la p&eacute;riode d&eacute;finie:</b> <br />{{ hebdoNote }}
+                                                </div>
+                                            </div>
+
+
+                                            <hr />
+                                            <advanced-table id="task-advanced-table" class="m-t-xs">
+                                                <style>
+                                                    .table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+                                                        border-top: 0;
+                                                    }
+                                                </style>
+
+                                                <br />
+                                                <div class="form-group" data-index="{{ index }}" style="padding: 10px !important; background-color: #ffffff; border: 1px solid #c0c0c0;">
+
+
+                                                    <div class="row" ng-controller="collaboratorTaskListCtrl">
+                                                        <div class="col-sm-12">
+                                                            <div class="row">
+                                                                <div class="form-group col-md-12">
+                                                                    <label for="label">
+                                                                        <small style="color: red">*</small>
+                                                                        &nbsp;&nbsp;Libell&eacute;
+                                                                    </label>
+                                                                    <input type="text" class="form-control" id="label"
+                                                                           placeholder="Entrez le libell&eacute; de la tâche"
+                                                                           ng-model="item.label" required ng-disabled="item.status !== 'brouillon'" />
+                                                                    <span>Sequence : {{ item.sequence }}</span>
+                                                                </div>
+                                                                <div class="col-md"><button disabled="disabled" class="btn btn-block" ng-class="{'btn-default': item.status === 'brouillon' ||  item.status == 'd&eacute;marr&eacute;e', 'btn-primary': item.status == 'en cours', 'btn-warning': item.status == 'en validation', 'btn-success': item.status == 'cl&ocirc;tur&eacute;e'}">{{item.status | uppercase}}</button></div>
+                                                            </div>
+
+                                                            <div class="row">
+                                                                <div class="form-group col-md-6">
+                                                                    <label for="timePlanned">
+                                                                        <small style="color: red">*</small>
+                                                                        &nbsp;&nbsp;Dur&eacute;e planifi&eacute;e
+                                                                    </label>
+
+                                                                    <input class="form-control" type="time" id="timePlanned" name="timePlanned"
+                                                                           min="0:01" max="100:00" ng-model="item.timePlannedTime" required ng-disabled="item.status !== 'brouillon'" />
+                                                                </div>
+                                                                <div class="form-group col-md-6">
+                                                                    <label for="deadline">
+                                                                        <small style="color: red">*</small>
+                                                                        &nbsp;&nbsp;D&eacute;lais
+                                                                    </label>
+
+                                                                    <input class="form-control" type="datetime-local" id="deadline"
+                                                                           name="deadline" ng-model="item.deadline"
+                                                                           min="2017-06-07T00:00" max="2200-06-14T00:00" ng-disabled="item.status !== 'brouillon'" />
+                                                                </div>
+                                                            </div>
+
+
+
+                                                            <div class="row">
+                                                                <div class="form-group col-md-6">
+                                                                    <label for="currentCollaborator">
+                                                                        &nbsp;&nbsp;Assigne&eacute; &aacute;
+                                                                    </label>
+                                                                    <select ng-model="item.idCurrentCollaborator" class="form-control" id="currentCollaborator" name="currentCollaborator" ng-disabled="item.status !== 'brouillon'">
+                                                                        <option>Choisir...</option>
+                                                                        <option ng-repeat="collaborator in collaborators" value="{{collaborator.id}}" ng-selected="item.idCurrentCollaborator === collaborator.id">{{ collaborator.nom }} {{ collaborator.prenoms }}</option>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="form-group col-md-6">
+                                                                    <label for="priority">
+                                                                        <small style="color: red">*</small>
+                                                                        &nbsp;&nbsp;Priorit&eacute;
+                                                                    </label>
+                                                                    <select ng-model="item.priority" class="form-control" id="priority" name="priority" ng-disabled="item.status !== 'brouillon'">
+                                                                        <option selected>Choisir...</option>
+                                                                        <option value="1">1</option>
+                                                                        <option value="2">2</option>
+                                                                        <option value="3">3</option>
+                                                                        <option value="4">4</option>
+                                                                        <option value="5">5</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="row">
+                                                                <!--<p class="pull-left">
+                                                                    (<small style="color: red">*</small>): obligatoires
+                                                                </p> <br /> <br />-->
+                                                                <div class="form-group col-md-12 text-right">
+                                                                    <hr />
+                                                                    <button ng-if="item.status == null || item.status == 'brouillon'" type="submit" class="btn btn-primary">
+                                                                        <i class="fa fa-save"></i>&nbsp;&nbsp;<span>Enregistrer</span>
+                                                                    </button>
+                                                                    <button ng-if="item.status == 'brouillon' || item.status == 'suspendue'" class="btn btn-success" ng-click="start(item)">
+                                                                        <i class="fa fa-save"></i>&nbsp;&nbsp;<span>Demarrer</span>
+                                                                    </button>
+                                                                    <!--<button ng-if="item.status == 'en cours' || item.status == 'd&eacute;marr&eacute;e'" class="btn btn-primary" ng-click="submit(item)">
+                                                                        <i class="fa fa-save"></i>&nbsp;&nbsp;<span>Soumettre</span>
+                                                                    </button>-->
+                                                                    <button ng-if="item.status == 'en validation'" class="btn btn-danger" ng-click="refuse(item)">
+                                                                        <i class="fa fa-save"></i>&nbsp;&nbsp;<span>Refuser</span>
+                                                                    </button>
+                                                                    <button ng-if="item.status == 'en cours' || item.status == 'd&eacute;marr&eacute;e' || item.status == 'en validation'" class="btn btn-warning" ng-click="pend(item)">
+                                                                        <i class="fa fa-save"></i>&nbsp;&nbsp;<span>Suspendre</span>
+                                                                    </button>
+                                                                    <button ng-if="item.status == 'en validation'" type="submit" class="btn btn-success" ng-click="accept(item)">
+                                                                        <i class="fa fa-save"></i>&nbsp;&nbsp;<span>Cl&ocirc;turer</span>
+                                                                    </button>
+                                                                    <button ng-if="item.status !== 'brouillon' && item.status !== 'cl&ocirc;tur&eacute;e' && item.status !== 'annul&eacute;e'" class="btn btn-danger" ng-click="abort(item)">
+                                                                        <i class="fa fa-save"></i>&nbsp;&nbsp;<span>Annuler</span>
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </advanced-table>
+                                        </div>
+                                    </accordion-group>
+
+                                    <!--<accordion-group heading="Calendrier" is-open="statusCalendar.isOpen">
+                                        <div class="list-group m-t" unresolved>
+                                            <div class="calendar" ng-model="eventSources" calendar="calendar1" config="uiConfig.calendar" ui-calendar="uiConfig.calendar"></div>
+                                        </div>
+                                    </accordion-group>-->
+                                </accordion>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                </advanced-table>
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+
+</div>

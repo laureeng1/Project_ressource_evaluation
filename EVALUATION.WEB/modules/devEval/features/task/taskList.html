@@ -1,0 +1,62 @@
+<!--
+    Très important !!!
+
+    - remplacer "Titre" par le titre de la fenêtre
+    - remplacer "élément(s)" par le nom de l'élément
+    - renommer l'id de advanced-table
+-->
+
+<div class="bg-light lter b-b wrapper-md">
+    <h1 class="m-n font-thin h3">T&atilde;ches</h1>
+</div>
+<div class="wrapper-md">
+    <div class="row">
+        <div class="col-sm-12" ng-controller="taskListCtrl">
+            <!--<button class="btn btn-default btn-sm" ng-click="editItem()">Nouveau</button>
+            <hr />-->
+            <p>Liste des t&acirc;ches </p>
+            <div class="list-group m-t" unresolved>
+                <advanced-table id="task-advanced-table" class="m-t-xs">
+                    <style>
+                        .table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+                            border-top: 0;
+                        }
+                    </style>
+
+                    <br />
+                    <div class="form-group" data-index="{{ index }}" style="padding-left: 5px !important;">
+
+                        <div class="row" ng-controller="collaboratorActionListCtrl">
+                            <div class="col-sm-12">
+                                <accordion close-others="oneAtATime">
+                                    <accordion-group heading="{{ title }}" is-open="status.isOpen">
+                                        <h3>Liste des actions sur la t&circ;che</h3>
+                                        <div class="row">
+                                            <div class="col-sm-4">
+                                                <button ng-disabled="taskStatus !== 'd&eacute;marr&eacute;e' && taskStatus !== 'en cours'" class="btn btn-primary btn-sm" ng-click="editItem()">Nouvelle action</button>
+                                            </div>
+                                            <div class="col-sm-8 text-right">
+                                                <button ng-disabled="taskStatus !== 'd&eacute;marr&eacute;e' && taskStatus !== 'en cours'" class="btn btn-success btn-sm" ng-click="submit()">Soumettre &agrave; validation</button>
+                                            </div>
+                                        </div>
+                                        <div class="list-group m-t" unresolved>
+                                            <advanced-table id="collaborator-action-advanced-table" class="m-t-xs"></advanced-table>
+                                        </div>
+                                    </accordion-group>
+                                </accordion>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </advanced-table>
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+
+</div>

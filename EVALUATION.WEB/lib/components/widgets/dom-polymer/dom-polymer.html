@@ -1,0 +1,102 @@
+﻿<polymer-element name="dom-polymer" constructor="DomPolymer">
+    <template>
+        <core-signals on-core-signal-do-action="{{doAction}}"></core-signals>
+    </template>
+
+    <script>
+        (
+            function () {
+                var eventsAdded = [];
+
+                function eventIsAdded(signal) {
+                    for (var i = 0; i < eventsAdded.length; i++) {
+                        if (eventsAdded[i].type == signal) {
+                            return { found: true, index: i, item: eventsAdded[i] };
+                        }
+                    }
+
+                    return { found: false, index: -1, item: null };
+                }
+
+                Polymer('dom-polymer', {
+                    created: function () {
+                        this.f = EventTarget.prototype.addEventListener;
+                    },
+                    ready: function () {
+
+                    },
+                    removeEvent: function (type) {
+                        var result = eventIsAdded(type);
+
+                        if (result.found) {
+                            var item = result.item;
+                            //this.removeEventListener(item.type, item.fn, item.capture);
+
+                            eventsAdded.splice(result.index, 1);
+                        }
+                    },
+                    addEventListener: function (type, fn, capture) {
+                        this.removeEvent(type);
+
+                        var event = {
+                            type: type,
+                            fn: fn,
+                            capture: capture
+                        };
+
+                        eventsAdded.push(event);
+
+                        //this.f(event.type, event.fn, event.capture);
+                    },
+                    doAction: function (e, detail, sender) {
+
+                        switch (detail.eventName) {
+                        case 'loaded':
+                            this.doLoaded(detail.componentName, detail.eventName);
+                            break;
+
+                        case 'removed':
+                            this.doRemoved(detail.componentName, detail.eventName)
+                            break;
+                        default:
+                            // do nothing
+                            break;
+                        }
+                    },
+                    contentRemoved: function (e, detail, sender) {
+                        var signal = detail.componentName + '-loaded';
+                        this.removeEvent(signal);
+                    },
+                    doLoaded: function (componentName, eventName) {
+                        var signal = componentName + '-' + eventName;
+
+                        this.job(signal, function () {
+                            this.fire('done');
+
+                            var result = eventIsAdded(signal);
+                            if (result.found)
+                                result.item.fn();
+
+                            //this.asyncFire(signal, {});
+                        }, 500);
+                        
+                    },
+                    doRemoved: function (componentName, eventName) {
+                        var signal = componentName + '-loaded';
+                        this.removeEvent(signal);
+                    }
+                });
+            }());
+    </script>
+</polymer-element>
+
+<script>
+    Polymer.whenPolymerReady(function () {
+        domPolymer = domPolymer || new DomPolymer();
+        document.body.appendChild(domPolymer);
+
+        var event = new CustomEvent("polymer-elements-are-initialized", { "detail": "Polymer elements are ready to be used!" });
+        document.dispatchEvent(event);
+
+    }.bind(this));
+</script>

@@ -1,0 +1,45 @@
+F:\PROJET_EVALUATION_2\EVALUATION.CORE\obj\Debug\EVALUATION.CORE.csprojResolveAssemblyReference.cache
+F:\PROJET_EVALUATION_2\EVALUATION.CORE\bin\Debug\EVALUATION.CORE.dll
+F:\PROJET_EVALUATION_2\EVALUATION.CORE\bin\Debug\EVALUATION.CORE.pdb
+F:\PROJET_EVALUATION_2\EVALUATION.CORE\bin\Debug\Admin.Commons.dll
+F:\PROJET_EVALUATION_2\EVALUATION.CORE\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+F:\PROJET_EVALUATION_2\EVALUATION.CORE\bin\Debug\log4net.dll
+F:\PROJET_EVALUATION_2\EVALUATION.CORE\bin\Debug\YAXLib.dll
+F:\PROJET_EVALUATION_2\EVALUATION.CORE\bin\Debug\Newtonsoft.Json.dll
+F:\PROJET_EVALUATION_2\EVALUATION.CORE\bin\Debug\Admin.Commons.pdb
+F:\PROJET_EVALUATION_2\EVALUATION.CORE\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+F:\PROJET_EVALUATION_2\EVALUATION.CORE\bin\Debug\Newtonsoft.Json.xml
+F:\PROJET_EVALUATION_2\EVALUATION.CORE\obj\Debug\EVALUATION.CORE.dll
+F:\PROJET_EVALUATION_2\EVALUATION.CORE\obj\Debug\EVALUATION.CORE.pdb
+C:\Users\Laureen Gala\Downloads\PROJET_EVALUATION_2\EVALUATION.CORE\bin\Debug\EVALUATION.CORE.dll
+C:\Users\Laureen Gala\Downloads\PROJET_EVALUATION_2\EVALUATION.CORE\bin\Debug\EVALUATION.CORE.pdb
+C:\Users\Laureen Gala\Downloads\PROJET_EVALUATION_2\EVALUATION.CORE\bin\Debug\Admin.Commons.dll
+C:\Users\Laureen Gala\Downloads\PROJET_EVALUATION_2\EVALUATION.CORE\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Laureen Gala\Downloads\PROJET_EVALUATION_2\EVALUATION.CORE\bin\Debug\log4net.dll
+C:\Users\Laureen Gala\Downloads\PROJET_EVALUATION_2\EVALUATION.CORE\bin\Debug\YAXLib.dll
+C:\Users\Laureen Gala\Downloads\PROJET_EVALUATION_2\EVALUATION.CORE\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Laureen Gala\Downloads\PROJET_EVALUATION_2\EVALUATION.CORE\bin\Debug\Admin.Commons.pdb
+C:\Users\Laureen Gala\Downloads\PROJET_EVALUATION_2\EVALUATION.CORE\bin\Debug\Admin.Commons.dll.config
+C:\Users\Laureen Gala\Downloads\PROJET_EVALUATION_2\EVALUATION.CORE\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Laureen Gala\Downloads\PROJET_EVALUATION_2\EVALUATION.CORE\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Laureen Gala\Downloads\PROJET_EVALUATION_2\EVALUATION.CORE\obj\Debug\EVALUATION.CORE.csprojAssemblyReference.cache
+C:\Users\Laureen Gala\Downloads\PROJET_EVALUATION_2\EVALUATION.CORE\obj\Debug\EVALUATION.CORE.csproj.CoreCompileInputs.cache
+C:\Users\Laureen Gala\Downloads\PROJET_EVALUATION_2\EVALUATION.CORE\obj\Debug\EVALUATION.CORE.csproj.CopyComplete
+C:\Users\Laureen Gala\Downloads\PROJET_EVALUATION_2\EVALUATION.CORE\obj\Debug\EVALUATION.CORE.dll
+C:\Users\Laureen Gala\Downloads\PROJET_EVALUATION_2\EVALUATION.CORE\obj\Debug\EVALUATION.CORE.pdb
+C:\Users\Laureen Gala\Desktop\PROJET_EVALUATION_2\EVALUATION.CORE\bin\Debug\EVALUATION.CORE.dll
+C:\Users\Laureen Gala\Desktop\PROJET_EVALUATION_2\EVALUATION.CORE\bin\Debug\EVALUATION.CORE.pdb
+C:\Users\Laureen Gala\Desktop\PROJET_EVALUATION_2\EVALUATION.CORE\bin\Debug\Admin.Commons.dll
+C:\Users\Laureen Gala\Desktop\PROJET_EVALUATION_2\EVALUATION.CORE\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Laureen Gala\Desktop\PROJET_EVALUATION_2\EVALUATION.CORE\bin\Debug\log4net.dll
+C:\Users\Laureen Gala\Desktop\PROJET_EVALUATION_2\EVALUATION.CORE\bin\Debug\YAXLib.dll
+C:\Users\Laureen Gala\Desktop\PROJET_EVALUATION_2\EVALUATION.CORE\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Laureen Gala\Desktop\PROJET_EVALUATION_2\EVALUATION.CORE\bin\Debug\Admin.Commons.pdb
+C:\Users\Laureen Gala\Desktop\PROJET_EVALUATION_2\EVALUATION.CORE\bin\Debug\Admin.Commons.dll.config
+C:\Users\Laureen Gala\Desktop\PROJET_EVALUATION_2\EVALUATION.CORE\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Laureen Gala\Desktop\PROJET_EVALUATION_2\EVALUATION.CORE\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Laureen Gala\Desktop\PROJET_EVALUATION_2\EVALUATION.CORE\obj\Debug\EVALUATION.CORE.csprojAssemblyReference.cache
+C:\Users\Laureen Gala\Desktop\PROJET_EVALUATION_2\EVALUATION.CORE\obj\Debug\EVALUATION.CORE.csproj.CoreCompileInputs.cache
+C:\Users\Laureen Gala\Desktop\PROJET_EVALUATION_2\EVALUATION.CORE\obj\Debug\EVALUATION.CORE.csproj.CopyComplete
+C:\Users\Laureen Gala\Desktop\PROJET_EVALUATION_2\EVALUATION.CORE\obj\Debug\EVALUATION.CORE.dll
+C:\Users\Laureen Gala\Desktop\PROJET_EVALUATION_2\EVALUATION.CORE\obj\Debug\EVALUATION.CORE.pdb

@@ -1,0 +1,217 @@
+﻿<!--
+    A bar chart is a way of showing data as bars.
+
+    It is sometimes used to show trend data, and the comparison of multiple data sets side by side.
+
+    ##### Example
+
+    <chart-bar width="400" height="200"
+               labels="['Jan','Feb','Mar','Apr','May','Jun','Jul']",
+               values="[[65,59,90,81,56,55,40], [28,48,40,19,96,27,100]]"
+               colors="['253,180,92','247,70,74','70,191,189','148,159,177','77,83,96']">
+    </chart-bar>
+
+    @element chart-bar
+    @blurb A bar chart is a way of showing data as bars.
+    @status alpha
+    @homepage http://robdodson.github.io/chart-elements
+    -->
+
+
+<polymer-element name="chart-core" attributes="width height labels values colors type title options">
+    <template>
+        <link rel="stylesheet" href="../../../vendors/bower_components/bootstrap/dist/css/bootstrap.css" type="text/css" />
+        <style>
+            .title {
+                text-align: center;
+                color: #FFA500;
+            }
+        </style>
+        <table>
+            <tr>
+                <td style="margin-left: 10%">
+                    <h3 class="title"> {{ title }}</h3>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <canvas 
+                        id="canvas"
+                        width="{{ width }}"
+                        height="{{ height }}"
+                        class="pull-left">
+                    </canvas>
+                    <div id="legend" class="col-lg-2 pull-left">
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </template>
+    <script>
+        Polymer('chart-core', {
+            /**
+       * Fired when the graph is displayed.
+       *
+       * @event chart-render
+       */
+
+            title: '',
+
+            /**
+             * Sets the type of the chart.
+             *
+             * Should be one of:
+             * - `Bar`, `Line`, `Pie`, `Scatter`, 
+             *
+             * @attribute type
+             * @type string
+             */
+            type: '',
+
+            /**
+             * Sets the options for the chart.
+             *
+             * Example:
+             * <pre>{
+             *   title: "Chart title goes here",
+             *   hAxis: {title: "Categories"},
+             *   vAxis: {title: "Values", minValue: 0, maxValue: 2},
+             *   legend: "none"
+             * };</pre>
+             *
+             * @attribute options
+             * @type object
+             */
+            options: null,
+
+            /**
+             * Sets the entire dataset for this object.
+             * Can be used to provide the data directly, or to provide a URL from
+             * which to request the data.
+             *
+             * The data format can be a two-dimensional array or the DataTable format
+             * expected by Google Charts.
+             * See <a href="https://google-developers.appspot.com/chart/interactive/docs/reference#DataTable">Google Visualization API reference (DataTable constructor)</a>
+             * for data table format details.
+             *
+             * When specifying data with `data` you must not specify `cols` or `rows`.
+             *
+             * Example:
+             * <pre>[["Categories", "Value"],
+             *  ["Category 1", 1.0],
+             *  ["Category 2", 1.1]]</pre>
+             *
+             * @attribute data
+             * @type array, object, or string
+             */
+            data: null,
+
+            chartTypes: null,
+
+            chartObject: null,
+
+            observe: {
+                labels: 'updateChart',
+                colors: 'updateChart',
+                values: 'updateChart',
+                type: 'updateChart',
+                options: 'updateChart',
+            },
+            created: function () {
+                this.colors = [];
+                this.values = [];
+                this.labels = [];
+                this.title = '';
+            },
+            ready: function () {
+                this.loadChartTypes();
+            },
+            updateChart: function () {
+                if (this.chart) {
+                    this.chart.destroy();
+                }
+
+                if (Utilities.IsUndefinedOrNull(this.chartTypes[this.type])) {
+                    alert('le type ' + this.type + ' n\'est pas correct');
+                    return;
+                }
+
+                if (!Utilities.IsUndefinedOrNull(this.options) && !Utilities.IsUndefinedOrNull(this.options.title))
+                    this.title = this.options.title;
+                else
+                    this.title = '';
+					
+				if (!Utilities.IsUndefinedOrNull(this.options) && !Utilities.IsUndefinedOrNull(this.options.colors))
+                    this.colors = this.options.colors;
+
+                var data = [];
+
+                this.values.forEach(function (val, i) {
+                    var color = '';
+                    var label = '';
+                    if (!Utilities.IsUndefinedOrNull(this.likeCamenbert[this.type])) {
+                        color = (this.colors != null && this.colors.length > 0) ? this.colors[i] : Utilities.getRandomColor();
+                        label = !Utilities.IsUndefinedOrNull(val[this.options.label]) ? val[this.options.label] : 'item ' + (i + 1);
+                        data.push({
+                            color: color,
+                            value: val[this.options.field],
+                            label: label,
+                        });
+                    } else {
+                        color = (this.colors.length > 0) ? this.colors[i] : Utilities.getRandomColor('rgba');
+                        data.push({
+                            label: this.type + ' ' + (i + 1),
+                            lineColor: "rgba(" + color + ",1)",
+                            fillColor: "rgba(" + color + ",0.5)",
+                            strokeColor: "rgba(" + color + ",1)",
+                            pointColor: "rgba(" + color + ",1)",
+                            pointStrokeColor: "#fff",
+                            pointHighlightFill: "#fff",
+                            pointHighlightStroke: "rgba(" + color + ",1)",
+                            data: this.values[i]
+                        });
+                    }
+                }, this);
+
+                if (!Utilities.IsUndefinedOrNull(this.likeCamenbert[this.type]))
+                    this.data = data;
+                else {
+                    this.data = { labels: this.labels, datasets: data };
+                }
+
+
+                this.ctx = this.$.canvas.getContext('2d');
+                this.chart = new Chart(this.ctx)[this.type](this.data, this.options);
+
+
+                this.legend = this.chart.generateLegend();
+                this.$.legend.innerHTML = this.legend;
+            },
+            likeCamenbert: {
+                'Doughnut': 'Doughnut',
+                'PolarArea': 'PolarArea',
+                'Pie': 'Pie',
+            },
+            loadChartTypes: function () {
+                this.chartTypes = {
+                    'Bar': 'Bar',
+                    'Line': 'Line',
+                    'Pie': 'Pie',
+                    'Area': 'Area',
+                    'Doughnut': 'Doughnut',
+                    'PolarArea': 'PolarArea',
+                };
+            },
+            transformValues: function () {
+                if (Utilities.IsUndefinedOrNull(this.values))
+                    return;
+
+                var data = [];
+
+                return data;
+            }
+        });
+    </script>
+    <script src="../../../common/utilities.js"></script>
+    <script src="../../../vendors/assets/chartjs/Chart-custom.js"></script>
+</polymer-element>

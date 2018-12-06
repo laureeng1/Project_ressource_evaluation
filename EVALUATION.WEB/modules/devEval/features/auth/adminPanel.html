@@ -1,0 +1,174 @@
+<!--
+    Très important !!!
+
+    - remplacer "Titre" par le titre de la fenêtre
+    - remplacer "&eacute;l&eacute;ment(s)" par le nom de l'&eacute;l&eacute;ment
+    - renommer l'id de advanced-table
+-->
+
+<div class="bg-light lter b-b wrapper-md">
+    <h1 class="m-n font-thin h3">ADMINISTRATION</h1>
+</div>
+<div class="wrapper-md">
+    <div class="row">
+        <div class="col-md-12">
+            <section class="panel m-b-none">
+                <div class="panel-body m-b-none p-b-none p-t-none">
+                    <tabset class="tab-container">
+                        <tab heading="Gestion des utilisateurs">
+                            <div class="col-sm-12" ng-controller="userListCtrl">
+                                <br />
+                                <button class="btn btn-default btn-sm" ng-click="editItem()">Nouvel utilisateur</button>
+                                <hr />
+                                <p>Liste des utilisateurs </p>
+                                <div class="list-group m-t" unresolved>
+                                    <advanced-table id="user-advanced-table" class="m-t-xs">
+                                        <style>
+                                            .table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+                                                border-top: 0;
+                                            }
+                                        </style>
+                                        <br />
+                                        <div class="form-group" data-index="{{ index }}" style="padding-left: 5px !important;" ng-controller="userRoleListCtrl">
+                                            <div class="row">
+                                                <div class="col-sm-12">
+                                                    <accordion close-others="oneAtATime">
+                                                        <accordion-group heading="{{ title }}" is-open="status.isOpen">
+                                                            <h3>R&ocirc;les de l'utilisateur</h3>
+                                                            <div class="list-group m-t" unresolved>
+                                                                <form>
+                                                                    <table class="table table-striped">
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th>Nom du r&ocirc;le</th>
+                                                                                <th>Est activ&eacute;</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr ng-repeat="r in roles">
+                                                                                <td>{{ r.displayName }}</td>
+                                                                                <td>
+                                                                                    <!--<input type="checkbox" />-->
+                                                                                    <input type="checkbox" ng-checked="userRoleChecked(r.id)" ng-click="changeUserRoles(r.id)" />
+                                                                                    <!--{{ r.id }} : {{ userRoles }}-->
+                                                                                </td>
+                                                                            </tr>
+                                                                            <!--<tr>
+                                                                                <td colspan="2" class="text-right">
+                                                                                    <button class="btn btn-primary btn-sm"  ng-click="alert('roles modifiés');">Valider</button>
+                                                                                </td>
+                                                                            </tr>-->
+                                                                        </tbody>
+                                                                    </table>
+                                                                </form>
+                                                            </div>
+                                                        </accordion-group>
+                                                    </accordion>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </advanced-table>
+                                </div>
+
+                            </div>
+                        </tab>
+
+                        <tab heading="Gestion des r&ocirc;les">
+                            <div class="col-sm-12" ng-controller="roleListCtrl">
+                                <br />
+                                <button class="btn btn-default btn-sm" ng-click="editItem()">Nouveau</button>
+                                <hr />
+                                <p>Liste des r&ocirc;les </p>
+                                <div class="list-group m-t" unresolved>
+                                    <advanced-table id="role-advanced-table" class="m-t-xs">
+                                        <style>
+                                            .table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+                                                border-top: 0;
+                                            }
+                                        </style>
+                                        <br />
+                                        <div class="form-group" data-index="{{ index }}" style="padding-left: 5px !important;" ng-controller="rolePermissionListCtrl">
+                                            <div class="row">
+                                                <div class="col-sm-12">
+                                                    <accordion close-others="oneAtATime">
+                                                        <accordion-group heading="{{ title }}" is-open="status.isOpen">
+                                                            <h3>Permissions du r&ocirc;le</h3>
+                                                            <div class="list-group m-t" unresolved>
+                                                                <form>
+                                                                    <table class="table table-striped">
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th>Nom de la permission</th>
+                                                                                <th>Est activ&eacute;</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr ng-repeat="p in permissions">
+                                                                                <td>{{ p.displayName }}</td>
+                                                                                <td>
+                                                                                    <!--<input type="checkbox" />-->
+                                                                                    <input type="checkbox" ng-checked="rolePermissionChecked(p.id)" ng-click="changeRolePermission(p.id)" />
+                                                                                    <!--{{ p.id }} : {{ rolePermissions }}-->
+                                                                                </td>
+                                                                            </tr>
+                                                                            <!--<tr>
+                                                                                <td colspan="2" class="text-right">
+                                                                                    <button class="btn btn-primary btn-sm"  ng-click="alert('roles modifiés');">Valider</button>
+                                                                                </td>
+                                                                            </tr>-->
+                                                                        </tbody>
+                                                                    </table>
+                                                                </form>
+                                                            </div>
+                                                        </accordion-group>
+                                                    </accordion>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </advanced-table>
+                                </div>
+
+                            </div>
+                        </tab>
+
+                        <tab heading="Gestion des permissions">
+                            <div class="col-sm-12" ng-controller="permissionListCtrl">
+                                <br />
+                                <button class="btn btn-default btn-sm" ng-click="editItem()">Nouveau</button>
+                                <!--<button class="btn btn-primary btn-sm" ng-click="setupRole()">G&eacute;n&eacute;rer r&ocirc;le</button>-->
+                                <hr />
+                                <p>Liste des permissions </p>
+                                <div class="list-group m-t" unresolved>
+                                    <advanced-table id="permission-advanced-table" class="m-t-xs">
+
+                                    </advanced-table>
+                                </div>
+                            </div>
+                        </tab>
+                    </tabset>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+
+
+</div>
+
+<style>
+    .panel {
+        background-color: transparent !important;
+    }
+
+    .panel-body {
+        padding: 0;
+        background-color: #fff !important;
+    }
+</style>
